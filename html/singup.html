@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Página</title>
+    <!-- Adicionando Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/login.css" />
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Lado Azul -->
+            <div class="col-md-4 fundo-azul">
+                <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                    <!-- Logo -->
+                    <img src="../img/Logotipo.svg" alt="Logo" class="mb-4">
+                    <br><br><br>
+                    <!-- Link para a Homepage -->
+                    <a href="#" class="mb-2">Pagina Principal</a>
+
+                    <!-- Link para criar conta -->
+                    <a href="#" class="mb-2">Login</a>
+                </div>
+            </div>
+
+            <!-- Lado Branco -->
+            <div class="col-md-8 fundo-branco">
+                <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                    <!-- Texto de Login -->
+                    <h2 class="mb-4 text-login">SingUp</h2>
+
+                    <!-- Campos de Cadastro -->
+                    <input type="text" class="form-control mb-3 w-50" placeholder="Nome">
+                    <input type="text" class="form-control mb-3 w-50" id="dataNascimento" placeholder="Data de Nascimento (DD/MM/AAAA)">
+                    <select class="form-control mb-3 w-50">
+                        <option value="">Selecione o Sexo</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                    <input type="text" class="form-control mb-3 w-50" placeholder="Localidade">
+                    <input type="email" class="form-control mb-3 w-50" placeholder="Email">
+                    <input type="password" class="form-control mb-3 w-50" placeholder="Password">
+
+                    <!-- Botão de Cadastro -->
+                    <button class="btn btn-primary btn-lg">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Adicionando Bootstrap JS (opcional, dependendo do seu uso) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../js/singup.js"></script>
+
+</body>
+
+</html>

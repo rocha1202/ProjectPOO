@@ -1,0 +1,33 @@
+        .fundo-azul {
+            background-color: #5688C7;
+            height: 100vh;
+        }
+
+        .fundo-branco {
+            background-color: #ffffff;
+            height: 100vh;
+        }
+
+        img {
+            height: 8%;
+        }
+
+        .text-login {
+            color: #5688C7;
+        }
+
+        a {
+            color: #ffffff;
+        }
+
+        a:hover {
+            color: #C94E23;
+        }
+
+        /* Centralizar conteúdo */
+        .centralizado {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
