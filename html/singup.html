@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/login.css" />
 
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 </head>
 
 <body>
@@ -19,13 +24,13 @@
             <div class="col-md-4 fundo-azul">
                 <div class="d-flex flex-column justify-content-center align-items-center h-100">
                     <!-- Logo -->
-                    <img src="../img/Logotipo.svg" alt="Logo" class="mb-4">
+                    <img src="../img/Logotipo_white.svg" alt="Logo" class="mb-4">
                     <br><br><br>
                     <!-- Link para a Homepage -->
-                    <a href="#" class="mb-2">Pagina Principal</a>
+                    <a href="../index.html" class="mb-2">Pagina Principal</a>
 
                     <!-- Link para criar conta -->
-                    <a href="#" class="mb-2">Login</a>
+                    <a href="./login.html" class="mb-2">Login</a>
                 </div>
             </div>
 
@@ -33,11 +38,12 @@
             <div class="col-md-8 fundo-branco">
                 <div class="d-flex flex-column justify-content-center align-items-center h-100">
                     <!-- Texto de Login -->
-                    <h2 class="mb-4 text-login">SingUp</h2>
+                    <h2 class="mb-4 text-login">Singup</h2>
 
                     <!-- Campos de Cadastro -->
                     <input type="text" class="form-control mb-3 w-50" placeholder="Nome">
-                    <input type="text" class="form-control mb-3 w-50" id="dataNascimento" placeholder="Data de Nascimento (DD/MM/AAAA)">
+                    <input type="text" class="form-control mb-3 w-50" id="dataNascimento"
+                        placeholder="Data de Nascimento (DD/MM/AAAA)">
                     <select class="form-control mb-3 w-50">
                         <option value="">Selecione o Sexo</option>
                         <option value="Feminino">Feminino</option>
@@ -49,7 +55,7 @@
                     <input type="password" class="form-control mb-3 w-50" placeholder="Password">
 
                     <!-- Botão de Cadastro -->
-                    <button class="btn btn-primary btn-lg">Cadastrar</button>
+                    <button class="btn btn-primary btn-lg">Criar</button>
                 </div>
             </div>
         </div>
@@ -59,7 +65,6 @@
     <!-- Adicionando Bootstrap JS (opcional, dependendo do seu uso) -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="../js/singup.js"></script>
-
 </body>
 
 </html>
