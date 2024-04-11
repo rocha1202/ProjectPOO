@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TSIW - ESMAD</title>
+    <link rel="icon" type="image/x-icon" href="../img/Logotipo.svg" />
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script type="module" src="./js/map.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
+    <!-- MENU HAMBURGER -->
+    <div class="sideBar" id="sideBar">
+      <a onclick="closeNav()"><i class="ph ph-x closeBtn"></i></a>
+      <div class="nav_options d-flex flex-column">
+        <a href="#saidas_profissionais" onclick="closeNav()"
+          >Saídas Profissionais</a
+        >
+        <a href="#eventos_noticias" onclick="closeNav()">Eventos/Notícias</a>
+        <a href="">Galeria</a>
+        <a href="#sobre" onclick="closeNav()">Sobre</a>
+        <a href="#jogos" onclick="closeNav()">Jogos</a>
+        <a href="#contactos" onclick="closeNav()">Contactos</a>
+        <a href="./html/login.html">Login</a>
+      </div>
+      <div class="d-flex linguas"><a href="">EN</a> | <a href="">PT</a></div>
+    </div>
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <nav class="navbar bg-navbar">
+      <div class="container-fluid">
+        <a href="index.html" class="navbar-brand"
+          ><img src="../img/Logotipo.svg" alt="Logo TSIW" class="logo"
+        /></a>
+        <i class="ph ph-list" id="menu" onclick="openNav()"></i>
+      </div>
+    </nav>
+  <script src="../js//sideBar.js"></script>
+</html>
