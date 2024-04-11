@@ -1,33 +1,75 @@
-        .fundo-azul {
-            background-color: #5688C7;
-            height: 100vh;
-        }
+@font-face {
+  font-family: "PortoSansRegular";
+  src: url("../fontes/PortoSans-Regular.otf") format("opentype");
+}
 
-        .fundo-branco {
-            background-color: #ffffff;
-            height: 100vh;
-        }
+@font-face {
+  font-family: "PortoSansStencilBold";
+  src: url("../fontes/PortoSansStencil-Bold.otf") format("opentype");
+}
 
-        img {
-            height: 8%;
-        }
+:root {
+  --blue: #5688c7;
+  --blue_rgb: 86, 136, 199;
+  --orange: #c94e23;
+  --orange_rgb: 201, 78, 35;
+  --gray: #bcbec0;
+  --gray_rgb: 188, 190, 192;
+  --black: #020202;
+  --white: #fffffc;
+}
 
-        .text-login {
-            color: #5688C7;
-        }
+.fundo-azul {
+  background-color: #5688c7;
+  height: 100vh;
+}
 
-        a {
-            color: #ffffff;
-        }
+.fundo-branco {
+  background-color: #ffffff;
+  height: 100vh;
+}
 
-        a:hover {
-            color: #C94E23;
-        }
+img {
+  height: 8%;
+}
 
-        /* Centralizar conteúdo */
-        .centralizado {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
+.text-login {
+  color: #5688c7;
+}
+
+a {
+  font-family: "PortoSansRegular";
+  color: #ffffff;
+}
+
+a:hover {
+  color: #c94e23;
+}
+
+/* Centralizar conteúdo */
+.centralizado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.btn {
+  margin-top: 10%;
+}
+
+.btn_login {
+  font-family: "PortoSansStencilBold";
+  font-size: 25px;
+  background-color: rgba(var(--blue_rgb), 0.85);
+  width: 140px;
+  height: 40px;
+  border: none;
+  color: var(--white);
+  text-align: center;
+  border-radius: 7px;
+}
+
+.btn_login:hover {
+  background-color: var(--blue);
+}
