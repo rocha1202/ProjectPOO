@@ -1,17 +1,477 @@
+@font-face {
+  font-family: "PortoSansStencilBold";
+  src: url("../fontes/PortoSansStencil-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PortoSansStencilRegular";
+  src: url("../fontes/PortoSansStencil-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PortoSansRegular";
+  src: url("../fontes/PortoSans-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PortoSansLight";
+  src: url("../fontes/PortoSans-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PortoSansBold";
+  src: url("../fontes/PortoSans-Bold.otf") format("opentype");
+}
+
+:root {
+  --blue: #5688c7;
+  --blue_rgb: 86, 136, 199;
+  --orange: #c94e23;
+  --orange_rgb: 201, 78, 35;
+  --gray: #bcbec0;
+  --gray_rgb: 188, 190, 192;
+  --black: #020202;
+  --white: #fffffc;
+}
+
 html,
 body {
   height: 100%;
   width: 100%;
+  position: relative;
   margin: 0;
   padding: 0;
   margin-top: 65;
+  background-color: var(--white);
 }
 
 .logo {
   width: 138px;
   height: 33px;
+  cursor: pointer;
 }
 
 .bg-navbar {
-  background-color: #bcbec0;
+  background-color: var(--gray);
+  position: fixed;
+  width: 100%;
+  z-index: 4;
+}
+
+.ph-list {
+  color: var(--orange);
+  z-index: 1;
+}
+
+.ph-list:hover {
+  cursor: pointer;
+  color: var(--blue);
+}
+
+.ph {
+  font-size: 35px;
+  margin-right: 10px;
+}
+
+.sideBar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  background-color: var(--gray);
+  overflow-x: hidden;
+  transition: 0.1s;
+}
+
+.closeBtn {
+  position: absolute;
+  z-index: 7;
+  top: 30px;
+  right: 20px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: var(--black);
+  font-size: 30px;
+  margin-right: 5px;
+}
+
+.closeBtn:hover {
+  cursor: pointer;
+  color: var(--orange);
+}
+
+.nav_options {
+  margin-top: 90px;
+  height: 70%;
+}
+
+.nav_options a {
+  color: var(--black);
+  font-family: "PortoSansRegular";
+  text-decoration: none;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+.nav_options a:hover {
+  color: var(--orange);
+  text-decoration: underline;
+}
+
+.linguas {
+  position: relative;
+  justify-content: flex-end;
+  right: 20px;
+  margin-right: 5px;
+  margin-top: 90px;
+  color: var(--blue);
+}
+
+.linguas a {
+  text-decoration: none;
+  color: var(--blue);
+}
+
+.linguas a:hover {
+  font-family: "PortoSansBold";
+}
+
+.banner {
+  position: relative;
+}
+
+.img_banner {
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  z-index: 1;
+}
+
+.title_banner {
+  font-family: "PortoSansStencilBold";
+  font-size: 70px;
+  z-index: 2;
+  position: relative;
+  text-align: center;
+  padding-top: 100px;
+  color: var(--white);
+}
+
+.text_banner {
+  font-family: "PortoSansRegular";
+  font-size: 35px;
+  margin-left: 20%;
+  margin-right: 20%;
+  z-index: 2;
+  position: relative;
+  text-align: center;
+  padding-top: 30px;
+  color: var(--white);
+}
+
+.btn {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  padding-top: 30px;
+}
+
+.btn_login {
+  font-family: "PortoSansStencilBold";
+  font-size: 30px;
+  background-color: rgba(var(--blue_rgb), 0.85);
+  width: 180px;
+  height: 50px;
+  border: none;
+  color: var(--white);
+  text-align: center;
+  border-radius: 10px;
+}
+
+.btn_login:hover {
+  background-color: var(--blue);
+}
+
+.saidas_profissionais {
+  position: relative;
+  z-index: 1;
+  padding-top: 7%;
+  text-align: center;
+}
+
+.title {
+  font-family: "PortoSansStencilRegular";
+  color: var(--blue);
+}
+
+.text {
+  font-family: "PortoSansLight";
+  font-size: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.saidas_prof_container {
+  width: 100%;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.column {
+  text-align: center;
+}
+
+.column_left {
+  margin-right: 40px;
+}
+
+.column_right {
+  margin-left: 40px;
+}
+
+.sub_title {
+  font-family: "PortoSansBold";
+  color: var(--orange);
+}
+
+.eventos_noticias {
+  margin-top: 30px;
+  padding-top: 20px;
+  text-align: center;
+  background-color: rgba(var(--gray_rgb), 0.35);
+  padding-bottom: 20px;
+}
+
+.eventos_noticias_container {
+  width: 100%;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.evento_noticia_img {
+  background-color: var(--white);
+  border-radius: 10px;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+}
+
+.evento_noticia_img img {
+  padding: 25px 25px 25px 25px;
+  width: 300px;
+  height: 300px;
+}
+
+.column_cat_overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  border-radius: 10px;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 0 auto;
+  transition: 0.5s ease;
+  background-color: rgba(var(--orange_rgb), 0.4);
+  cursor: pointer;
+}
+
+.evento_noticia_img:hover .column_cat_overlay {
+  opacity: 1;
+}
+
+.column_cat_title {
+  font-family: "PortoSansBold";
+  color: var(--black);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.sobre {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.paragraph {
+  text-align: justify;
+}
+
+.sobre_links {
+  font-family: "PortoSansRegular";
+  margin-left: 10%;
+  font-size: 20px;
+}
+
+.sobre_links a {
+  margin-right: 30px;
+  color: var(--black);
+  text-decoration: none;
+  align-items: center;
+}
+
+.sobre_links a:hover {
+  color: var(--orange);
+}
+
+.sobre_links a span {
+  margin-right: 5px;
+}
+
+.sobre_links a span:hover {
+  text-decoration: underline;
+}
+
+.sobre_links a .ph {
+  font-size: 15px;
+  margin-right: 0px;
+  justify-items: center;
+  align-items: center;
+}
+
+.jogos {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.jogos_container {
+  width: 100%;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.jogo_img {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+}
+
+.jogo_img img {
+  border-radius: 10px;
+  width: 300px;
+  height: 300px;
+}
+
+.jogo_img:hover .column_cat_overlay {
+  opacity: 1;
+}
+
+#map {
+  margin-top: 30px;
+  margin-right: 10%;
+  margin-left: 10%;
+  height: 50%;
+}
+
+.contactos {
+  margin-top: 30px;
+  text-align: center;
+  justify-content: center;
+  margin-right: 20%;
+  margin-left: 20%;
+}
+
+.contact_form {
+  width: 100%;
+  border: 1.5px;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: var(--blue);
+  margin-top: 70px;
+}
+
+form {
+  width: 100%;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 10px;
+  justify-items: center;
+}
+
+.contact_input {
+  border-color: var(--blue);
+  margin-right: 20px;
+  border-width: 1px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 0%;
+  width: 100%;
+}
+
+.contact_input::placeholder {
+  font-family: "PortoSansStencilRegular";
+  color: var(--gray);
+  font-size: 20px;
+}
+
+.contact_textarea {
+  border-color: var(--blue);
+  border-width: 1px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.contact_textarea::placeholder {
+  font-family: "PortoSansStencilRegular";
+  color: var(--gray);
+  font-size: 20px;
+  padding-left: 5px;
+}
+
+.footer {
+  margin-top: 30px;
+  background-color: var(--gray);
+  justify-content: center;
+}
+
+.footer_container {
+  width: 100%;
+  justify-content: center;
+}
+
+.logos {
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+  padding-left: 70px;
+}
+
+.logo_footer {
+  width: 168px;
+  height: 63px;
+  cursor: pointer;
+}
+
+.info_uni {
+  font-family: "PortoSansRegular";
+  color: var(--white);
+  text-align: center;
+  justify-content: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.link_sociais {
+  font-family: "PortoSansRegular";
+  font-size: 20px;
+  text-align: center;
+  align-content: center;
+}
+
+.link_sociais p {
+  color: var(--white);
+}
+
+.icons {
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.icons i:hover {
+  color: var(--orange);
 }

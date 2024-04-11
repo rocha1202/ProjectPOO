@@ -5,23 +5,291 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TSIW - ESMAD</title>
     <link rel="icon" type="image/x-icon" href="./img/Logotipo.svg" />
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script type="module" src="./js/map.js"></script>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
-    <!-- BARRA DE NAVEGÇÃO -->
-    <nav class="navbar bg-navbar fixed-top">
+    <!-- MENU HAMBURGER -->
+    <div class="sideBar" id="sideBar">
+      <a onclick="closeNav()"><i class="ph ph-x closeBtn"></i></a>
+      <div class="nav_options d-flex flex-column">
+        <a href="#saidas_profissionais" onclick="closeNav()"
+          >Saídas Profissionais</a
+        >
+        <a href="#eventos_noticias" onclick="closeNav()">Eventos/Notícias</a>
+        <a href="">Galeria</a>
+        <a href="#sobre" onclick="closeNav()">Sobre</a>
+        <a href="#jogos" onclick="closeNav()">Jogos</a>
+        <a href="#contactos" onclick="closeNav()">Contactos</a>
+        <a href="./html/login.html">Login</a>
+      </div>
+      <div class="d-flex linguas"><a href="">EN</a> | <a href="">PT</a></div>
+    </div>
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <nav class="navbar bg-navbar">
       <div class="container-fluid">
         <a href="index.html" class="navbar-brand"
           ><img src="./img/Logotipo.svg" alt="Logo TSIW" class="logo"
         /></a>
+        <i class="ph ph-list" id="menu" onclick="openNav()"></i>
       </div>
     </nav>
+    <!-- BANNER - PARTE 1 -->
+    <div class="banner">
+      <img src="./img/banner/img1.png" alt="Imagem Banner" class="img_banner" />
+      <h1 class="title_banner">Bem-vindo ao website de TSIW!</h1>
+      <p class="text_banner">
+        Aqui saberás informações relativas ao curso e poderás participar em
+        jogos que estão presentes neste site
+      </p>
+      <div class="btn">
+        <button
+          class="btn_login"
+          onclick="window.location.href = './html/login.html';"
+        >
+          Login
+        </button>
+      </div>
+    </div>
+    <!-- SAÍDAS PROFISSIONAIS - PARTE 2 -->
+    <div id="saidas_profissionais" class="saidas_profissionais">
+      <h1 class="title">Saídas Profissionais</h1>
+      <p class="text">
+        A licenciatura assenta numa visão contemporânea e multidisciplinar da
+        Web, agregando competências focadas na concepção, design e
+        desenvolvimento de produtos e software para a Web
+      </p>
+      <div class="d-flex saidas_prof_container">
+        <div class="col-3 column column_left">
+          <h5 class="sub_title">MULTIPLATAFORMA</h5>
+          <p class="text">Desenvolvimento de produtos multiplataforma</p>
+        </div>
+        <div class="col-3 column">
+          <h5 class="sub_title">PRODUTOS WEB</h5>
+          <p class="text">
+            Conceção e desenvolvimento de software e produtos Web
+          </p>
+        </div>
+        <div class="col-3 column column_right">
+          <h5 class="sub_title">UI/UX DEVELOPER</h5>
+          <p class="text">
+            Desenvolvimento de plataformas de comercio e negócio eletrônico
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- EVENTOS/NOTÍCIAS - PARTE 3 -->
+    <div id="eventos_noticias" class="eventos_noticias">
+      <h1 class="title">Eventos/Notícias</h1>
+      <p class="text">Eventos e notícias mais recentes relativas ao curso</p>
+      <div>
+        <div class="d-flex eventos_noticias_container">
+          <div class="col-3 column">
+            <div class="evento_noticia_img">
+              <img
+                src="./img/eventos_noticias/img2.jpeg"
+                alt="Imagem Poster Open Day"
+              />
+              <div class="column_cat_overlay"></div>
+            </div>
+            <h5 class="column_cat_title">OPEN DAY’S</h5>
+          </div>
+          <div class="col-3 column">
+            <div class="evento_noticia_img">
+              <img
+                src="./img/eventos_noticias/img3.jpeg"
+                alt="Imagem Poster Mad Game Jam"
+              />
+              <div class="column_cat_overlay"></div>
+            </div>
+            <h5 class="column_cat_title">MAD GAME JAM</h5>
+          </div>
+          <div class="col-3 column">
+            <div class="evento_noticia_img">
+              <img
+                src="./img/eventos_noticias/img4.jpeg"
+                alt="Imagem Poster Plug In"
+              />
+              <div class="column_cat_overlay"></div>
+            </div>
+            <h5 class="column_cat_title">PLUG-IN</h5>
+          </div>
+        </div>
+        <div class="btn"><button class="btn_login">Ver tudo</button></div>
+      </div>
+    </div>
+    <!-- SOBRE - PARTE 4 -->
+    <div id="sobre" class="sobre">
+      <h1 class="title">Sobre</h1>
+      <p class="text paragraph">
+        A licenciatura procura dotar os estudantes de conhecimento e
+        competências práticas que lhes permitam o domínio de áreas emergentes
+        como os serviços centrados na cloud, a computação móvel e ubíqua, ou
+        plataformas Web e de negócio eletrônico, sem descurar competências hoje
+        em dia fundamentais, como ergonomia e design de interação, usabilidade e
+        user experience ou prototipagem de plataformas digitais.
+      </p>
+      <div class="d-flex sobre_links">
+        <a href=""
+          ><span>Ver Plano de Estudos</span><i class="ph ph-arrow-right"></i
+        ></a>
+        <a href=""
+          ><span>Mais Informações</span><i class="ph ph-arrow-right"></i
+        ></a>
+      </div>
+    </div>
+    <!-- JOGOS - PARTE 5 -->
+    <div id="jogos" class="jogos">
+      <h1 class="title">Jogos</h1>
+      <div>
+        <div class="d-flex jogos_container">
+          <div class="col-3 column">
+            <div class="jogo_img">
+              <img src="./img/jogos/img5.jpg" alt="Imagem Poster Open Day" />
+              <div class="column_cat_overlay"></div>
+            </div>
+            <h5 class="column_cat_title">Jogo da Memória</h5>
+          </div>
+          <div class="col-3 column">
+            <div class="jogo_img">
+              <img src="./img/jogos/img6.jpg" alt="Imagem Jogo Escape Room" />
+              <div class="column_cat_overlay"></div>
+            </div>
+            <h5 class="column_cat_title">Escape Room</h5>
+          </div>
+          <div class="col-3 column">
+            <div class="jogo_img">
+              <img src="./img/jogos/img7.jpg" alt="Imagem Poster Plug In" />
+              <div class="column_cat_overlay"></div>
+            </div>
+            <h5 class="column_cat_title">Quiz</h5>
+          </div>
+        </div>
+        <div class="btn"><button class="btn_login">Mais jogos</button></div>
+      </div>
+    </div>
+    <!-- MAPA/LOCALIZAÇÃO - PARTE 6 -->
+    <div id="map"></div>
+    <!-- CONTACTOS - PARTE 7 -->
+    <div id="contactos" class="contactos">
+      <h1 class="title">Contactos</h1>
+      <p class="text">
+        Se tiveres alguma dúvida podes nos contactar preenchendo o formulário
+        abaixo e entraremos em contacto contigo o mais rápido possível
+      </p>
+      <div class="contact_form">
+        <form action="">
+          <div class="d-flex">
+            <input
+              type="text"
+              class="mb-5 w-50 contact_input"
+              placeholder="Nome"
+            />
+            <input
+              type="text"
+              class="mb-5 w-50 contact_input"
+              placeholder="Apelido"
+            />
+          </div>
+          <div class="d-flex">
+            <input
+              type="email"
+              class="mb-5 w-70 contact_input"
+              placeholder="Email"
+            />
+          </div>
+          <div class="d-flex">
+            <textarea
+              name="observacoes"
+              class="contact_textarea"
+              rows="10"
+              placeholder="Texto"
+            ></textarea>
+          </div>
+          <div class="btn"><button class="btn_login">Submeter</button></div>
+        </form>
+      </div>
+    </div>
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="d-flex justify-content-between footer_container">
+        <div class="logos col-3">
+          <a href="index.html" class="navbar-brand"
+            ><img src="./img/Logotipo.svg" alt="Logo TSIW" class="logo_footer"
+          /></a>
+          <br />
+          <a href="index.html" class="navbar-brand"
+            ><img
+              src="./img/PPORTO_Cor.svg"
+              alt="Logo TSIW"
+              class="logo_footer"
+          /></a>
+        </div>
+        <div class="col-3">
+          <p class="info_uni">
+            Escola Superior de Media Artes e Design <br />Rua D. Sancho I, n.º
+            981
+            <br />
+            4480-876 Vila do Conde <br />Portugal <br />
+            <br />
+            T. +351 252 291 700 <br />E. geral@esmad.ipp.pt
+          </p>
+        </div>
+        <div class="col-3 link_sociais">
+          <p>Vê as nossas redes sociais!</p>
+          <div class="d-flex icons">
+            <i class="ph ph-instagram-logo"></i>
+            <i class="ph ph-facebook-logo"></i>
+            <i class="ph ph-youtube-logo"></i>
+            <i class="ph ph-envelope"></i>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
+  <!-- SCRIPT MAPA GOOGLE -->
+  <script>
+    ((g) => {
+      var h,
+        a,
+        k,
+        p = "The Google Maps JavaScript API",
+        c = "google",
+        l = "importLibrary",
+        q = "__ib__",
+        m = document,
+        b = window;
+      b = b[c] || (b[c] = {});
+      var d = b.maps || (b.maps = {}),
+        r = new Set(),
+        e = new URLSearchParams(),
+        u = () =>
+          h ||
+          (h = new Promise(async (f, n) => {
+            await (a = m.createElement("script"));
+            e.set("libraries", [...r] + "");
+            for (k in g)
+              e.set(
+                k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()),
+                g[k]
+              );
+            e.set("callback", c + ".maps." + q);
+            a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+            d[q] = f;
+            a.onerror = () => (h = n(Error(p + " could not load.")));
+            a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+            m.head.append(a);
+          }));
+      d[l]
+        ? console.warn(p + " only loads once. Ignoring:", g)
+        : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+    })({ key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "weekly" });
+  </script>
+  <script src="./js/sideBar.js"></script>
 </html>
