@@ -1,14 +1,14 @@
 @font-face {
     font-family: "PortoSansRegular";
     src: url("../fontes/PortoSans-Regular.otf") format("opentype");
-  }
-  
-  @font-face {
+}
+
+@font-face {
     font-family: "PortoSansStencilBold";
     src: url("../fontes/PortoSansStencil-Bold.otf") format("opentype");
-  }
-  
-  :root {
+}
+
+:root {
     --blue: #5688c7;
     --blue_rgb: 86, 136, 199;
     --orange: #c94e23;
@@ -17,7 +17,7 @@
     --gray_rgb: 188, 190, 192;
     --black: #020202;
     --white: #fffffc;
-  }
+}
 
 .blue-background {
     background-color: #5688C7;
@@ -48,6 +48,25 @@ a:hover {
     color: #C94E23;
 }
 
+span,a {
+    font-size: 18px;
+    font-family: "PortoSansRegular";
+
+}
+.text-login{
+    font-size: 50px;
+    font-family: "PortoSansStencilBold";
+}
+.text-login.conquistas{
+    font-size: 30px;
+    font-family: "PortoSansRegular";
+}
+button {
+    color: var(--blue);
+    text-align: center;
+    font-size: 18px;
+    font-family: "PortoSansStencilRegular";
+  }
 .prize-image {
     margin: 30px;
 }
@@ -83,26 +102,27 @@ a:hover {
 .avatar-image:hover .avatar-hover-image {
     display: block;
 }
- .avatar-container {
-        position: relative;
-    }
 
-    .avatar-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: none;
-        justify-content: center;
-        align-items: center;
-    }
+.avatar-container {
+    position: relative;
+}
 
-    .avatar-container:hover .avatar-overlay {
-        display: flex;
-    }
+.avatar-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
 
-    .avatar-overlay img {
-        max-width: 100%;
-        max-height: 100%;
-    }
+.avatar-container:hover .avatar-overlay {
+    display: flex;
+}
+
+.avatar-overlay img {
+    max-width: 100%;
+    max-height: 100%;
+}

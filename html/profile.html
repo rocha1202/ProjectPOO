@@ -4,13 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página com Bootstrap</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/profile.css" />
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -39,7 +36,7 @@
                     <h2 class="mb-4 text-login">Perfil</h2>
                     <!-- Campos de Cadastro -->
                     <input type="text" class="form-control mb-3 w-60" placeholder="Nome">
-                    <input type="text" class="form-control mb-3 w-60" id="dataNascimento"
+                    <input type="date" class="form-control mb-3 w-60" id="dataNascimento"
                         placeholder="Data de Nascimento (DD/MM/AAAA)">
                     <select class="form-control mb-3 w-60">
                         <option value="">Selecione o Sexo</option>
@@ -74,8 +71,9 @@
     <!-- Placeholder para carregar a modal -->
     <div id="modalPlaceholder"></div>
 
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="../js/calendario.js"></script>
     <script>
         // Adiciona um manipulador de eventos de clique à imagem de hover
         $(".avatar-hover-image").click(function () {
