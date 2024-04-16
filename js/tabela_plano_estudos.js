@@ -1,7 +1,9 @@
+/* TABELAS */
 const tabela1 = document.getElementById("tabela1");
 const tabela2 = document.getElementById("tabela2");
 const tabela3 = document.getElementById("tabela3");
 
+/* VARIÁVEIS */
 const tabela1_data = [
   {
     uc: "Algoritmia e Estruturas de Dados",
@@ -226,6 +228,7 @@ const tabela3_data = [
   },
 ];
 
+/* FUNÇÕES PARA CRIAR AS TABELAS */
 const renderTable1 = () => {
   tabela1.innerHTML = `
     <tr>
@@ -295,6 +298,7 @@ const renderTabela3 = () => {
   });
 };
 
+/* CHAMADA DAS FUNÇÕES PARA APRESENTAR OS DADOS */
 renderTable1();
 renderTabela2();
 renderTabela3();

@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "PortoSansStencilBold";
+  src: url("../fontes/PortoSansStencil-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PortoSansStencilRegular";
+  src: url("../fontes/PortoSansStencil-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PortoSansRegular";
+  src: url("../fontes/PortoSans-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PortoSansLight";
+  src: url("../fontes/PortoSans-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PortoSansBold";
+  src: url("../fontes/PortoSans-Bold.otf") format("opentype");
+}
+
+:root {
+  --blue: #5688c7;
+  --blue_rgb: 86, 136, 199;
+  --orange: #c94e23;
+  --orange_rgb: 201, 78, 35;
+  --gray: #bcbec0;
+  --gray_rgb: 188, 190, 192;
+  --black: #020202;
+  --white: #fffffc;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  margin-top: 65;
+  background-color: var(--white);
+}
+
+.container {
+  width: 100%;
+}
+
+.title_detail {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding-top: 90px;
+  font-size: 40px;
+}
+
+.container_noticias {
+  margin-top: 70px;
+  justify-content: flex-start;
+}
+
+.evento_noticia_img_detail {
+  background-color: var(--gray);
+  border-radius: 10px;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+}
+
+.evento_noticia_img_detail img {
+  padding: 25px 25px 25px 25px;
+  width: 300px;
+  height: 300px;
+}
+
+.evento_noticia_img_detail:hover .column_cat_overlay {
+  opacity: 1;
+}
