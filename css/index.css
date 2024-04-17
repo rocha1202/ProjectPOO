@@ -331,30 +331,30 @@ body {
   align-items: center;
 }
 
-.jogos {
+.testemunhos {
   margin-top: 30px;
   text-align: center;
 }
 
-.jogos_container {
+.testemunhos_container {
   width: 100%;
   margin-top: 40px;
   justify-content: center;
 }
 
-.jogo_img {
+.testemunho_img {
   width: 300px;
   height: 300px;
   margin: auto;
 }
 
-.jogo_img img {
+.testemunho_img img {
   border-radius: 10px;
   width: 300px;
   height: 300px;
 }
 
-.jogo_img:hover .column_cat_overlay {
+.testemunho_img:hover .column_cat_overlay {
   opacity: 1;
 }
 
