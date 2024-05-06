@@ -1,12 +1,17 @@
 @font-face {
     font-family: "PortoSansRegular";
     src: url("../fontes/PortoSans-Regular.otf") format("opentype");
-}
-
-@font-face {
+  }
+  
+  @font-face {
     font-family: "PortoSansStencilBold";
     src: url("../fontes/PortoSansStencil-Bold.otf") format("opentype");
-}
+  }
+  
+  @font-face {
+    font-family: "PortoSansStencilRegular";
+    src: url("../fontes/PortoSansStencil-Regular.otf") format("opentype");
+  }
 
 :root {
     --blue: #5688c7;
@@ -20,32 +25,63 @@
 }
 
 .blue-background {
-    background-color: #5688C7;
+    background-color: var(--blue);
     height: 100vh;
     position: relative;
-    color: #ffffff;
+    color: var(--white);
 }
 
+.nomeUser{
+    font-family: "PortoSansStencilRegular";
 
+}
+
+.text-black{
+    color: var(--black );
+}
+.text-orange{
+    font-family: "PortoSansStencilRegular";
+    color: var(--orange);
+    margin-top :5%;
+    margin-left: 5%;
+}
 .logout-link {
     position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
+    bottom: 5%;
+    left: 45%;
 }
 
-.text-login {
-    color: #5688C7;
+.profile-info{
+    font-family: "Porto Sans";
+    size: 32px;
+    position: absolute;
+    top: 30%;
+    left: 40%;
 }
 
+.button-alterar{
+    position: relative;
+    left: 20%;
+}
+.profile-update{  
+
+    position: relative;
+    top: 10%;
+    left: 30%;
+}
+.select{
+    color: var(--orange);
+}
+.campos{
+    margin-top:20%;
+}
 a {
     font-family: "PortoSansRegular";
-    color: #ffffff;
+    color: var(--white);
 }
 
 a:hover {
-    color: #C94E23;
+    color: var(--orange);
 }
 
 span,a {
@@ -53,32 +89,8 @@ span,a {
     font-family: "PortoSansRegular";
 
 }
-.text-login{
-    font-size: 50px;
-    font-family: "PortoSansStencilBold";
-}
-.text-login.conquistas{
-    font-size: 30px;
-    font-family: "PortoSansRegular";
-}
-button {
-    color: var(--blue);
-    text-align: center;
-    font-size: 18px;
-    font-family: "PortoSansStencilRegular";
-  }
-.prize-image {
-    margin: 30px;
-}
 
 
-.conquistas {
-    margin-top: -50px;
-}
-
-.rounded-circle.mt-5 {
-    background-color: rgba(255, 255, 255, 0.6);
-}
 
 /* Adicione um estilo para a imagem de avatar */
 .avatar-image {
@@ -91,7 +103,7 @@ button {
     position: absolute;
     top: 0;
     left: 0;
-    width: 150px;
+    width: 126px;
     display: none;
     z-index: 999;
 }
@@ -103,9 +115,6 @@ button {
     display: block;
 }
 
-.avatar-container {
-    position: relative;
-}
 
 .avatar-overlay {
     position: absolute;

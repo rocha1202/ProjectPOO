@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TSIW - Eventos/Notícias</title>
+  <link rel="icon" type="image/x-icon" href="../img/Logotipo.svg" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/testemunho.css" />
+</head>
+
+<body>
+  <!-- MENU HAMBURGER -->
+  <div class="sideBar" id="sideBar">
+    <a onclick="closeNav()"><i class="ph ph-x closeBtn"></i></a>
+    <div class="nav_options d-flex flex-column">
+      <a href="../index.html#saidas_profissionais" onclick="closeNav()">Saídas Profissionais</a>
+      <a href="../index.html#eventos_noticias" onclick="closeNav()">Eventos/Notícias</a>
+      <a href="">Galeria</a>
+      <a href="../index.html#sobre" onclick="closeNav()">Sobre</a>
+      <a href="../index.html#jogos" onclick="closeNav()">Jogos</a>
+      <a href="../index.html#contactos" onclick="closeNav()">Contactos</a>
+      <a href="./html/login.html">Login</a>
+    </div>
+    <div class="d-flex linguas"><a href="">EN</a> | <a href="">PT</a></div>
+  </div>
+  <!-- BARRA DE NAVEGAÇÃO -->
+  <nav class="navbar bg-navbar">
+    <div class="container-fluid">
+      <a href="../index.html" class="navbar-brand"><img src="../img/Logotipo.svg" alt="Logo TSIW" class="logo" /></a>
+      <i class="ph ph-list" id="menu" onclick="openNav()"></i>
+    </div>
+  </nav>
+
+  <br><br><br>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+          <!-- Div para envolver o avatar -->
+          <div class="avatar-image">
+            <!-- Avatar -->
+            <img width="200px" src="../img/alumnis/Alumni1.svg">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex flex-column justify-content-right align-items-right h-100">
+          <h2 class="mb-4">Nuno Costa</h2>
+          <h5>Nuno Costa, alumnus da Licenciatura em Tecnologias e Sistemas de Informação para a Web, trabalha
+            atualmente na MOG Technologies.</h5>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="d-flex flex-column align-items-right">
+        <div style="margin: 0 50px;"> <!-- Adicionando a margem -->
+
+          <p>Nuno Costa, alumnus da Licenciatura em Tecnologias e Sistemas de Informação para a Web, trabalha
+            atualmente
+            como Assistente Convidado na Escola Superior de Media Artes e Design e como Software Developer na
+            MOG
+            Technologies.</p>
+          <p>
+            Durante a frequência do curso, em conjunto com dois colegas, conquistou o 1.º lugar no concurso
+            internacional de programação I Juezlti Contest of EU Code Week. A jornada do Nuno na MOG teve início
+            num
+            evento organizado pela ESMAD, o Plug-in, que tem como objetivo promover uma ligação mais estreita
+            entre
+            os
+            estudantes e as empresas. Durante o seu estágio na empresa, desenvolveu um projeto no ramo da
+            educação,
+            colaborando com parceiros de diferentes países europeus.</p>
+          <p>Após a conclusão do estágio, Nuno foi convidado a integrar uma equipa de desenvolvimento da empresa
+            onde
+            estagiou. “Ingressar em TSIW preparou-me para os desafios do mundo profissional. Os diferentes
+            projetos
+            de
+            grupo e o foco nas tecnologias mais recentes proporcionaram-me uma base sólida de conhecimentos e
+            habilidades práticas, como o trabalho de equipa e resolução de problemas.” Como Assistente
+            Convidado,
+            compartilha o seu conhecimento na mesma instituição onde se formou, contribuindo para a formação de
+            futuros
+            profissionais na área.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="d-flex justify-content-between footer_container">
+        <div class="logos col-3">
+          <a href="index.html" class="navbar-brand"
+            ><img src="../img/Logotipo.svg" alt="Logo TSIW" class="logo_footer"
+          /></a>
+          <br />
+          <a href="index.html" class="navbar-brand"
+            ><img
+              src="../img/PPORTO_Cor.svg"
+              alt="Logo TSIW"
+              class="logo_footer"
+          /></a>
+        </div>
+        <div class="col-3">
+          <p class="info_uni">
+            Escola Superior de Media Artes e Design <br />Rua D. Sancho I, n.º
+            981
+            <br />
+            4480-876 Vila do Conde <br />Portugal <br />
+            <br />
+            T. +351 252 291 700 <br />E. geral@esmad.ipp.pt
+          </p>
+        </div>
+        <div class="col-3 link_sociais">
+          <p>Vê as nossas redes sociais!</p>
+          <div class="d-flex icons">
+            <a href="https://www.instagram.com/_tsiw.esmad_/">
+              <i class="ph ph-instagram-logo"></i>
+            </a>
+            <a href="https://www.facebook.com/LTSIW">
+              <i class="ph ph-facebook-logo"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCA1uYDftSXjN1Lx5E9-ByIg">
+              <i class="ph ph-youtube-logo"></i>
+            </a>
+            <a href="">
+              <i class="ph ph-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
