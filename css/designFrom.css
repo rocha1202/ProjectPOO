@@ -1,0 +1,49 @@
+
+.contact_form {
+    width: 100%;
+    border: 1.5px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: var(--blue);
+    margin-top: 70px;
+  }
+  
+  form {
+    width: 100%;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+    justify-items: center;
+  }
+    
+  .contact_input {
+    border-color: var(--blue);
+    margin-right: 20px;
+    border-width: 1px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0%;
+    width: 100%;
+  }
+  
+  .contact_input::placeholder {
+    font-family: "PortoSansStencilRegular";
+    color: var(--gray);
+    font-size: 20px;
+  }
+  
+  .contact_textarea {
+    border-color: var(--blue);
+    border-width: 1px;
+    border-radius: 10px;
+    width: 100%;
+  }
+  
+  .contact_textarea::placeholder {
+    font-family: "PortoSansStencilRegular";
+    color: var(--gray);
+    font-size: 20px;
+    padding-left: 5px;
+  }

@@ -1,0 +1,75 @@
+@font-face {
+    font-family: "PortoSansRegular";
+    src: url("../fontes/PortoSans-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "PortoSansStencilBold";
+    src: url("../fontes/PortoSansStencil-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "PortoSansStencilRegular";
+    src: url("../fontes/PortoSansStencil-Regular.otf") format("opentype");
+}
+
+:root {
+    --blue: #5688c7;
+    --blue_rgb: 86, 136, 199;
+    --orange: #c94e23;
+    --orange_rgb: 201, 78, 35;
+    --gray: #bcbec0;
+    --gray_rgb: 188, 190, 192;
+    --black: #020202;
+    --white: #fffffc;
+}
+
+.blue-background {
+    background-color: var(--blue);
+    height: 100vh;
+}
+
+.admin {
+    font-family: "PortoSansStencilRegular";
+    color: var(--white);
+}
+
+.text-orange {
+    font-family: "PortoSansStencilRegular";
+    color: var(--orange);
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.logout-link {
+    position: absolute;
+    bottom: 5%;
+    left: 45%;
+}
+
+
+.button-alterar {
+    position: relative;
+    left: 20%;
+}
+
+
+.select {
+    color: var(--orange);
+}
+
+a {
+    font-family: "PortoSansRegular";
+    color: var(--white);
+}
+
+a:hover {
+    color: var(--orange);
+}
+
+span,
+a {
+    font-size: 18px;
+    font-family: "PortoSansRegular";
+
+}
