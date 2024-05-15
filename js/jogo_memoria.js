@@ -19,30 +19,6 @@ const cards = [
   { id: 16, nome: "Card 16", letter: "H" },
 ];
 
-const random = cards.sort(() => Math.random() - 0.5);
-
-const renderCards = () => {
-  container.innerHTML = "";
-  container.innerHTML += `<div id="cards"></div>`;
-  const cards = document.querySelector("#cards");
-  random.map((item) => {
-    cards.innerHTML += `
-      <div id='card' class='col-3'>
-        <div class="view front-view">
-            <p class="text-danger">${item.nome}</p>
-        </div>
-        <div class="view back-view">
-          <p class="text-danger" id='letter'>${item.letter}</p>
-        </div>
-      </div>
-      `;
-  });
-};
-
-renderCards();
-
-const cardsArray = document.querySelectorAll("#card");
-
 let matchedCard = 0;
 let cardOne;
 let cardTwo;
@@ -76,21 +52,47 @@ const matchCards = (letter1, letter2) => {
     if (matchedCard === 8) {
       if (confirm("Quer jogar novamente?")) {
         setTimeout(() => {
-          return renderCards();
+          return randomArray();
         }, 1000);
       }
     }
-    return;
-  } else {
-    setTimeout(() => {
-      cardOne.classList.remove("flip");
-      cardTwo.classList.remove("flip");
-      cardOne = cardTwo = "";
-      disabledDeck = false;
-    }, 1200);
   }
+  setTimeout(() => {
+    cardOne.classList.remove("flip");
+    cardTwo.classList.remove("flip");
+    cardOne = cardTwo = "";
+    disabledDeck = false;
+  }, 1200);
 };
 
-cardsArray.forEach((item) => {
-  item.addEventListener("click", flipCard);
-});
+const renderCards = (random) => {
+  container.innerHTML = "";
+  container.innerHTML += `<div id="cards"></div>`;
+  const cards = document.querySelector("#cards");
+  random.map((item, index) => {
+    cards.innerHTML += `
+      <div id='card' class='col-3'>
+        <div class="view front-view">
+            <p class="text-danger">${item.nome}</p>
+        </div>
+        <div class="view back-view">
+          <p class="text-danger" id='letter'>${item.letter}</p>
+        </div>
+      </div>
+      `;
+  });
+};
+
+const randomArray = () => {
+  matchedCard = 0;
+  cardOne = cardTwo = "";
+  const random = cards.sort(() => Math.random() - 0.5);
+  renderCards(random);
+  const cardsArray = document.querySelectorAll("#card");
+
+  cardsArray.forEach((item) => {
+    item.addEventListener("click", flipCard);
+  });
+};
+
+randomArray();
