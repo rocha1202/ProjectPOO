@@ -93,6 +93,10 @@ export function add(
   console.log(users);
 }
 
+function getNextId() {
+  return bands.length > 0 ? bands.length + 1 : 1;
+}
+
 //Classe de utilizadores
 class User {
   id = null;
@@ -105,6 +109,8 @@ class User {
   pontos = 0;
   avatar = "";
   premios = [];
+  bloqueado = "";
+  eliminado = "";
 
   constructor(
     nome,
@@ -115,7 +121,9 @@ class User {
     password,
     pontos,
     avatar,
-    premios
+    premios,
+    bloqueado,
+    eliminado
   ) {
     this.id = getNextId();
     this.nome = nome;
@@ -127,5 +135,7 @@ class User {
     this.pontos = pontos;
     this.avatar = avatar;
     this.premios = premios;
+    this.bloqueado = bloqueado;
+    this.eliminado = eliminado;
   }
 }
