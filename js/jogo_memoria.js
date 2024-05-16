@@ -86,10 +86,12 @@ const renderCards = (random) => {
 const randomArray = () => {
   matchedCard = 0;
   cardOne = cardTwo = "";
-  const random = cards.sort(() => Math.random() - 0.5);
-  renderCards(random);
-  const cardsArray = document.querySelectorAll("#card");
 
+  const random = cards.sort(() => Math.random() - 0.5);
+
+  renderCards(random);
+
+  const cardsArray = document.querySelectorAll("#card");
   cardsArray.forEach((item) => {
     item.addEventListener("click", flipCard);
   });
