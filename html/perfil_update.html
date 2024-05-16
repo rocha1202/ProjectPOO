@@ -19,13 +19,15 @@
                     <!-- Div para envolver o avatar -->
                     <div class="avatar-image">
                         <!-- Avatar -->
-                        <img class="rounded-circle " width="126px" src="../img/avatares/M1.svg">
+                        <img class="rounded-circle" width="126px" id="avatarImage">
+
+                        <!-- <img class="rounded-circle " width="126px" src="../img/avatares/M1.svg"> -->
                         <!-- Imagem de hover -->
                         <img class="rounded-circle avatar-hover-image" src="../img/avatares/profile_hover.svg">
                     </div>
                     <br>
-                    <span class="nomeUser ">Nome do Utilizador</span>
-                    <span class="text-black">Pontos: 1000</span>
+                    <span class="nomeUser"> <span id="profileName1"></span></span>
+                    <span class="text-black">Pontos: <span id="pontos"></span></span>
                     <div class="d-flex flex-column icons justify-content-start text-left mt-5 mb-3">
                         <a href="../html/perfil.html" class="select"><img src="../img/icons/User/dadosPerfil_select.svg"
                                 width="32px">Dados de Perfil</a>
@@ -42,25 +44,24 @@
             <div class="col-md-8 fundo-branco">
                 <h2 class="mb-4 text-orange">Dados do Perfil</h2>
 
-
-
                 <div class="profile-update">
-                    <!-- Campos de Cadastro -->
-                    <input type="text" class="form-control mb-3 w-50" placeholder="Nome">
-                    <input type="date" class="form-control mb-3 w-50" id="dataNascimento"
+                    <input type="text" class="form-control mb-3 w-50" name="nome" placeholder="Nome">
+                    <input type="date" class="form-control mb-3 w-50" name="dataNascimento"
                         placeholder="Data de Nascimento (DD/MM/AAAA)">
-                    <select class="form-control mb-3 w-50">
+                    <select class="form-control mb-3 w-50" name="sexo">
                         <option value="">Selecione o Sexo</option>
                         <option value="Feminino">Feminino</option>
                         <option value="Masculino">Masculino</option>
                         <option value="Outro">Outro</option>
                     </select>
-                    <input type="text" class="form-control mb-3 w-50" placeholder="Localidade">
-                    <input type="email" class="form-control mb-3 w-50" placeholder="Email">
-                    <input type="password" class="form-control mb-3 w-50" placeholder="Password">
+                    <input type="text" class="form-control mb-3 w-50" name="localidade" placeholder="Localidade">
+                    <input type="email" class="form-control mb-3 w-50" name="email" placeholder="Email">
+                    <input type="password" class="form-control mb-3 w-50" name="password" placeholder="Password">
+
 
                     <div class="button-alterar">
-                        <button class="btn btn-primary btn-lg" onclick="window.location.href = './perfil.html'">Alterar Dados</button>
+                        <button class="btn btn-primary btn-lg" onclick="alterar()">Alterar
+                            Dados</button>
                     </div>
                 </div>
 
@@ -76,6 +77,58 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Carrega os dados do usuário da sessionStorage e exibe no perfil
+        var currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+        if (currentUser) {
+            document.getElementById("pontos").textContent = currentUser.pontos;
+            document.getElementById("profileName1").textContent = currentUser.nome;
+            document.getElementById("avatarImage").src = "../img/avatares/" + currentUser.avatar;
+            document.getElementsByName("nome")[0].value = currentUser.nome;
+            document.getElementsByName("dataNascimento")[0].value = currentUser.dataNascimento;
+            document.getElementsByName("sexo")[0].value = currentUser.sexo;
+            document.getElementsByName("localidade")[0].value = currentUser.localidade;
+            document.getElementsByName("email")[0].value = currentUser.email;
+            document.getElementsByName("password")[0].value = currentUser.password;
+
+        } else {
+            // Se não houver dados de usuário na sessionStorage, redireciona para a página de login
+            window.location.href = "./login.html";
+        }
+
+        function alterar() {
+            var nome = document.getElementsByName("nome")[0].value;
+            var dataNascimento = document.getElementsByName("dataNascimento")[0].value;
+            var sexo = document.getElementsByName("sexo")[0].value;
+            var localidade = document.getElementsByName("localidade")[0].value;
+            var email = document.getElementsByName("email")[0].value;
+            var password = document.getElementsByName("password")[0].value;
+
+            var users = JSON.parse(localStorage.getItem("userData"));
+            var currentUserEmail = JSON.parse(sessionStorage.getItem("currentUser")).email;
+            for (var i = 0; i < users.length; i++) {
+                if (users[i].email === currentUserEmail) {
+                    users[i].nome = nome;
+                    users[i].dataNascimento = dataNascimento;
+                    users[i].sexo = sexo;
+                    users[i].localidade = localidade;
+                    users[i].email = email;
+                    users[i].password = password;
+                    break;
+                }
+            }
+            localStorage.setItem("userData", JSON.stringify(users));
+            // Atualize o currentUser na sessionStorage
+            var updatedUser = users.find(user => user.email === currentUserEmail);
+            sessionStorage.setItem("currentUser", JSON.stringify(updatedUser));
+
+            window.location.href = "./perfil.html";
+        }
+
+    </script>
+
+
     <script>
         // Adiciona um manipulador de eventos de clique à imagem de hover
         $(".avatar-hover-image").click(function () {

@@ -5,6 +5,7 @@ function saveData() {
     var localidade = document.getElementById("localidade").value;
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
+    var avatar=""
     var userDataArray = JSON.parse(localStorage.getItem("userData")) || [];
 
     // Verificar se o email já existe
@@ -20,6 +21,9 @@ function saveData() {
         alert("Os campos têm que estar todos preenchidos")
     }
     else {
+        if(sexo=="Masculino"){
+            avatar="M1.svg"
+        }else{avatar="F1.svg"}
         var userData = {
             nome: nome,
             dataNascimento: dataNascimento,
@@ -28,7 +32,7 @@ function saveData() {
             email: email,
             password: password,
             pontos: 0,
-            avatar: ""
+            avatar: avatar
         };
         userDataArray.push(userData);
         localStorage.setItem("userData", JSON.stringify(userDataArray));
