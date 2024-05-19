@@ -32,7 +32,7 @@ export function add(
   tipo,
   eliminado
 ) {
-  if (publicacoes.some((user) => publicacoes.titulo === titulo)) {
+  if (publicacoes.some((publicacao) => publicacao.titulo === titulo)) {
     throw Error(`Já existe uma publicação com o titulo "${titulo}" já existe!`);
   } else {
     publicacoes.push(
