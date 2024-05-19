@@ -7,13 +7,13 @@ export function init() {
     for (let publicacao of tempPublicacoes) {
       publicacoes.push(
         new Publicacao(
-          titulo,
-          sub_titulo,
-          img,
-          descricao,
-          data_publicado,
-          tipo,
-          eliminado
+          publicacao.titulo,
+          publicacao.sub_titulo,
+          publicacao.img,
+          publicacao.descricao,
+          publicacao.data_publicado,
+          publicacao.tipo,
+          publicacao.eliminado
         )
       );
     }

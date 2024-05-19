@@ -15,7 +15,9 @@ export function init() {
           user.password,
           user.pontos,
           user.avatar,
-          user.premios
+          user.premios,
+          user.bloqueado,
+          user.eliminado
         )
       );
     }
@@ -67,7 +69,9 @@ export function add(
   password,
   pontos,
   avatar,
-  premios
+  premios,
+  bloqueado,
+  eliminado
 ) {
   if (users.some((user) => user.email === email)) {
     throw Error(
@@ -84,7 +88,9 @@ export function add(
         password,
         pontos,
         avatar,
-        premios
+        premios,
+        bloqueado,
+        eliminado
       )
     );
     localStorage.setItem("users", JSON.stringify(users));
