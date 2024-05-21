@@ -5,16 +5,14 @@ export function init() {
   if (localStorage.testemunhos) {
     const tempTestemunhos = JSON.parse(localStorage.testemunhos);
     for (let testemunho of tempTestemunhos) {
-      if (testemunho.eliminado === "N") {
-        testemunhos.push(
-          testemunho.titulo,
-          testemunho.sub_titulo,
-          testemunho.img,
-          testemunho.descricao,
-          testemunho.data_publicado,
-          testemunho.eliminado
-        );
-      }
+      testemunhos.push(
+        testemunho.titulo,
+        testemunho.sub_titulo,
+        testemunho.img,
+        testemunho.descricao,
+        testemunho.data_publicado,
+        testemunho.eliminado
+      );
     }
   } else {
     testemunhos = [];
@@ -31,7 +29,7 @@ export function add(
   eliminado = "N"
 ) {
   if (testemunhos.some((testemunho) => testemunho.titulo === titulo)) {
-    throw Error(`Já existe um testemunho com o titulo "${titulo}" já existe!`);
+    throw Error(`Já existe um testemunho com o titulo "${titulo}"!`);
   } else {
     testemunhos.push(
       new Testemunho(

@@ -5,16 +5,14 @@ export function init() {
   if (localStorage.premios) {
     const tempPremios = JSON.parse(localStorage.premios);
     for (let premio of tempPremios) {
-      if (premio.eliminado === "N") {
-        premios.push(
-          new Premio(
-            premio.titulo,
-            premio.img,
-            premio.progresso,
-            premio.eliminado
-          )
-        );
-      }
+      premios.push(
+        new Premio(
+          premio.titulo,
+          premio.img,
+          premio.progresso,
+          premio.eliminado
+        )
+      );
     }
   } else {
     premios = [];
@@ -24,7 +22,7 @@ export function init() {
 //Adiciona os premios
 export function add(titulo, img, progresso, eliminado = "N") {
   if (premios.some((premio) => premio.titulo === titulo)) {
-    throw Error(`Já existe um prémio com o titulo "${titulo}" já existe!`);
+    throw Error(`Já existe um prémio com o titulo "${titulo}"!`);
   } else {
     premios.push(new Premio(titulo, img, progresso, eliminado));
     localStorage.setItem("premios", JSON.stringify(premios));

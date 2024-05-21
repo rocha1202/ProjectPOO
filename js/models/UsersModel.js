@@ -5,22 +5,21 @@ export function init() {
   if (localStorage.users) {
     const tempUsers = JSON.parse(localStorage.users);
     for (let user of tempUsers) {
-      if (user.eliminado === "N" && user.bloqueado === "N")
-        users.push(
-          new User(
-            user.nome,
-            user.dataNascimento,
-            user.genero,
-            user.localidade,
-            user.email,
-            user.password,
-            user.pontos,
-            user.avatar,
-            user.premios,
-            user.bloqueado,
-            user.eliminado
-          )
-        );
+      users.push(
+        new User(
+          user.nome,
+          user.dataNascimento,
+          user.genero,
+          user.localidade,
+          user.email,
+          user.password,
+          user.pontos,
+          user.avatar,
+          user.premios,
+          user.bloqueado,
+          user.eliminado
+        )
+      );
     }
   } else {
     users = [];

@@ -1,6 +1,8 @@
 import * as User from "./models/UsersModel";
 import * as Publicacao from "./models/NoticiasEventosModel";
 import * as Testemunho from "./models/TestemunhosModel";
+import * as Premio from "./models/PremiosModel";
+import * as Media from "./models/GaleriaModel";
 
 initdata();
 
