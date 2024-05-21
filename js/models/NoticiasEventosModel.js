@@ -5,17 +5,19 @@ export function init() {
   if (localStorage.publicacoes) {
     const tempPublicacoes = JSON.parse(localStorage.publicacoes);
     for (let publicacao of tempPublicacoes) {
-      publicacoes.push(
-        new Publicacao(
-          publicacao.titulo,
-          publicacao.sub_titulo,
-          publicacao.img,
-          publicacao.descricao,
-          publicacao.data_publicado,
-          publicacao.tipo,
-          publicacao.eliminado
-        )
-      );
+      if (publicacao.eliminado === "N") {
+        publicacoes.push(
+          new Publicacao(
+            publicacao.titulo,
+            publicacao.sub_titulo,
+            publicacao.img,
+            publicacao.descricao,
+            publicacao.data_publicado,
+            publicacao.tipo,
+            publicacao.eliminado
+          )
+        );
+      }
     }
   } else {
     publicacoes = [];
@@ -30,7 +32,7 @@ export function add(
   descricao,
   data_publicado,
   tipo,
-  eliminado
+  eliminado = "N"
 ) {
   if (publicacoes.some((publicacao) => publicacao.titulo === titulo)) {
     throw Error(`Já existe uma publicação com o titulo "${titulo}" já existe!`);

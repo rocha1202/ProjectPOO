@@ -5,21 +5,22 @@ export function init() {
   if (localStorage.users) {
     const tempUsers = JSON.parse(localStorage.users);
     for (let user of tempUsers) {
-      users.push(
-        new User(
-          user.nome,
-          user.dataNascimento,
-          user.genero,
-          user.localidade,
-          user.email,
-          user.password,
-          user.pontos,
-          user.avatar,
-          user.premios,
-          user.bloqueado,
-          user.eliminado
-        )
-      );
+      if (user.eliminado === "N" && user.bloqueado === "N")
+        users.push(
+          new User(
+            user.nome,
+            user.dataNascimento,
+            user.genero,
+            user.localidade,
+            user.email,
+            user.password,
+            user.pontos,
+            user.avatar,
+            user.premios,
+            user.bloqueado,
+            user.eliminado
+          )
+        );
     }
   } else {
     users = [];
@@ -89,8 +90,8 @@ export function add(
         pontos,
         avatar,
         premios,
-        bloqueado,
-        eliminado
+        (bloqueado = "N"),
+        (eliminado = "N")
       )
     );
     localStorage.setItem("users", JSON.stringify(users));
