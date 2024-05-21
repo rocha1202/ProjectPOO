@@ -45,6 +45,7 @@
                 <h2 class="mb-4 text-orange">Dados do Perfil</h2>
 
                 <div class="profile-update">
+                    <p id="profileEmail"></p>
                     <input type="text" class="form-control mb-3 w-50" name="nome" placeholder="Nome">
                     <input type="date" class="form-control mb-3 w-50" name="dataNascimento"
                         placeholder="Data de Nascimento (DD/MM/AAAA)">
@@ -55,7 +56,6 @@
                         <option value="Outro">Outro</option>
                     </select>
                     <input type="text" class="form-control mb-3 w-50" name="localidade" placeholder="Localidade">
-                    <input type="email" class="form-control mb-3 w-50" name="email" placeholder="Email">
                     <input type="password" class="form-control mb-3 w-50" name="password" placeholder="Password">
 
 
@@ -89,7 +89,7 @@
             document.getElementsByName("dataNascimento")[0].value = currentUser.dataNascimento;
             document.getElementsByName("sexo")[0].value = currentUser.sexo;
             document.getElementsByName("localidade")[0].value = currentUser.localidade;
-            document.getElementsByName("email")[0].value = currentUser.email;
+            document.getElementById("profileEmail").textContent = currentUser.email;
             document.getElementsByName("password")[0].value = currentUser.password;
 
         } else {
@@ -102,7 +102,7 @@
             var dataNascimento = document.getElementsByName("dataNascimento")[0].value;
             var sexo = document.getElementsByName("sexo")[0].value;
             var localidade = document.getElementsByName("localidade")[0].value;
-            var email = document.getElementsByName("email")[0].value;
+            var email = document.getElementById("profileEmail").textContent;
             var password = document.getElementsByName("password")[0].value;
 
             var users = JSON.parse(localStorage.getItem("userData"));

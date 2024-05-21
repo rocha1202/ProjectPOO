@@ -8,7 +8,6 @@
      document.getElementById("profileSex").textContent = currentUser.sexo;
      document.getElementById("profileLocation").textContent = currentUser.localidade;
      document.getElementById("profileEmail").textContent = currentUser.email;
-     document.getElementById("profilePassword").textContent = currentUser.password;
      document.getElementById("avatarImage").src = "../img/avatares/" + currentUser.avatar;
 
      } else {
