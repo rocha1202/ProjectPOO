@@ -17,7 +17,8 @@ export function init() {
           user.avatar,
           user.premios,
           user.bloqueado,
-          user.eliminado
+          user.eliminado,
+          user.tipo
         )
       );
     }
@@ -75,7 +76,8 @@ export function add(
   avatar,
   premios,
   bloqueado,
-  eliminado
+  eliminado,
+  tipo
 ) {
   if (users.some((user) => user.email === email)) {
     throw Error(
@@ -94,7 +96,8 @@ export function add(
         avatar,
         premios,
         bloqueado,
-        eliminado
+        eliminado,
+        tipo
       )
     );
     localStorage.setItem("users", JSON.stringify(users));
@@ -121,6 +124,7 @@ class User {
   premios = [];
   bloqueado = "";
   eliminado = "";
+  tipo = "";
 
   constructor(
     nome,
@@ -133,7 +137,8 @@ class User {
     avatar,
     premios,
     bloqueado,
-    eliminado
+    eliminado,
+    tipo
   ) {
     this.id = getNextId();
     this.nome = nome;
@@ -147,5 +152,6 @@ class User {
     this.premios = premios;
     this.bloqueado = bloqueado;
     this.eliminado = eliminado;
+    this.tipo = tipo;
   }
 }

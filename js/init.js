@@ -32,6 +32,7 @@ function initdata() {
       ],
       bloqueado: "N",
       eliminado: "N",
+      tipo: "user",
     },
     {
       id: 2,
@@ -57,6 +58,22 @@ function initdata() {
       ],
       bloqueado: "N",
       eliminado: "S",
+      tipo: "user",
+    },
+    {
+      id: 3,
+      nome: "Admin1",
+      dataNascimento: "09-05-2001",
+      genero: "M",
+      localidade: "Braga",
+      email: "admin1@gmail.com",
+      password: "admin1",
+      pontos: 0,
+      avatar: "",
+      premios: [],
+      bloqueado: "N",
+      eliminado: "N",
+      tipo: "admin",
     },
   ];
 
@@ -84,7 +101,8 @@ function initdata() {
       user.avatar,
       user.premios,
       user.bloqueado,
-      user.eliminado
+      user.eliminado,
+      user.tipo
     );
   });
 
