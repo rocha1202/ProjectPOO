@@ -14,7 +14,7 @@ function loginView() {
       displayMessage("Login efetuado com sucesso", "success");
       // Wait 1 second before reloading, so the user can see the login success message
       setTimeout(() => {
-        location.reload();
+        window.location.href = "../../index.html";
       }, 1000);
     } catch (e) {
       displayMessage(e.message, "danger");

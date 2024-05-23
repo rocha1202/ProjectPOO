@@ -93,8 +93,8 @@ export function add(
         pontos,
         avatar,
         premios,
-        (bloqueado = "N"),
-        (eliminado = "N")
+        bloqueado,
+        eliminado
       )
     );
     localStorage.setItem("users", JSON.stringify(users));

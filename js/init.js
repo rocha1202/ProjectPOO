@@ -33,6 +33,31 @@ function initdata() {
       bloqueado: "N",
       eliminado: "N",
     },
+    {
+      id: 2,
+      nome: "User2",
+      dataNascimento: "12-09-2002",
+      genero: "M",
+      localidade: "Gaia",
+      email: "user2@gmail.com",
+      password: "pass2",
+      pontos: 100,
+      avatar: "",
+      premios: [
+        {
+          nome: "Consiga 100 pontos",
+          completo: "S",
+          data_completo: "01-04-2024",
+        },
+        {
+          nome: "Consiga 1000 pontos",
+          completo: "N",
+          data_completo: "",
+        },
+      ],
+      bloqueado: "N",
+      eliminado: "S",
+    },
   ];
 
   /* const publicacoes = {
