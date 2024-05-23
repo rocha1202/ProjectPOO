@@ -1,39 +1,41 @@
-import * as User from "./models/UsersModel";
-import * as Publicacao from "./models/NoticiasEventosModel";
+import * as User from "./models/UsersModel.js";
+/* import * as Publicacao from "./models/NoticiasEventosModel";
 import * as Testemunho from "./models/TestemunhosModel";
 import * as Premio from "./models/PremiosModel";
-import * as Media from "./models/GaleriaModel";
+import * as Media from "./models/GaleriaModel"; */
 
 initdata();
 
 function initdata() {
-  const users = {
-    id: 1,
-    nome: "User1",
-    dataNascimento: "02-03-2000",
-    genero: "F",
-    localidade: "Vila de Conde",
-    email: "user1@gmail.com",
-    password: "pass1",
-    pontos: 120,
-    avatar: "",
-    premios: [
-      {
-        nome: "Consiga 100 pontos",
-        completo: "S",
-        data_completo: "01-04-2024",
-      },
-      {
-        nome: "Consiga 1000 pontos",
-        completo: "N",
-        data_completo: "",
-      },
-    ],
-    bloqueado: "N",
-    eliminado: "N",
-  };
+  const users = [
+    {
+      id: 1,
+      nome: "User1",
+      dataNascimento: "02-03-2000",
+      genero: "F",
+      localidade: "Vila de Conde",
+      email: "user1@gmail.com",
+      password: "pass1",
+      pontos: 120,
+      avatar: "",
+      premios: [
+        {
+          nome: "Consiga 100 pontos",
+          completo: "S",
+          data_completo: "01-04-2024",
+        },
+        {
+          nome: "Consiga 1000 pontos",
+          completo: "N",
+          data_completo: "",
+        },
+      ],
+      bloqueado: "N",
+      eliminado: "N",
+    },
+  ];
 
-  const publicacoes = {
+  /* const publicacoes = {
     id: 1,
     titulo: "Apresentação do HaHaArt Film Festival",
     sub_titulo:
@@ -43,7 +45,7 @@ function initdata() {
     data_publicado: "17-05-2024",
     tipo: "evento",
     eliminado: "N",
-  };
+  }; */
 
   users.forEach((user) => {
     User.add(
@@ -61,7 +63,7 @@ function initdata() {
     );
   });
 
-  publicacoes.forEach((publicacao) => {
+  /* publicacoes.forEach((publicacao) => {
     Publicacao.add(
       publicacao.titulo,
       publicacao.sub_titulo,
@@ -71,5 +73,5 @@ function initdata() {
       publicacao.tipo,
       publicacao.eliminado
     );
-  });
+  }); */
 }

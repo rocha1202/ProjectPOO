@@ -29,13 +29,17 @@ export function init() {
 // Login do utilizador
 export function login(email, password) {
   const user = users.find(
-    (user) => user.email === email && user.password === password
+    (user) =>
+      user.email === email &&
+      user.password === password &&
+      user.bloqueado === "N" &&
+      user.eliminado === "N"
   );
   if (user) {
     sessionStorage.setItem("loggedUser", JSON.stringify(user));
     return true;
   } else {
-    throw Error("Invalid login!");
+    throw Error("Login inválido!");
   }
 }
 
@@ -100,7 +104,7 @@ export function add(
 }
 
 function getNextId() {
-  return bands.length > 0 ? bands.length + 1 : 1;
+  return users.length > 0 ? users.length + 1 : 1;
 }
 
 //Classe de utilizadores
