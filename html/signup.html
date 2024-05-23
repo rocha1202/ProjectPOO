@@ -31,30 +31,28 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Lado Branco -->
-            <div class="col-md-8 fundo-branco">
-                <div class="d-flex flex-column justify-content-center align-items-center h-100">
-                    <!-- Texto de Login -->
-                    <h2 class="mb-4 text-login">Signup</h2>
-
-                    <!-- Campos de Cadastro -->
-                    <input type="text" class="form-control mb-3 w-50" placeholder="Nome" id="nome">
+            <div class="d-flex flex-column col justify-content-center align-items-center">
+                <form id="formRegister" class="d-flex flex-column col justify-content-center align-items-center">
+                     <!-- Texto de Login -->
+                     <h2 class="mb-4 text-login">Signup</h2>
+                     <!-- Campos de Cadastro -->
+                    <input type="text" class="form-control mb-3 w-50" placeholder="Nome" id="nome" required>
                     <input type="date" class="form-control mb-3 w-50" id="dataNascimento"
-                        placeholder="Data de Nascimento (DD/MM/AAAA)">
-                    <select class="form-control mb-3 w-50" id="sexo">
-                        <option value="">Selecione o Sexo</option>
-                        <option value="Feminino">Feminino</option>
-                        <option value="Masculino">Masculino</option>
-                        <option value="Outro">Outro</option>
+                        placeholder="Data de Nascimento (DD/MM/AAAA)" required>
+                    <select class="form-control mb-3 w-50" id="genero" required>
+                        <option value="">Selecione o Género</option>
+                        <option value="F">Feminino</option>
+                        <option value="M">Masculino</option>
+                        <option value="O">Outro</option>
                     </select>
-                    <input type="text" class="form-control mb-3 w-50" placeholder="Localidade" id="localidade">
-                    <input type="email" class="form-control mb-3 w-50" placeholder="Email" id="email">
-                    <input type="password" class="form-control mb-3 w-50" placeholder="Password" id="password">
-
+                    <input type="text" class="form-control mb-3 w-50" placeholder="Localidade" id="localidade" required>
+                    <input type="email" class="form-control mb-3 w-50" placeholder="Email" id="email" required>
+                    <input type="password" class="form-control mb-3 w-50" placeholder="Password" id="password" required>
                     <!-- Botão de Cadastro -->
-            
-                    <button class="btn btn-primary btn-lg" onclick="saveData()">Criar</button>
+                    <button class="btn btn-primary btn-lg" type="submit">Criar</button>
+                </form>
+                <div>
+                    <div id="msg"></div>
                 </div>
             </div>
         </div>
@@ -62,8 +60,7 @@
     </div>
 
     <!-- Adicionando Bootstrap JS (opcional, dependendo do seu uso) -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="/js/signup.js"></script>
+    <script type="module" src="../js/views/RegisterView.js"></script>
 
 </body>
 

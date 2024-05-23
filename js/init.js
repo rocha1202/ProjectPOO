@@ -7,75 +7,94 @@ import * as Media from "./models/GaleriaModel"; */
 initdata();
 
 function initdata() {
-  const users = [
-    {
-      id: 1,
-      nome: "User1",
-      dataNascimento: "02-03-2000",
-      genero: "F",
-      localidade: "Vila de Conde",
-      email: "user1@gmail.com",
-      password: "pass1",
-      pontos: 120,
-      avatar: "",
-      premios: [
-        {
-          nome: "Consiga 100 pontos",
-          completo: "S",
-          data_completo: "01-04-2024",
-        },
-        {
-          nome: "Consiga 1000 pontos",
-          completo: "N",
-          data_completo: "",
-        },
-      ],
-      bloqueado: "N",
-      eliminado: "N",
-      tipo: "user",
-    },
-    {
-      id: 2,
-      nome: "User2",
-      dataNascimento: "12-09-2002",
-      genero: "M",
-      localidade: "Gaia",
-      email: "user2@gmail.com",
-      password: "pass2",
-      pontos: 100,
-      avatar: "",
-      premios: [
-        {
-          nome: "Consiga 100 pontos",
-          completo: "S",
-          data_completo: "01-04-2024",
-        },
-        {
-          nome: "Consiga 1000 pontos",
-          completo: "N",
-          data_completo: "",
-        },
-      ],
-      bloqueado: "N",
-      eliminado: "S",
-      tipo: "user",
-    },
-    {
-      id: 3,
-      nome: "Admin1",
-      dataNascimento: "09-05-2001",
-      genero: "M",
-      localidade: "Braga",
-      email: "admin1@gmail.com",
-      password: "admin1",
-      pontos: 0,
-      avatar: "",
-      premios: [],
-      bloqueado: "N",
-      eliminado: "N",
-      tipo: "admin",
-    },
-  ];
+  if (!localStorage.users) {
+    const users = [
+      {
+        id: 1,
+        nome: "User1",
+        dataNascimento: "02-03-2000",
+        genero: "F",
+        localidade: "Vila de Conde",
+        email: "user1@gmail.com",
+        password: "pass1",
+        pontos: 120,
+        avatar: "",
+        premios: [
+          {
+            nome: "Consiga 100 pontos",
+            completo: "S",
+            data_completo: "01-04-2024",
+          },
+          {
+            nome: "Consiga 1000 pontos",
+            completo: "N",
+            data_completo: "",
+          },
+        ],
+        bloqueado: "N",
+        eliminado: "N",
+        tipo: "user",
+      },
+      {
+        id: 2,
+        nome: "User2",
+        dataNascimento: "12-09-2002",
+        genero: "M",
+        localidade: "Gaia",
+        email: "user2@gmail.com",
+        password: "pass2",
+        pontos: 100,
+        avatar: "",
+        premios: [
+          {
+            nome: "Consiga 100 pontos",
+            completo: "S",
+            data_completo: "01-04-2024",
+          },
+          {
+            nome: "Consiga 1000 pontos",
+            completo: "N",
+            data_completo: "",
+          },
+        ],
+        bloqueado: "N",
+        eliminado: "S",
+        tipo: "user",
+      },
+      {
+        id: 3,
+        nome: "Admin1",
+        dataNascimento: "09-05-2001",
+        genero: "M",
+        localidade: "Braga",
+        email: "admin1@gmail.com",
+        password: "admin1",
+        pontos: 0,
+        avatar: "",
+        premios: [],
+        bloqueado: "N",
+        eliminado: "N",
+        tipo: "admin",
+      },
+    ];
+
+    users.forEach((user) => {
+      User.add(
+        user.nome,
+        user.dataNascimento,
+        user.genero,
+        user.localidade,
+        user.email,
+        user.password,
+        user.pontos,
+        user.avatar,
+        user.premios,
+        user.bloqueado,
+        user.eliminado,
+        user.tipo
+      );
+    });
+  }
 
   /* const publicacoes = {
     id: 1,
@@ -88,23 +107,6 @@ function initdata() {
     tipo: "evento",
     eliminado: "N",
   }; */
-
-  users.forEach((user) => {
-    User.add(
-      user.nome,
-      user.dataNascimento,
-      user.genero,
-      user.localidade,
-      user.email,
-      user.password,
-      user.pontos,
-      user.avatar,
-      user.premios,
-      user.bloqueado,
-      user.eliminado,
-      user.tipo
-    );
-  });
 
   /* publicacoes.forEach((publicacao) => {
     Publicacao.add(

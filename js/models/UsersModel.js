@@ -80,9 +80,7 @@ export function add(
   tipo
 ) {
   if (users.some((user) => user.email === email)) {
-    throw Error(
-      `Este email "${email}" já existe! Por favor escolha outro nome.`
-    );
+    throw Error(`Este email "${email}" já existe! Por favor escolha outro.`);
   } else {
     users.push(
       new User(
