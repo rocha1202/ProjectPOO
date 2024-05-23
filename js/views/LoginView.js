@@ -13,8 +13,13 @@ function loginView() {
       );
       displayMessage("Login efetuado com sucesso", "success");
       // Wait 1 second before reloading, so the user can see the login success message
+      let userLogged = User.getUserLogged();
       setTimeout(() => {
-        window.location.href = "/index.html";
+        if (userLogged.tipo === "admin") {
+          window.location.href = "/html/admin/user.html";
+        } else {
+          window.location.href = "/index.html";
+        }
       }, 1000);
     } catch (e) {
       displayMessage(e.message, "danger");
