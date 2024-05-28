@@ -11,7 +11,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
 
   <link rel="stylesheet" href="/css/salas/sala.css" />
-  <!-- Adicionando Image Map Resizer -->
 </head>
 
 <body>
@@ -20,10 +19,14 @@
     class="img-fluid img-responsive rounded mx-auto d-block">
     <map name="image-map">
       <area id="area" coords="252,601,298,605,303,798,252,822" shape="poly">
-      <area coords="713,489,786,489,789,628,709,628" shape="poly">
-      <area data-index="0" coords="984,498,1136,435,1208,443,1208,770,1124,774,986,718" shape="poly">
-      <area data-index="1" coords="603,593,639,666" shape="rect">
+      <area id="porta" coords="713,489,786,489,789,628,709,628" shape="poly">
+      <area id="area0" data-index="0" coords="984,498,1136,435,1208,443,1208,770,1124,774,986,718" shape="poly">
+      <area id="area1" data-index="1" coords="603,593,639,666" shape="rect">
+      <area id="area2" data-index="2" coords="87,663,19" shape="circle">
+
   </map>
+  <img id="key" src="/img/icons/User/salas/key.svg" style="position: fixed; left: 10px; bottom: 10px; height: 10%; display: none;">
+
 
   <!-- Modal -->
   <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel"

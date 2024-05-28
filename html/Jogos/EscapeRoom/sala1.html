@@ -11,7 +11,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
 
   <link rel="stylesheet" href="/css/salas/sala.css" />
-  <!-- Adicionando Image Map Resizer -->
 </head>
 
 <body>
@@ -19,12 +18,16 @@
   <img src="/img/salas/imgSala1.jpg" usemap="#image-map" alt="room"
     class="img-fluid img-responsive rounded mx-auto d-block">
   <map name="image-map">
-    <area data-index="0" coords="1964,351,1989,294,2180,380,2157,434" shape="poly">
-    <area data-index="1" coords="2475,783,2742,780,2768,329,2494,339" shape="poly">
+    <area data-index="0" id="area0" coords="1964,351,1989,294,2180,380,2157,434" shape="poly">
+    <area data-index="1" id="area1" coords="2475,783,2742,780,2768,329,2494,339" shape="poly">
     <area id="areaGlobo" coords="896,672,890,494,1014,488,1029,678" shape="poly">
-    <area data-index="2" coords="1989,815,2192,840,2196,939,2256,958,2196,993,1992,958" shape="poly">
-    <area data-index="3" coords="2907,1194,3019,232,3079,229,3324,276,3171,1397,3104,1394" shape="poly">
+    <area data-index="2" id="area2" coords="1989,815,2192,840,2196,939,2256,958,2196,993,1992,958"
+      shape="poly">
+    <area id="porta" coords="2907,1194,3019,232,3079,229,3324,276,3171,1397,3104,1394" shape="poly">
   </map>
+
+  <img id="key" src="/img/icons/User/salas/key.svg" style="position: fixed; left: 10px; bottom: 10px; height: 10%; display: none;">
+
 
   <!-- Modal -->
   <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel"
@@ -84,4 +87,5 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
