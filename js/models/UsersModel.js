@@ -27,6 +27,37 @@ export function init() {
   }
 }
 
+//Buscar os Utilizadores
+export function getUsers(
+  filterTxt = "",
+  filterGenero = "",
+  filterBloqueado = "",
+  filterEliminado = "",
+  filterTipo = "",
+  isSorted = false
+) {
+  let filteredUsers = users.filter(
+    (user) =>
+      (user.email.toLowerCase().includes(filterTxt.toLowerCase()) ||
+        filterTxt === "") &&
+      (user.genero === filterGenero || filterGenero === "") &&
+      (user.bloqueado === filterBloqueado || filterBloqueado === "") &&
+      (user.eliminado === filterEliminado || filterEliminado === "") &&
+      (user.tipo === filterTipo || filterTipo === "")
+  );
+
+  filteredUsers = isSorted
+    ? filteredUsers.sort((a, b) => a.nome.localeCompare(b.nome))
+    : filteredUsers;
+
+  return filteredUsers;
+}
+
+//Ordenar Utilizadores
+export function sortUsers() {
+  users.sort((a, b) => a.nome.localeCompare(b.nome));
+}
+
 // Login do utilizador
 export function login(email, password) {
   const user = users.find(
