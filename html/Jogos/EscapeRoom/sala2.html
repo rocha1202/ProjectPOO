@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/x-icon" href="/img/Logotipo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EscapeRoom - Sala1</title>
+  <title>EscapeRoom - Sala2</title>
   <!-- Adicionando Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
@@ -16,17 +16,13 @@
 
 <body>
 
-  <img src="/img/salas/imgSala1.jpg" usemap="#image-map" alt="room"
+  <img src="/img/salas/imgSala2.jpg" usemap="#image-map" alt="room"
     class="img-fluid img-responsive rounded mx-auto d-block">
-  <map name="image-map">
-    <area data-index="0" coords="1964,351,1989,294,2180,380,2157,434" shape="poly">
-    <area data-index="1" coords="2475,783,2742,780,2768,329,2494,339"
-      shape="poly">
-    <area id="areaGlobo"coords="896,672,890,494,1014,488,1029,678" shape="poly">
-    <area data-index="2" coords="1989,815,2192,840,2196,939,2256,958,2196,993,1992,958"
-      shape="poly">
-    <area coords="2907,1194,3019,232,3079,229,3324,276,3171,1397,3104,1394"
-      shape="poly">
+    <map name="image-map">
+      <area id="area" coords="252,601,298,605,303,798,252,822" shape="poly">
+      <area coords="713,489,786,489,789,628,709,628" shape="poly">
+      <area data-index="0" coords="984,498,1136,435,1208,443,1208,770,1124,774,986,718" shape="poly">
+      <area data-index="1" coords="603,593,639,666" shape="rect">
   </map>
 
   <!-- Modal -->
@@ -49,7 +45,7 @@
     </div>
   </div>
   <dialog id="dlgVideo">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/fcRR8eUZ8vo?si=s9_0YG3g75rEtbG1"
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/mttrG_kbHN4?si=uRJJ9CAWPpsBU1Tb"
       title="YouTube video player" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -59,7 +55,7 @@
 
   <script>
     // Função para abrir o diálogo de vídeo
-    document.getElementById('areaGlobo').addEventListener('click', function () {
+    document.getElementById('area').addEventListener('click', function () {
       document.getElementById('dlgVideo').showModal();
     });
   

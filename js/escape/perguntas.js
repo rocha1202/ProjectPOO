@@ -1,4 +1,4 @@
-const perguntas = [
+export const perguntasSala1 = [
     {
         pergunta: "O que significa a sigla 'CPU' em informática?",
         opcoes: [
@@ -100,48 +100,47 @@ const perguntas = [
         respostaCorreta: 2
     }
 ];
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+
+export const perguntasSala2  = [
+    {
+        pergunta: "Qual é a representação binária do número decimal 10?",
+        opcoes: ["1000", "1010", "1100", "1110"],
+        respostaCorreta: 1
+    },
+    {
+        pergunta: "Qual é o resultado da soma binária de 1101 e 1010?",
+        opcoes: ["10111", "11011", "10001", "11101"],
+        respostaCorreta: 2
+    },
+    {
+        pergunta: "Qual é o valor decimal do número binário 1111?",
+        opcoes: ["13", "14", "15", "16"],
+        respostaCorreta: 2
+    },
+    {
+        pergunta: "Qual é a operação lógica binária que resulta em 1 apenas quando ambos os bits são 1?",
+        opcoes: ["OR", "AND", "XOR", "NOT"],
+        respostaCorreta: 1
+    },
+    {
+        pergunta: "Qual é a representação binária do número decimal 25?",
+        opcoes: ["11001", "10111", "10011", "11101"],
+        respostaCorreta: 0
+    },
+    {
+        pergunta: "Qual é o resultado da operação binária XOR entre 1010 e 1100?",
+        opcoes: ["0101", "0110", "1001", "1111"],
+        respostaCorreta: 1
+    },
+    {
+        pergunta: "Qual é o complemento de 2 do número binário 0110?",
+        opcoes: ["1010", "1001", "1101", "1010"],
+        respostaCorreta: 3
+    },
+    {
+        pergunta: "Qual é a operação lógica binária que inverte os bits (0 se torna 1 e 1 se torna 0)?",
+        opcoes: ["OR", "AND", "XOR", "NOT"],
+        respostaCorreta: 3
     }
-    return array;
-}
+];
 
-function iniciarQuiz() {
-    shuffle(perguntas); // Embaralha as perguntas ao iniciar o quiz
-}
-
-function showQuestionModal(index) {
-    const pergunta = perguntas[index];
-    const modalTitle = pergunta.pergunta;
-    let modalContent = '';
-
-    pergunta.opcoes.forEach((opcao, i) => {
-        modalContent += `<div class="form-check">
-        <input class="form-check-input" type="radio" name="opcao" id="opcao${i}" value="${i}">
-        <label class="form-check-label" for="opcao${i}">
-          ${opcao}
-        </label>
-      </div>`;
-    });
-
-    document.getElementById('infoModalLabel').textContent = modalTitle;
-    document.querySelector('#infoModal .modal-body').innerHTML = modalContent;
-    document.getElementById('verifyButton').onclick = function () {
-        const selectedOption = document.querySelector('input[name="opcao"]:checked');
-        if (selectedOption) {
-            const userAnswer = parseInt(selectedOption.value, 10);
-            if (userAnswer === pergunta.respostaCorreta) {
-                alert('Resposta correta!');
-            } else {
-                alert('Resposta incorreta. Tente novamente.');
-            }
-        } else {
-            alert('Por favor, selecione uma resposta.');
-        }
-    };
-    $('#infoModal').modal('show');
-}
-
-export { iniciarQuiz, showQuestionModal };

@@ -1,20 +1,72 @@
-
-
-import { iniciarQuiz, showQuestionModal } from './perguntas.js';
-
+import { perguntasSala1, perguntasSala2 } from './perguntas.js';
 
 document.addEventListener('DOMContentLoaded', function () {
-    imageMapResize();
+    let perguntas;
 
-    // Shuffle questions array
-    iniciarQuiz();
+    if (window.location.pathname.includes('sala1.html')) {
+        perguntas = perguntasSala1;
+    } else if (window.location.pathname.includes('sala2.html')) {
+        perguntas = perguntasSala2;
+    } else {
+        console.error('Página desconhecida!');
+        return;
+    }
 
+    iniciarQuiz(perguntas);
     document.querySelectorAll('area').forEach(area => {
         area.addEventListener('click', function () {
-            const index = this.getAttribute('data-index');
-            showQuestionModal(index);
+            const index = parseInt(this.getAttribute('data-index'), 10);
+            if (!isNaN(index) && index >= 0 && index < perguntas.length) {
+                showQuestionModal(perguntas, index);
+            } else {
+                console.log("Erro por causa do video. Ignorar")
+            }
         });
     });
 
-
+    imageMapResize();
 });
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function iniciarQuiz(perguntas) {
+    shuffle(perguntas); // Embaralha as perguntas ao iniciar
+}
+
+function showQuestionModal(perguntas, index) {
+    const pergunta = perguntas[index];
+    const modalTitle = pergunta.pergunta;
+    let modalContent = '';
+
+    pergunta.opcoes.forEach((opcao, i) => {
+        modalContent += `<div class="form-check">
+        <input class="form-check-input" type="radio" name="opcao" id="opcao${i}" value="${i}">
+        <label class="form-check-label" for="opcao${i}">
+          ${opcao}
+        </label>
+      </div>`;
+    });
+
+    document.getElementById('infoModalLabel').textContent = modalTitle;
+    document.querySelector('#infoModal .modal-body').innerHTML = modalContent;
+    document.getElementById('verifyButton').onclick = function () {
+        const selectedOption = document.querySelector('input[name="opcao"]:checked');
+        if (selectedOption) {
+            const userAnswer = parseInt(selectedOption.value, 10);
+            if (userAnswer === pergunta.respostaCorreta) {
+                alert('Resposta correta!');
+            } else {
+                alert('Resposta incorreta. Tente novamente.');
+            }
+        } else {
+            alert('Por favor, selecione uma resposta.');
+        }
+    };
+    $('#infoModal').modal('show');
+}
