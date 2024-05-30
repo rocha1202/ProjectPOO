@@ -135,6 +135,16 @@ export function add(
   console.log(users);
 }
 
+// Definir a banda atual(Aquela que será vista no detalhe na banda)
+export function setCurrentUser(id) {
+  localStorage.setItem("user", id);
+}
+
+// Obter a banda atual(Todo o objeto)
+export function getCurrentUser() {
+  return users.find((user) => user.id === localStorage.getItem("user"));
+}
+
 function getNextId() {
   return users.length > 0 ? users.length + 1 : 1;
 }
