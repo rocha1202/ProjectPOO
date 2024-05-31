@@ -22,6 +22,36 @@ export function init() {
   }
 }
 
+//Vai buscar todas as publicações
+export function getPublicacoes(
+  filterTxt = "",
+  filterDataPublicado = "",
+  filterEliminado = "",
+  filterTipo = "",
+  isSorted = false
+) {
+  let filteredPublicacoes = publicacoes.filter(
+    (publicacao) =>
+      (publicacao.titulo.toLowerCase().includes(filterTxt.toLowerCase()) ||
+        filterTxt === "") &&
+      (publicacao.data_publicado === filterDataPublicado ||
+        filterDataPublicado === "") &&
+      (publicacao.eliminado === filterEliminado || filterEliminado === "") &&
+      (publicacao.tipo === filterTipo || filterTipo === "")
+  );
+
+  filteredPublicacoes = isSorted
+    ? filteredPublicacoes.sort((a, b) => a.nome.localeCompare(b.nome))
+    : filteredPublicacoes;
+
+  return filteredPublicacoes;
+}
+
+//Ordenar publicacoes
+export function sortPublicacoes() {
+  publicacoes.sort((a, b) => a.titulo.localeCompare(b.titulo));
+}
+
 //Adiciona as publicacoes
 export function add(
   titulo,
@@ -50,8 +80,20 @@ export function add(
   }
 }
 
+// Definir a publicacao atual(Aquela que será vista no detalhe na publicacao)
+export function setCurrentPublicacao(id) {
+  localStorage.setItem("publicacao", id);
+}
+
+// Obter a publicacao atual(Todo o objeto)
+export function getCurrentPublicacao() {
+  return publicacoes.find(
+    (publicacao) => publicacao.id === localStorage.getItem("publicacao")
+  );
+}
+
 function getNextId() {
-  return bands.length > 0 ? bands.length + 1 : 1;
+  return publicacoes.length > 0 ? publicacoes.length + 1 : 1;
 }
 
 //Class de noticias e eventos

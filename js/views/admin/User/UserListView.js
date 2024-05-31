@@ -1,4 +1,4 @@
-import * as User from "../../models/UsersModel.js";
+import * as User from "../../../models/UsersModel.js";
 
 function userCatalog() {
   User.init();
@@ -12,7 +12,6 @@ function userCatalog() {
     const bloqueado = document.querySelector("#bloqueado").value;
     const eliminado = document.querySelector("#eliminado").value;
     const tipo = document.querySelector("#tipo").value;
-    console.log(text, genero, bloqueado, eliminado, tipo);
     renderCatalog(User.getUsers(text, genero, bloqueado, eliminado, tipo));
   });
 
@@ -51,20 +50,3 @@ function generateListItem(user) {
 }
 
 userCatalog();
-
-/* 
-  // EXIBIR O CATÁLOGO DE BANDAS
-  function renderCatalog(bands = []) {
-    // CLICAR NO BOTÃO REMOVER
-    const btnsRemove = document.getElementsByClassName("remove");
-    for (const button of btnsRemove) {
-      button.addEventListener("click", () => {
-        if (confirm("Desje mesmo remover a banda?")) {
-          Band.removeBand(button.id);
-          location.reload();
-        }
-      });
-    }
-  }
-  
-  catalogView(); */
