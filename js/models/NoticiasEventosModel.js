@@ -41,7 +41,7 @@ export function getPublicacoes(
   );
 
   filteredPublicacoes = isSorted
-    ? filteredPublicacoes.sort((a, b) => a.nome.localeCompare(b.nome))
+    ? filteredPublicacoes.sort((a, b) => a.titulo.localeCompare(b.titulo))
     : filteredPublicacoes;
 
   return filteredPublicacoes;
@@ -60,7 +60,7 @@ export function add(
   descricao,
   data_publicado,
   tipo,
-  eliminado = "N"
+  eliminado
 ) {
   if (publicacoes.some((publicacao) => publicacao.titulo === titulo)) {
     throw Error(`Já existe uma publicação com o titulo "${titulo}"!`);

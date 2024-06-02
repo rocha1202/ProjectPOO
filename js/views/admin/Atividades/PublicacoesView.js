@@ -11,7 +11,6 @@ function atividadesCatalog() {
     const dataPublicado = document.querySelector("#dataPublicado").value;
     const eliminado = document.querySelector("#eliminado").value;
     const tipo = document.querySelector("#tipo").value;
-    console.log(text, dataPublicado, eliminado, tipo);
     renderCatalog(
       Publicacao.getPublicacoes(text, dataPublicado, eliminado, tipo)
     );
@@ -27,7 +26,7 @@ function atividadesCatalog() {
 function renderCatalog(publicacoes = []) {
   let render = "";
   publicacoes.map((publicacao) => (render += generateListItem(publicacao)));
-  // Atribuição de todos os cards gerados ao elemento com id userCatalog
+  // Atribuição de todos os cards gerados ao elemento com id atividadesCatalog
   document.querySelector("#atividadesCatalog").innerHTML = render;
 
   //Clicar no botão Ver
