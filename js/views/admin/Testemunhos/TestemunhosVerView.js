@@ -6,7 +6,7 @@ function testemunhoView() {
   const testemunho = Testemunho.getCurrentTestemunho();
 
   document.querySelector("#titulo").value = testemunho.titulo;
-  document.querySelector("#subTitulo").value = testemunho.subtitulo;
+  document.querySelector("#subTitulo").value = testemunho.sub_titulo;
   document.querySelector("#descricao").value = testemunho.descricao;
   document.querySelector("#file").value = testemunho.img;
 }

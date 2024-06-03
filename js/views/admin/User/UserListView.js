@@ -33,7 +33,7 @@ function renderCatalog(users = []) {
   for (const btn of btnVer) {
     btn.addEventListener("click", () => {
       User.setCurrentUser(btn.id);
-      location.href = "/html/admin/userVer.html";
+      location.href = "/html/admin/user/userVer.html";
     });
   }
 }

@@ -31,7 +31,7 @@ function renderCatalog(testemunhos = []) {
   for (const btn of btnVer) {
     btn.addEventListener("click", () => {
       Testemunho.setCurrentTestemunho(btn.id);
-      location.href = "/html/admin/testemunhoVer.html";
+      location.href = "/html/admin/testemunhos/testemunhoVer.html";
     });
   }
 }

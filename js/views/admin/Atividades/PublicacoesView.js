@@ -34,7 +34,7 @@ function renderCatalog(publicacoes = []) {
   for (const btn of btnVer) {
     btn.addEventListener("click", () => {
       Publicacao.setCurrentPublicacao(btn.id);
-      location.href = "/html/admin/atividadeVer.html";
+      location.href = "/html/admin/atividades/atividadeVer.html";
     });
   }
 }

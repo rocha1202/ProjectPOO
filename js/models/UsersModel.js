@@ -91,7 +91,6 @@ export function getUserLogged() {
 }
 
 export function findUser(userId) {
-  console.log(users, userId);
   return users.find((user) => user.id == userId);
 }
 
@@ -131,8 +130,6 @@ export function add(
     );
     localStorage.setItem("users", JSON.stringify(users));
   }
-
-  console.log(users);
 }
 
 // Definir o utilizador atual(Aquela que será vista no detalhe do utilizador)
@@ -142,7 +139,9 @@ export function setCurrentUser(id) {
 
 // Obter a user atual(Todo o objeto)
 export function getCurrentUser() {
-  return users.find((user) => user.id === localStorage.getItem("user"));
+  return users.find(
+    (user) => user.id === JSON.parse(localStorage.getItem("user"))
+  );
 }
 
 function getNextId() {

@@ -88,7 +88,8 @@ export function setCurrentPublicacao(id) {
 // Obter a publicacao atual(Todo o objeto)
 export function getCurrentPublicacao() {
   return publicacoes.find(
-    (publicacao) => publicacao.id === localStorage.getItem("publicacao")
+    (publicacao) =>
+      publicacao.id === JSON.parse(localStorage.getItem("publicacao"))
   );
 }
 

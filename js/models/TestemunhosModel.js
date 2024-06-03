@@ -83,7 +83,8 @@ export function setCurrentTestemunho(id) {
 //Obter o testemunho atual (Todo o objeto)
 export function getCurrentTestemunho() {
   return testemunhos.find(
-    (testemunho) => testemunho.id === localStorage.getItem("testemunho")
+    (testemunho) =>
+      testemunho.id === JSON.parse(localStorage.getItem("testemunho"))
   );
 }
 function getNextId() {
