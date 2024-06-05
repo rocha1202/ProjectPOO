@@ -16,9 +16,9 @@ function loginView() {
       let userLogged = User.getUserLogged();
       setTimeout(() => {
         if (userLogged.tipo === "admin") {
-          window.location.href = "/html/admin/user.html";
+          window.location.href = "/html/admin/user/user.html";
         } else {
-          window.location.href = "/index.html";
+          window.location.href = "/html/perfil.html";
         }
       }, 1000);
     } catch (e) {

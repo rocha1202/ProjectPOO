@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/designFrom.css" />
     <link rel="stylesheet" href="/css/admin/user.css" />
-
 </head>
 
 <body>
@@ -17,26 +16,20 @@
         <div class="row">
             <div class="col-md-3 blue-background">
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                    <!-- Div para envolver o avatar -->
                     <div class="">
                         <img class="" width="200px" src="/img/Logotipo.svg">
-
                     </div>
                     <br>
                     <span></span>
                     <span class="admin">Administrador</span>
                     <div class="d-flex flex-column icons justify-content-start text-left mt-5 mb-3">
-                        <a href="./user.html" class=" py-2"><img src="/img/icons/Admin/user.svg"
-                            width="26px">Utilizadores</a>
-                    <a href="./testemunhos.html" class="select py-2"><img src="/img/icons/Admin/testemunhos_select.svg"
-                            width="26px">Testemunhos</a>
-                    <a href="./atividades.html" class="py-2"><img src="/img/icons/Admin/atividades.svg" width="26px">Atividades</a>
-                    <a href="./desafios.html" class="py-2"><img src="/img/icons/Admin/desafios.svg" width="26px">Desafios</a>
-                    <a href="./gamificacao.html" class="py-2"><img src="/img/icons/Admin/gamificacao.svg"
-                            width="26px">Gamificação</a>
+                        <a href="./user.html" class=" py-2"><img src="/img/icons/Admin/user.svg" width="26px">Utilizadores</a>
+                        <a href="./testemunhos.html" class="select py-2"><img src="/img/icons/Admin/testemunhos_select.svg" width="26px">Testemunhos</a>
+                        <a href="./atividades.html" class="py-2"><img src="/img/icons/Admin/atividades.svg" width="26px">Atividades</a>
+                        <a href="./desafios.html" class="py-2"><img src="/img/icons/Admin/desafios.svg" width="26px">Desafios</a>
+                        <a href="./gamificacao.html" class="py-2"><img src="/img/icons/Admin/gamificacao.svg" width="26px">Gamificação</a>
                     </div>
-                    <a href="/html/login.html" class="logout-link "><img src="/img/icons/User/SignOut.svg"
-                            width="32px"></a>
+                    <a href="/html/login.html" class="logout-link"><img src="/img/icons/User/SignOut.svg" width="32px"></a>
                 </div>
             </div>
 
@@ -44,22 +37,49 @@
                 <h2 class="mb-4 text-orange">Testemunho</h2>
 
                 <div class="d-flex flex-column justify-content-center align-items-center">
-
-                    <input type="text" class="form-control mb-3" placeholder="Nome">
-                    <input type="text" class="form-control mb-3" placeholder="Titulo">
-                    <textarea class="form-control mb-3" rows="10" placeholder="Texto" style="overflow: auto;"></textarea>
-                    <input type="file" class="form-control-file mb-3">
-
+                    <input type="text" class="form-control mb-3" placeholder="Titulo" id="titulo" />
+                    <input type="text" class="form-control mb-3" placeholder="SubTitulo" id="subTitulo" />
+                    <textarea class="form-control mb-3" rows="10" placeholder="Texto" id="descricao" style="overflow: auto"></textarea>
+                    <input type="file" class="form-control-file mb-3" id="file" />
                 </div>
 
                 <div class="d-flex flex-row justify-content-center align-items-center">
-                    <button class="btn btn-outline-primary">Inserir</button>
+                    <button class="btn btn-outline-primary" id="inserir-btn">Inserir</button>
                 </div>
-
-
 
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                <script type="module" src="/js/TetemunhoAdd.js"></script>
+                <script type="module">
+                    import { add } from '/js/models/TestemunhosModel.js';
+
+                    document.getElementById('inserir-btn').addEventListener('click', () => {
+                        const titulo = document.getElementById('titulo').value;
+                        const subTitulo = document.getElementById('subTitulo').value;
+                        const descricao = document.getElementById('descricao').value;
+                        const file = document.getElementById('file').files[0];
+
+                        const reader = new FileReader();
+                        reader.onloadend = () => {
+                            const img = reader.result;
+                            const data_publicado = new Date().toISOString().split('T')[0];
+                            const eliminado = false;
+
+                            try {
+                                add(titulo, subTitulo, img, descricao, data_publicado, eliminado);
+                                alert('Testemunho inserido com sucesso!');
+                            } catch (error) {
+                                alert(error.message);
+                            }
+                        };
+
+                        if (file) {
+                            reader.readAsDataURL(file);
+                        } else {
+                            alert('Por favor, selecione um arquivo de imagem.');
+                        }
+                    });
+                </script>
             </div>
         </div>
     </div>
