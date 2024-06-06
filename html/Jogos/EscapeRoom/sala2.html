@@ -17,15 +17,19 @@
 
   <img src="/img/salas/imgSala2.jpg" usemap="#image-map" alt="room"
     class="img-fluid img-responsive rounded mx-auto d-block">
-    <map name="image-map">
-      <area id="area" coords="252,601,298,605,303,798,252,822" shape="poly">
-      <area id="porta" coords="713,489,786,489,789,628,709,628" shape="poly">
-      <area id="area0" data-index="0" coords="984,498,1136,435,1208,443,1208,770,1124,774,986,718" shape="poly">
-      <area id="area1" data-index="1" coords="603,593,639,666" shape="rect">
-      <area id="area2" data-index="2" coords="87,663,19" shape="circle">
+  <map name="image-map">
+    <area id="area" coords="252,601,298,605,303,798,252,822" shape="poly">
+    <area id="porta" coords="713,489,786,489,789,628,709,628" shape="poly">
+    <area id="area0" data-index="0" coords="984,498,1136,435,1208,443,1208,770,1124,774,986,718" shape="poly">
+    <area id="area1" data-index="1" coords="603,593,639,666" shape="rect">
+    <area id="area2" data-index="2" coords="87,663,19" shape="circle">
 
   </map>
-  <img id="key" src="/img/icons/User/salas/key.svg" style="position: fixed; left: 10px; bottom: 10px; height: 10%; display: none;">
+  <a href="/html/Jogos/menu.html"><img id="close" src="/img/icons/User/close.svg"
+      style="position: fixed;right: 10px;top: 10px; display: block;">
+  </a>
+  <img id="key" src="/img/icons/User/salas/key.svg"
+    style="position: fixed; left: 10px; bottom: 10px; height: 10%; display: none;">
 
 
   <!-- Modal -->
@@ -53,7 +57,7 @@
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <br>
-    <button type="button" class="btn btn-primary"  id="btnCloseVideo">Fechar</button>
+    <button type="button" class="btn btn-primary" id="btnCloseVideo">Fechar</button>
   </dialog>
 
   <script>
@@ -61,7 +65,7 @@
     document.getElementById('area').addEventListener('click', function () {
       document.getElementById('dlgVideo').showModal();
     });
-  
+
     // Fechar o diálogo de vídeo quando o botão Fechar é clicado
     document.getElementById('btnCloseVideo').addEventListener('click', function () {
       document.getElementById('dlgVideo').close();
@@ -70,7 +74,7 @@
       var videoSrc = video.src;
       video.src = videoSrc;
     });
-  
+
     // Lidar com o fechamento da modal pelo botão de fechar
     document.getElementById('dlgVideo').addEventListener('close', function () {
       // Parar o vídeo quando a modal for fechada
@@ -79,7 +83,7 @@
       video.src = videoSrc;
     });
   </script>
-  
+
 
 
   <script type="module" src="/js/escape/escolhaMultipla.js"></script>

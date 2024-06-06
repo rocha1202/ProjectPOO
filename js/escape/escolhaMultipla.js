@@ -1,11 +1,15 @@
 import { perguntasSala1, perguntasSala2 } from './perguntas.js';
 
+let local = "";
+
 document.addEventListener('DOMContentLoaded', function () {
     let perguntas;
 
     if (window.location.pathname.includes('sala1.html')) {
+        local = "Sala1";
         perguntas = perguntasSala1;
     } else if (window.location.pathname.includes('sala2.html')) {
+        local = "Sala2";
         perguntas = perguntasSala2;
     } else {
         console.error('Página desconhecida!');
@@ -68,9 +72,12 @@ function showQuestionModal(perguntas, index) {
                     $('#infoModal').modal('hide');
                     $('#key').css('display', 'block');
                     alert('Parabéns! Você conseguiu a chave.');
+                    if (local = "Sala1") {
+                        document.getElementById('porta').setAttribute('href', 'sala2.html');
+                    } else {
+                        document.getElementById('porta').setAttribute('href', '#');
 
-                    document.getElementById('porta').setAttribute('href', '#');
-
+                    }
                 } else {
                     $('#infoModal').modal('hide');
                 }
