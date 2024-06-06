@@ -1,0 +1,59 @@
+@font-face {
+    font-family: "PortoSansStencilBold";
+    src: url("../fontes/PortoSansStencil-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "PortoSansStencilRegular";
+    src: url("../fontes/PortoSansStencil-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "PortoSansRegular";
+    src: url("../fontes/PortoSans-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "PortoSansLight";
+    src: url("../fontes/PortoSans-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "PortoSansBold";
+    src: url("../fontes/PortoSans-Bold.otf") format("opentype");
+}
+
+:root {
+    --blue: #5688c7;
+    --blue_rgb: 86, 136, 199;
+    --orange: #c94e23;
+    --orange_rgb: 201, 78, 35;
+    --gray: #bcbec0;
+    --gray_rgb: 188, 190, 192;
+    --black: #020202;
+    --white: #fffffc;
+}
+
+.navbar {
+    background-color: var(--gray);
+    position: fixed;
+    width: 100%;
+}
+
+.text-login {
+    color: var(--blue);
+    text-align: center;
+    font-size: 50px;
+    font-family: "PortoSansStencilRegular";
+}
+
+.h5{
+    font-family: "PortoSansBold";
+
+}
+.text {
+    color: var(--blue);
+    font-size: 50px;
+    margin-left: 60px;
+    font-family: "PortoSansStencilRegular";
+}
