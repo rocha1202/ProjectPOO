@@ -1,3 +1,39 @@
+@font-face {
+  font-family: "PortoSansStencilBold";
+  src: url("../fontes/PortoSansStencil-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PortoSansStencilRegular";
+  src: url("../fontes/PortoSansStencil-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PortoSansRegular";
+  src: url("../fontes/PortoSans-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PortoSansLight";
+  src: url("../fontes/PortoSans-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PortoSansBold";
+  src: url("../fontes/PortoSans-Bold.otf") format("opentype");
+}
+
+:root {
+  --blue: #5688c7;
+  --blue_rgb: 86, 136, 199;
+  --orange: #c94e23;
+  --orange_rgb: 201, 78, 35;
+  --gray: #bcbec0;
+  --gray_rgb: 188, 190, 192;
+  --black: #020202;
+  --white: #fffffc;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +47,7 @@ body {
 }
 
 .container {
-  padding: 25px;
+  padding: 30px;
 }
 
 #cards,
@@ -23,9 +59,6 @@ body {
   justify-content: center;
 }
 
-/* img {
-  border-radius: 7px;
-} */
 
 #cards {
   height: 100%;
@@ -47,7 +80,7 @@ body {
   height: 100px;
   user-select: none;
   pointer-events: none;
-  background: #fff;
+  background: var(--gray);
   border-radius: 7px;
   backface-visibility: hidden;
   transition: transform 0.25s linear;
@@ -70,4 +103,15 @@ body {
 
 #card.flip .back-view {
   transform: rotateY(0);
+}
+
+.card {
+  border: 0;
+}
+
+.text {
+  color: var(--blue);
+  font-size: 50px;
+margin-top: 15px;
+  font-family: "PortoSansStencilRegular";
 }
