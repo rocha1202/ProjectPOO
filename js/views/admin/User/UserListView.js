@@ -5,6 +5,11 @@ function userCatalog() {
 
   renderCatalog(User.getUsers());
 
+  document.querySelector(
+    "#header"
+  ).innerHTML += `<h2 class="text-orange mr-2">Utilizador</h2>
+  <a href="" class="mt-5" style='color:black'>Adicionar</a>`;
+
   //Clicar no botão filtrar
   document.querySelector("#btnFilter").addEventListener("click", () => {
     const text = document.querySelector("#text").value;

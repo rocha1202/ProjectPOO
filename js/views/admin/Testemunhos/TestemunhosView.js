@@ -5,6 +5,12 @@ function testemunhosCatalog() {
 
   renderCatalog(Testemunho.getTestemunhos());
 
+  document.querySelector(
+    "#header"
+  ).innerHTML += `<h2 class="text-orange mr-2">Testemunhos</h2>
+            <a href="./testemunhoNovo.html">
+              <button class="btn btn-primary">Novo</button></a>`;
+
   //Clicar no botão filtrar
   document.querySelector("#btnFilter").addEventListener("click", () => {
     const text = document.querySelector("#text").value;
