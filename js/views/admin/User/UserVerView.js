@@ -5,14 +5,16 @@ function userView() {
 
   const user = User.getCurrentUser();
 
+  renderButtons(user.bloqueado, user.eliminado);
+
   document.querySelector("#nome").value = user.nome;
   document.querySelector("#dataNascimento").value = user.dataNascimento;
   document.querySelector("#genero").value = user.genero;
   document.querySelector("#localidade").value = user.localidade;
   document.querySelector("#email").value = user.email;
   document.querySelector("#password").value = user.password;
-
-  renderButtons(user.bloqueado, user.eliminado);
+  document.querySelector("#tipo").value = user.tipo;
+  document.querySelector("#file").value = user.avatar;
 }
 
 function renderButtons(bloqueado, eliminado) {

@@ -5,6 +5,12 @@ function atividadesCatalog() {
 
   renderCatalog(Publicacao.getPublicacoes());
 
+  document.querySelector(
+    "#header"
+  ).innerHTML += `<h2 class="text-orange mr-2">Atividades</h2>
+            <a href="./atividadeNovo.html">
+              <button class="btn btn-primary">Novo</button></a>`;
+
   //Clicar no botão filtrar
   document.querySelector("#btnFilter").addEventListener("click", () => {
     const text = document.querySelector("#text").value;

@@ -87,6 +87,11 @@
               placeholder="SubTitulo"
               id="subTitulo"
             />
+            <select class="form-control mb-3" id="tipo">
+              <option value="">Selecione uma opção</option>
+              <option value="evento">Evento</option>
+              <option value="noticia">Notícia</option>
+            </select>
             <textarea
               class="form-control mb-3"
               rows="10"
@@ -95,19 +100,15 @@
               id="descricao"
             ></textarea>
             <input type="file" class="form-control-file mb-3" id="file" />
+            <div
+              class="d-flex flex-row justify-content-center align-items-center"
+              id="btnList"
+            ></div>
           </div>
-
-          <div
-            class="d-flex flex-row justify-content-center align-items-center"
-          >
-            <button class="btn btn-outline-primary">Atualizar</button>
-            <button class="btn btn-outline-primary">Apagar</button>
-          </div>
-
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
           <script
             type="module"
-            src="../../js/views/admin/Atividades/PublicacoesVerView.js"
+            src="/js/views/admin/Atividades/PublicacoesVerView.js"
           ></script>
         </div>
       </div>
