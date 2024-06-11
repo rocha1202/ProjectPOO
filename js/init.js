@@ -13,7 +13,7 @@ function initdata() {
       {
         id: 1,
         nome: "User1",
-        dataNascimento: "02-03-2000",
+        dataNascimento: "200-03-02",
         genero: "F",
         localidade: "Vila de Conde",
         email: "user1@gmail.com",
@@ -24,7 +24,7 @@ function initdata() {
           {
             nome: "Consiga 100 pontos",
             completo: "S",
-            data_completo: "01-04-2024",
+            data_completo: "2024-04-01",
           },
           {
             nome: "Consiga 1000 pontos",
@@ -39,7 +39,7 @@ function initdata() {
       {
         id: 2,
         nome: "User2",
-        dataNascimento: "12-09-2002",
+        dataNascimento: "2002-09-12",
         genero: "M",
         localidade: "Gaia",
         email: "user2@gmail.com",
@@ -65,7 +65,7 @@ function initdata() {
       {
         id: 3,
         nome: "Admin1",
-        dataNascimento: "09-05-2001",
+        dataNascimento: "2001-05-09",
         genero: "M",
         localidade: "Braga",
         email: "admin1@gmail.com",
