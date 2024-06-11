@@ -5,6 +5,7 @@ let cardOne = null;
 let cardTwo = null;
 let disabledDeck = false;
 let points = 0;
+let pointsLevel=0;
 
 const flipCard = (e) => {
   let clickedCard = e.target.closest('.card');
@@ -19,7 +20,6 @@ const flipCard = (e) => {
     let cardOneImg = cardOne.querySelector(".back-view img").getAttribute('id');
     let cardTwoImg = cardTwo.querySelector(".back-view img").getAttribute('id');
     matchCards(cardOneImg, cardTwoImg);
-    console.log(points);
   }
 };
 
@@ -80,7 +80,6 @@ const game = urlParams.get('game');
 
 // Determine the game code based on the selected game
 let gameCode = '';
-console.log(game);
 let cards = [];
 let textoElement = document.getElementById("texto");
 switch (game) {
@@ -93,6 +92,7 @@ switch (game) {
       { id: 5, nome: "Card 5", img: "/img/jogos/Memoria/icon5.png" },
       { id: 6, nome: "Card 6", img: "/img/jogos/Memoria/icon6.png" }
     ];
+    pointsLevel=1
     if (textoElement) {
       textoElement.textContent = "Jogo da Memoria - 4x3";
     }
@@ -111,6 +111,8 @@ switch (game) {
       { id: 9, nome: "Card 9", img: "/img/jogos/Memoria/icon9.png" },
       { id: 10, nome: "Card 10", img: "/img/jogos/Memoria/icon10.png" }
     ];
+    pointsLevel=2
+
     if (textoElement) {
       textoElement.textContent = "Jogo da Memoria - 5x4";
     }
@@ -131,6 +133,7 @@ switch (game) {
       { id: 11, nome: "Card 11", img: "/img/jogos/Memoria/icon11.png" },
       { id: 12, nome: "Card 12", img: "/img/jogos/Memoria/icon12.png" },
     ];
+    pointsLevel=5
     if (textoElement) {
       textoElement.textContent = "Jogo da Memoria - 6x4";
     }
@@ -138,7 +141,7 @@ switch (game) {
     break;
   default:
     if (textoElement) {
-      textoElement.textContent = "Jogo da Memoria - Padrão";
+      textoElement.textContent = "Jogo da Memoria";
     }
     gameCode = 'Código padrão';
 }
