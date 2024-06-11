@@ -11,7 +11,9 @@ function testemunhoNovo() {
       const sub_titulo = document.querySelector("#subTitulo").value;
       const descricao = document.querySelector("#descricao").value;
       const file = document.querySelector("#file").value;
-      const data = `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate()}`;
+      const date = new Date();
+      const data = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+     
       try {
         Testemunho.add(titulo, sub_titulo, file, descricao, data, "N");
         displayMessage("Testemunho adicionado com sucesso!", "success");

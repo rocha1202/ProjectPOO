@@ -80,7 +80,7 @@
 
     <script>
         // Carrega os dados do usuário da sessionStorage e exibe no perfil
-        var currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+        var currentUser = JSON.parse(sessionStorage.getItem("loggedUser"));
         if (currentUser) {
             document.getElementById("pontos").textContent = currentUser.pontos;
             document.getElementById("profileName1").textContent = currentUser.nome;
@@ -105,8 +105,8 @@
             var email = document.getElementById("profileEmail").textContent;
             var password = document.getElementsByName("password")[0].value;
 
-            var users = JSON.parse(localStorage.getItem("userData"));
-            var currentUserEmail = JSON.parse(sessionStorage.getItem("currentUser")).email;
+            var users = JSON.parse(localStorage.getItem("users"));
+            var currentUserEmail = JSON.parse(sessionStorage.getItem("loggedUser")).email;
             for (var i = 0; i < users.length; i++) {
                 if (users[i].email === currentUserEmail) {
                     users[i].nome = nome;

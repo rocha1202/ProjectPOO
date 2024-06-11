@@ -34,10 +34,10 @@ function renderButtons(bloqueado, eliminado) {
 function atualizarUsuario() {
   const userId = localStorage.getItem("user"); // Get the current user ID from localStorage
   if (!userId) {
-    console.error("No user ID found in localStorage");
+    console.error("Sem ID na localStorage");
     return;
   }
-  console.log("User ID from localStorage:", userId); // Debugging statement
+  console.log("ID na localStorage:", userId); // Debugging statement
 
   const updatedUser = {
     id: userId,
@@ -52,34 +52,29 @@ function atualizarUsuario() {
     bloqueado: User.getCurrentUser().bloqueado, // Retain current values for bloqueado and eliminado
     eliminado: User.getCurrentUser().eliminado
   };
-  console.log("Updated User Object:", updatedUser); // Debugging statement
 
   const users = JSON.parse(localStorage.getItem("users")) || [];
-  console.log("Users from localStorage:", users); // Debugging statement
 
   // Convert userId to the same type as the IDs in the users array
   const userIndex = users.findIndex((user) => user.id == userId); // Use loose equality for comparison
-  console.log("User Index:", userIndex); // Debugging statement
 
   if (userIndex !== -1) {
     users[userIndex] = updatedUser;
     localStorage.setItem("users", JSON.stringify(users));
-    alert("User updated successfully!");
+    alert("Utilizador atualizador com sucesso!");
   } else {
-    console.error("User not found in localStorage users array");
+    console.error("O utilizador não foi encontrado na localStorage");
   }
 }
 
 function atualizarEliminado() {
   const userId = localStorage.getItem("user"); // Get the current user ID from localStorage
   if (!userId) {
-    console.error("No user ID found in localStorage");
+    console.error("Sem ID na localStorage");
     return;
   }
-  console.log("User ID from localStorage:", userId); // Debugging statement
 
   const users = JSON.parse(localStorage.getItem("users")) || [];
-  console.log("Users from localStorage:", users); // Debugging statement
 
   // Convert userId to the same type as the IDs in the users array
   const userIndex = users.findIndex((user) => user.id == userId); // Use loose equality for comparison
@@ -90,37 +85,34 @@ function atualizarEliminado() {
     user.eliminado = user.eliminado === "S" ? "N" : "S"; // Toggle eliminado status
     users[userIndex] = user;
     localStorage.setItem("users", JSON.stringify(users));
-    alert(`User ${user.eliminado === "S" ? "desativado" : "ativado"} com sucesso!`);
+    alert(`Utilizador ${user.eliminado === "S" ? "desativado" : "ativado"} com sucesso!`);
     renderButtons(user.bloqueado, user.eliminado); // Re-render buttons to reflect the change
   } else {
-    console.error("User not found in localStorage users array");
+    console.error("Não encontrou o user na localStorage");
   }
 }
 
 function atualizarBloqueado() {
   const userId = localStorage.getItem("user"); // Get the current user ID from localStorage
   if (!userId) {
-    console.error("No user ID found in localStorage");
+    console.error("Sem ID na localStorage");
     return;
   }
-  console.log("User ID from localStorage:", userId); // Debugging statement
 
   const users = JSON.parse(localStorage.getItem("users")) || [];
-  console.log("Users from localStorage:", users); // Debugging statement
 
   // Convert userId to the same type as the IDs in the users array
   const userIndex = users.findIndex((user) => user.id == userId); // Use loose equality for comparison
-  console.log("User Index:", userIndex); // Debugging statement
 
   if (userIndex !== -1) {
     const user = users[userIndex];
     user.bloqueado = user.bloqueado === "S" ? "N" : "S"; // Toggle bloqueado status
     users[userIndex] = user;
     localStorage.setItem("users", JSON.stringify(users));
-    alert(`User ${user.bloqueado === "S" ? "bloqueado" : "desbloqueado"} com sucesso!`);
+    alert(`Utilizador: ${user.bloqueado === "S" ? "bloqueado" : "desbloqueado"} com sucesso!`);
     renderButtons(user.bloqueado, user.eliminado); // Re-render buttons to reflect the change
   } else {
-    console.error("User not found in localStorage users array");
+    console.error("Não encontrou o utilizador no array");
   }
 }
 
