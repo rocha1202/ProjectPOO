@@ -1,68 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/img/Logotipo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <!-- Adicionando Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="../css/login.css" />
-  </head>
 
-  <body>
-    <div class="container-fluid" id="loginPage">
-      <div class="row">
-        <!-- Lado Azul -->
-        <div class="col-md-4 fundo-azul">
-          <div
-            class="d-flex flex-column justify-content-center align-items-center h-100"
-          >
-            <!-- Logo -->
-            <img src="../img/Logotipo_white.svg" alt="Logo" class="mb-4" />
-            <br /><br /><br />
-            <div class="d-flex flex-column text-center links">
-              <!-- Link para a Homepage -->
-              <a href="../index.html" class="mb-2">Pagina Principal</a>
-              <!-- Link para criar conta -->
-              <a href="./signup.html" class="mb-2">Criar Conta</a>
-            </div>
-          </div>
-        </div>
-        <!-- Lado Branco -->
-        <div
-          class="d-flex flex-column col justify-content-center align-items-center"
-        >
-          <form
-            id="formLogin"
-            class="d-flex flex-column col justify-content-center align-items-center"
-          >
-            <!-- Texto de Login -->
-            <h2 class="mb-4 text-login">Login</h2>
-            <input
-              type="email"
-              class="form-control mb-3 w-50"
-              placeholder="Email"
-              id="email"
-            />
-            <input
-              type="password"
-              class="form-control mb-3 w-50"
-              placeholder="Password"
-              id="password"
-            />
-            <button class="btn btn-primary btn-lg" type="submit">Entrar</button>
-          </form>
-          <div>
-            <div id="msg"></div>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/img/Logotipo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <!-- Adicionando Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/login.css" />
+</head>
+
+<body>
+  <div class="container-fluid" id="loginPage">
+    <div class="row">
+      <!-- Lado Azul -->
+      <div class="col-md-4 fundo-azul">
+        <div class="d-flex flex-column justify-content-center align-items-center h-100">
+          <!-- Logo -->
+          <img src="../img/Logotipo_white.svg" alt="Logo" class="mb-4" />
+          <br /><br /><br />
+          <div class="d-flex flex-column text-center links">
+            <!-- Link para a Homepage -->
+            <a href="../index.html" class="mb-2">Pagina Principal</a>
+            <!-- Link para criar conta -->
+            <a href="./signup.html" class="mb-2">Criar Conta</a>
           </div>
         </div>
       </div>
+      <!-- Lado Branco -->
+      <div class="d-flex flex-column col justify-content-center align-items-center">
+        <form id="formLogin" class="d-flex flex-column col justify-content-center align-items-center">
+          <!-- Texto de Login -->
+          <h2 class="mb-4 text-login">Login</h2>
+          <input type="email" class="form-control mb-3 w-50" placeholder="Email" id="email" />
+          <input type="password" class="form-control mb-3 w-50" placeholder="Password" id="password" />
+          <button class="btn btn-primary btn-lg" type="submit">Entrar</button>
+        </form>
+        <div>
+          <div id="msg"></div>
+        </div>
+      </div>
     </div>
-    <!-- Adicionando Bootstrap JS (opcional, dependendo do seu uso) -->
-    <script type="module" src="../js/views/LoginView.js"></script>
-  </body>
+  </div>
+  <!-- Adicionando Bootstrap JS (opcional, dependendo do seu uso) -->
+  <script type="module" src="../js/views/LoginView.js"></script>
+</body>
+
 </html>

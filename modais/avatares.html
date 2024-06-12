@@ -74,18 +74,18 @@
 function selecionaAvatar(avatar) {
         // Atualiza o avatar na sessionStorage
         currentUser.avatar = avatar + ".svg";
-        sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
+        sessionStorage.setItem("loggedUser", JSON.stringify(currentUser));
 
         // Atualiza o avatar na localStorage
-        var users = JSON.parse(localStorage.getItem("userData"));
-        var currentUserEmail = JSON.parse(sessionStorage.getItem("currentUser")).email;
+        var users = JSON.parse(localStorage.getItem("users"));
+        var currentUserEmail = JSON.parse(sessionStorage.getItem("loggedUser")).email;
         for (var i = 0; i < users.length; i++) {
             if (users[i].email === currentUserEmail) {
                 users[i].avatar = avatar + ".svg";
                 break;
             }
         }
-        localStorage.setItem("userData", JSON.stringify(users));
+        localStorage.setItem("users", JSON.stringify(users));
 
         // Atualiza a imagem do avatar na página de perfil
         document.getElementById("avatarImage").src = "/img/avatares/" + avatar + ".svg";

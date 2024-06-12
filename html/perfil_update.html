@@ -23,13 +23,15 @@
                     <span class="nomeUser"> <span id="profileName1"></span></span>
                     <span class="text-black">Pontos: <span id="pontos"></span></span>
                     <div class="d-flex flex-column icons justify-content-start text-left mt-5 mb-3">
-                        <a href="../html/perfil.html" class="select"><img src="../img/icons/User/dadosPerfil_select.svg" width="32px">Dados de Perfil</a>
+                        <a href="../html/perfil.html" class="select"><img src="../img/icons/User/dadosPerfil_select.svg"
+                                width="32px">Dados de Perfil</a>
                         <a href="#"><img src="../img/icons/User/ranking.svg" width="32px">Ranking</a>
                         <a href="#"><img src="../img/icons/User/conquistas.svg" width="32px">Conquistas</a>
                         <a href="#"><img src="../img/icons/User/feed.svg" width="32px">Feed</a>
                         <a href="#"><img src="../img/icons/User/jogos.svg" width="32px">Jogos</a>
                     </div>
-                    <a href="./login.html" class="logout-link"><img src="../img/icons/User/SignOut.svg" width="32px"></a>
+                    <a href="./login.html" class="logout-link"><img src="../img/icons/User/SignOut.svg"
+                            width="32px"></a>
                 </div>
             </div>
 
@@ -39,7 +41,8 @@
                 <div class="profile-update">
                     <p id="profileEmail"></p>
                     <input type="text" class="form-control mb-3 w-50" name="nome" placeholder="Nome">
-                    <input type="date" class="form-control mb-3 w-50" name="dataNascimento" placeholder="Data de Nascimento (DD/MM/AAAA)">
+                    <input type="date" class="form-control mb-3 w-50" name="dataNascimento"
+                        placeholder="Data de Nascimento (DD/MM/AAAA)">
                     <select class="form-control mb-3 w-50" name="profileSex">
                         <option value="">Selecione o Sexo</option>
                         <option value="F">Feminino</option>
@@ -52,9 +55,12 @@
                     <div class="button-alterar">
                         <button class="btn btn-primary btn-lg" onclick="alterar()">Alterar Dados</button>
                     </div>
+
                 </div>
+                <div id="msg"></div>
 
             </div>
+
         </div>
     </div>
 
@@ -67,9 +73,9 @@
 
     <script>
         // Adiciona um manipulador de eventos de clique à imagem de hover
-        $(".avatar-hover-image").click(function() {
+        $(".avatar-hover-image").click(function () {
             // Carrega o conteúdo da modal
-            $("#modalPlaceholder").load("../modais/avatares.html", function() {
+            $("#modalPlaceholder").load("../modais/avatares.html", function () {
                 // Mostra o modal quando a imagem de hover é clicada
                 $("#avatarModal").modal("show");
             });
