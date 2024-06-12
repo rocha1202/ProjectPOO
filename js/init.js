@@ -19,7 +19,7 @@ function initdata() {
         email: "user1@gmail.com",
         password: "pass1",
         pontos: 120,
-        avatar: "/img/avatares/F1.svg",
+        avatar: "F3.svg",
         premios: [
           {
             nome: "Consiga 100 pontos",
@@ -45,7 +45,7 @@ function initdata() {
         email: "user2@gmail.com",
         password: "pass2",
         pontos: 100,
-        avatar: "/img/avatares/M1.svg",
+        avatar: "M2.svg",
         premios: [
           {
             nome: "Consiga 100 pontos",
@@ -71,7 +71,7 @@ function initdata() {
         email: "admin1@gmail.com",
         password: "admin1",
         pontos: 0,
-        avatar: "/img/avatares/M1.svg",
+        avatar: "M1.svg",
         premios: [],
         bloqueado: "N",
         eliminado: "N",

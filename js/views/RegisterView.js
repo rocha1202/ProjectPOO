@@ -14,8 +14,14 @@ function registerView() {
       const localidade = document.querySelector("#localidade").value;
       const email = document.querySelector("#email").value;
       const password = document.querySelector("#password").value;
-      const avatar = "";
+      let avatar = ""; // Use let instead of const
+      console.log(genero);
       try {
+        if (genero === "F") {
+          avatar = "F1.svg";
+        } else {
+          avatar = "M1.svg";
+        }
         User.add(
           nome,
           dataNascimento,
