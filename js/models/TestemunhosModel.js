@@ -21,7 +21,7 @@ export function init() {
   }
 }
 
-//Vai bvuscar todos os testemunhos
+//Vai buscar todos os testemunhos
 export function getTestemunhos(
   filterTxt = "",
   filterDataPublicado = "",
