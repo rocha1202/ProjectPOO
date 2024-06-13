@@ -73,3 +73,12 @@ a {
     font-family: "PortoSansRegular";
 
 }
+
+.container-fluid {
+    height: 100vh;
+}
+
+.usersList {
+    overflow-y: auto;
+    height: calc(80vh - 50px);
+}
