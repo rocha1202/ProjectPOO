@@ -1,8 +1,9 @@
 import * as User from "./models/UsersModel.js";
 import * as Publicacao from "./models/NoticiasEventosModel.js";
 import * as Testemunho from "./models/TestemunhosModel.js";
+import * as Premio from "./models/PremiosModel.js";
+
 /* 
-import * as Premio from "./models/PremiosModel";
 import * as Media from "./models/GaleriaModel"; */
 
 initdata();
@@ -147,6 +148,37 @@ function initdata() {
         testemunho.descricao,
         testemunho.data_publicado,
         testemunho.eliminado
+      );
+    });
+  }
+
+  if (!localStorage.premios) {
+    const premios = [
+      {
+        id: 1,
+        titulo: "Complete 5 Escape Rooms",
+        img_bloq: "/img/premios/P1_blo.svg",
+        img_desbloq: "/img/premios/P1_des.svg",
+        progresso: 5,
+        eliminado: "N",
+      },
+      {
+        id: 2,
+        titulo: "Termine 3 quizzes com percentagem acima de 80%",
+        img_bloq: "/img/premios/P2_blo.svg",
+        img_desbloq: "/img/premios/P2_des.svg",
+        progresso: 3,
+        eliminado: "N",
+      },
+    ];
+
+    premios.forEach((premio) => {
+      Premio.add(
+        premio.titulo,
+        premio.img_bloq,
+        premio.img_desbloq,
+        premio.progresso,
+        premio.eliminado
       );
     });
   }
