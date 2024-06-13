@@ -20,6 +20,31 @@ export function init() {
   }
 }
 
+//Vai buscar todos os premios
+export function getPremios(
+  filterTxt = "",
+  filterEliminado = "",
+  isSorted = false
+) {
+  let filteredPremios = premios.filter(
+    (premio) =>
+      (premio.titulo.toLowerCase().includes(filterTxt.toLowerCase()) ||
+        filterTxt === "") &&
+      (premio.eliminado === filterEliminado || filterEliminado === "")
+  );
+
+  filteredPremios = isSorted
+    ? filteredPremios.sort((a, b) => a.titulo.localeCompare(b.titulo))
+    : filteredPremios;
+
+  return filteredPremios;
+}
+
+//Ordenar Premios
+export function sortPremios() {
+  premios.sort((a, b) => a.title.localeCompare(b.titulo));
+}
+
 //Adiciona os premios
 export function add(titulo, img_bloq, img_desbloq, progresso, eliminado = "N") {
   if (premios.some((premio) => premio.titulo === titulo)) {
@@ -32,8 +57,13 @@ export function add(titulo, img_bloq, img_desbloq, progresso, eliminado = "N") {
   }
 }
 
+//Definir o testemunho atual(Aquela que será vista no detalhe na publicação)
+export function setCurrentPremio(id) {
+  localStorage.setItem("premio", id);
+}
+
 function getNextId() {
-  return bands.length > 0 ? bands.length + 1 : 1;
+  return premios.length > 0 ? premios.length + 1 : 1;
 }
 
 //Classe de Premios
