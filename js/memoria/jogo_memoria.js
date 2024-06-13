@@ -6,6 +6,7 @@ let cardTwo = null;
 let disabledDeck = false;
 let points = 0;
 let pointsLevel=0;
+let colUpdate=""
 
 const flipCard = (e) => {
   let clickedCard = e.target.closest('.card');
@@ -26,11 +27,37 @@ const flipCard = (e) => {
 const matchCards = (icon1, icon2) => {
   if (icon1 === icon2) {
     matchedCard++;
-    points += 2;
+    points += pointsLevel;
     cardOne.removeEventListener("click", flipCard);
     cardTwo.removeEventListener("click", flipCard);
     cardOne = cardTwo = null;
     disabledDeck = false;
+    console.log(points);
+
+    if (matchedCard === cards.length) {
+      // Atualizar os pontos do usuário
+      let currentUser = JSON.parse(sessionStorage.getItem("loggedUser"));
+      if (currentUser) {
+        currentUser.pontos += points; // Adiciona os pontos ao total do usuário
+        sessionStorage.setItem("loggedUser", JSON.stringify(currentUser));
+
+        // Atualiza o usuário no localStorage
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+        let userIndex = users.findIndex(user => user.email === currentUser.email);
+        if (userIndex !== -1) {
+          users[userIndex].pontos = currentUser.pontos;
+          localStorage.setItem("users", JSON.stringify(users));
+        }
+      }
+
+      // Exibir a modal com os pontos finais
+      document.getElementById("finalPoints").textContent = points;
+      $('#gameCompletedModal').modal('show');
+
+      document.getElementById("closeModalButton").addEventListener("click", () => {
+        window.location.href = '/html/Jogos/menuJM.html';
+      });
+    }
   } else {
     setTimeout(() => {
       if (cardOne) cardOne.classList.remove("flip");
@@ -41,13 +68,15 @@ const matchCards = (icon1, icon2) => {
   }
 };
 
+
+
 const renderCards = (random) => {
   container.innerHTML = "";
   container.innerHTML += `<div id="cards" class="row"></div>`;
   const cardsContainer = document.querySelector("#cards");
   random.forEach((item) => {
     cardsContainer.innerHTML += `
-        <div class="card col-3" id='card'>
+        <div class="card ${colUpdate}" id="card">
           <div class="view front-view">
               <img src="/img/Logotipo.svg" height="20px">
           </div>
@@ -58,6 +87,7 @@ const renderCards = (random) => {
       `;
   });
 };
+
 
 const randomArray = (cards) => {
   matchedCard = 0;
@@ -93,6 +123,7 @@ switch (game) {
       { id: 6, nome: "Card 6", img: "/img/jogos/Memoria/icon6.png" }
     ];
     pointsLevel=1
+    colUpdate="col-3"
     if (textoElement) {
       textoElement.textContent = "Jogo da Memoria - 4x3";
     }
@@ -112,7 +143,7 @@ switch (game) {
       { id: 10, nome: "Card 10", img: "/img/jogos/Memoria/icon10.png" }
     ];
     pointsLevel=2
-
+    colUpdate="col-3"
     if (textoElement) {
       textoElement.textContent = "Jogo da Memoria - 5x4";
     }
@@ -134,8 +165,9 @@ switch (game) {
       { id: 12, nome: "Card 12", img: "/img/jogos/Memoria/icon12.png" },
     ];
     pointsLevel=5
+    colUpdate="col-2"
     if (textoElement) {
-      textoElement.textContent = "Jogo da Memoria - 6x4";
+      textoElement.textContent = "Jogo da Memoria - 4x6";
     }
     gameCode = 'Código para o Jogo 3';
     break;

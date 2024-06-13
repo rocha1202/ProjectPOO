@@ -44,9 +44,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-    overflow-x: hidden;
-    overflow-y: hidden;
-
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .container {
@@ -62,25 +61,24 @@ body {
   justify-content: center;
 }
 
-
 #cards {
   height: 100%;
   width: 100%;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 #card {
   cursor: pointer;
   perspective: 800px;
   transform-style: preserve-3d;
-  height: calc(100% / 4 - 10px);
-  width: calc(100% / 4 - 10px);
+  height: calc(100% / 4 - 20px);
+  width: calc(100% / 4 - 20px);
 }
 
 #cards #card .view {
-  width: 70px;
-  height: 100px;
+  width: 60px; /* Ajuste este valor conforme necessário */
+  height: 80px; /* Ajuste este valor conforme necessário */
   user-select: none;
   pointer-events: none;
   background: var(--gray);
@@ -88,7 +86,7 @@ body {
   backface-visibility: hidden;
   transition: transform 0.25s linear;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
+  margin: 10px; /* Ajuste este valor para controlar o espaçamento entre as cartas */
 }
 
 #card .back-view {
@@ -115,6 +113,6 @@ body {
 .text {
   color: var(--blue);
   font-size: 50px;
-margin-top: 15px;
+  margin-top: 15px;
   font-family: "PortoSansStencilRegular";
 }
