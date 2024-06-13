@@ -14,7 +14,7 @@ if (currentUser) {
     }
     document.getElementById("profileLocation").textContent = currentUser.localidade;
     document.getElementById("profileEmail").textContent = currentUser.email;
-    document.getElementById("avatarImage").src = "../img/avatares/" + currentUser.avatar;
+    document.getElementById("avatarImage").src = "/img/avatares/" + currentUser.avatar;
 
 } else {
     // Se não houver dados de usuário na sessionStorage, redireciona para a página de login
