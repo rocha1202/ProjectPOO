@@ -16,7 +16,7 @@
 <body>
     <div class="navbar fixed-top">
         <img src="/img/Logotipo.svg">
-        <a href="../perfil.html"> <img src="/img/avatares/M1.svg" class="avatares" width="50px"></a>
+        <a href="../perfil.html"> <img id="avatarImage" src="" class="avatares" width="50px"></a>
     </div>
 
     <div class="mt-5 pt-5">
@@ -25,7 +25,8 @@
         <div class="container">
             <div class="row justify-content-center mt-5">
                 <div class="col-auto">
-                    <a href="/html/Jogos/menuJM.html"><img src="/img/jogoDaMemoria.svg" class="img-fluid" width="250px" /></a>
+                    <a href="/html/Jogos/menuJM.html"><img src="/img/jogoDaMemoria.svg" class="img-fluid"
+                            width="250px" /></a>
                     <h5 class="text-center">Jogo da Memoria</h5>
                 </div>
                 <div class="col-auto">
@@ -44,6 +45,11 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <script>
+        var currentUser = JSON.parse(sessionStorage.getItem("loggedUser"));
+        document.getElementById("avatarImage").src = "/img/avatares/" + currentUser.avatar;
+
+    </script>
 </body>
 
 </html>

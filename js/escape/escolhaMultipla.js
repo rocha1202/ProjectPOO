@@ -1,6 +1,7 @@
 import { perguntasSala1, perguntasSala2 } from './perguntas.js';
 
 let local = "";
+let pontos = 0; // Pontos acumulados pelo jogador
 
 document.addEventListener('DOMContentLoaded', function () {
     let perguntas;
@@ -68,16 +69,17 @@ function showQuestionModal(perguntas, index) {
                 alert('Resposta correta!');
                 perguntas.splice(index, 1); // Remove a pergunta do array
                 perguntasRespondidas++;
+                pontos += 2; // Adiciona 2 pontos para cada resposta correta
+
                 if (perguntasRespondidas === 3) {
                     $('#infoModal').modal('hide');
                     $('#key').css('display', 'block');
-                    alert('Parabéns! Você conseguiu a chave.');
-                    if (local = "Sala1") {
-                        document.getElementById('porta').setAttribute('href', 'sala2.html');
-                    } else {
-                        document.getElementById('porta').setAttribute('href', '#');
-
-                    }
+                    updateUserPoints();
+                    document.getElementById('porta').setAttribute('href', '../menuES.html');
+                    
+                    // Display the key achievement modal
+                    document.getElementById('totalPoints').textContent = pontos;
+                    $('#keyModal').modal('show');
                 } else {
                     $('#infoModal').modal('hide');
                 }
@@ -91,4 +93,20 @@ function showQuestionModal(perguntas, index) {
         }
     };
     $('#infoModal').modal('show');
+}
+
+function updateUserPoints() {
+    let currentUser = JSON.parse(sessionStorage.getItem("loggedUser"));
+    if (currentUser) {
+        currentUser.pontos = (currentUser.pontos || 0) + pontos; // Adiciona os pontos ao total do usuário
+        sessionStorage.setItem("loggedUser", JSON.stringify(currentUser));
+
+        // Atualiza o usuário no localStorage
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+        let userIndex = users.findIndex(user => user.email === currentUser.email);
+        if (userIndex !== -1) {
+            users[userIndex].pontos = currentUser.pontos;
+            localStorage.setItem("users", JSON.stringify(users));
+        }
+    }
 }
