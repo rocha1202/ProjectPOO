@@ -197,7 +197,8 @@ body{
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #ffcdd2;
+    background-color: var(--orange);
+    color: var(--white);
 }
 
 .ranking-wrapper {

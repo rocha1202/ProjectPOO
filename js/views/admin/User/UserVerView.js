@@ -1,5 +1,9 @@
 import * as User from "../../../models/UsersModel.js";
 
+let avatarGuarda = ""
+let pontosGuarda = ""
+let premiosGuarda = ""
+
 function userView() {
   User.init();
 
@@ -15,7 +19,9 @@ function userView() {
   document.querySelector("#email").value = user.email;
   document.querySelector("#password").value = user.password;
   document.querySelector("#tipo").value = user.tipo;
-  document.querySelector("#file").value = user.avatar;
+  avatarGuarda = user.avatar;
+  pontosGuarda = user.pontos;
+  premiosGuarda = user.premios;
 }
 
 function renderButtons(bloqueado, eliminado) {
@@ -39,6 +45,7 @@ function atualizarUsuario() {
   }
   console.log("ID na localStorage:", userId); // Debugging statement
 
+
   const updatedUser = {
     id: userId,
     nome: document.querySelector("#nome").value,
@@ -48,7 +55,8 @@ function atualizarUsuario() {
     email: document.querySelector("#email").value,
     password: document.querySelector("#password").value,
     tipo: document.querySelector("#tipo").value,
-    avatar: document.querySelector("#file").value,
+    avatar: avatarGuarda, // Update avatar property
+    pontos: pontosGuarda,
     bloqueado: User.getCurrentUser().bloqueado, // Retain current values for bloqueado and eliminado
     eliminado: User.getCurrentUser().eliminado
   };

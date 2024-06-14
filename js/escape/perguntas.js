@@ -134,7 +134,7 @@ export const perguntasSala2  = [
     },
     {
         pergunta: "Qual é o complemento de 2 do número binário 0110?",
-        opcoes: ["1010", "1001", "1101", "1010"],
+        opcoes: ["1000", "1001", "1101", "1010"],
         respostaCorreta: 3
     },
     {
