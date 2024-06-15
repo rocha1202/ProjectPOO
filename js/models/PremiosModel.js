@@ -57,9 +57,16 @@ export function add(titulo, img_bloq, img_desbloq, progresso, eliminado = "N") {
   }
 }
 
-//Definir o testemunho atual(Aquela que será vista no detalhe na publicação)
+//Definir o premio atual(Aquela que será vista no detalhe na publicação)
 export function setCurrentPremio(id) {
   localStorage.setItem("premio", id);
+}
+
+//Obter o premio atual (Todo o objeto)
+export function getCurrentPremio() {
+  return premios.find(
+    (premio) => premio.id === JSON.parse(localStorage.getItem("premio"))
+  );
 }
 
 function getNextId() {
