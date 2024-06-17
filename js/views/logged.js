@@ -9,5 +9,4 @@ if (!User.isLogged()) {
     // Se estiver autenticado, continua o código
     User.init();
     let userLogged = User.getUserLogged();
-    alert("autenc")
 }
