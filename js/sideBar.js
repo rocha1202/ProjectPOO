@@ -12,7 +12,7 @@ const renderSideBar = () => {
     >Saídas Profissionais</a
   >
   <a href=${
-    !sideBarDetail ? "#eventos_noticias" : "../index.html#eventos_noticias"
+    !sideBarDetail ? "#eventos_noticias" : "index.html#eventos_noticias"
   } onclick="closeNav()">Eventos/Notícias</a>
   <a href="">Galeria</a>
   <a href=${

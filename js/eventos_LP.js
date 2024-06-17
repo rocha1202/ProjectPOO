@@ -1,25 +1,53 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const eventosNoticiasContainer = document.getElementById('eventos_noticias_container');
-    
-    // Get publicações from localStorage
-    const publicacoes = JSON.parse(localStorage.getItem('publicacoes')) || [];
+document.addEventListener("DOMContentLoaded", function () {
+  const eventsContainer = document.querySelector(".eventos_noticias_container");
 
-    // Filter out the eliminated publicações and sort by date
-    const validPublicacoes = publicacoes.filter(pub => pub.eliminado === 'N')
-                                       .sort((a, b) => new Date(b.data_publicado) - new Date(a.data_publicado))
-                                       .slice(0, 3); // Get the last 3 publicações
+  function getTestemunhos() {
+      const events = JSON.parse(localStorage.getItem('publicacoes')) || [];
+      return events.filter(t => t.eliminado === "N").slice(-3).reverse();
+  }
 
-    // Generate HTML for the valid publicações
-    validPublicacoes.forEach(pub => {
-      const div = document.createElement('div');
-      div.className = 'col-3 column';
-      div.innerHTML = `
-        <div class="evento_noticia_img">
-          <img src="${pub.img}" alt="${pub.titulo}" />
-          <div class="column_cat_overlay"></div>
-        </div>
-        <h5 class="column_cat_title">${pub.titulo}</h5>
-      `;
-      eventosNoticiasContainer.appendChild(div);
-    });
-  });
+  function updateTestemunhos() {
+      const events = getTestemunhos();
+      eventsContainer.innerHTML = '';
+
+      events.forEach(t => {
+          const column = document.createElement('div');
+          column.classList.add('col-3', 'column');
+
+          const eventsLink = document.createElement('a');
+          eventsLink.addEventListener("click", () => {
+              // Directly set the current user in localStorage
+              const currentObject = { id: t.id };
+
+              // Armazenar no localStorage convertendo para JSON
+              localStorage.setItem('current', JSON.stringify(currentObject));
+              location.href = "./html/noticia_evento_detalhe.html";
+            });
+
+          const eventsImg = document.createElement('div');
+          eventsImg.classList.add('testemunho_img');
+
+          const img = document.createElement('img');
+          img.src = t.img;
+          img.alt = `Imagem ${t.titulo}`;
+
+          const overlay = document.createElement('div');
+          overlay.classList.add('column_cat_overlay');
+
+          eventsImg.appendChild(img);
+          eventsImg.appendChild(overlay);
+          eventsLink.appendChild(eventsImg);
+
+          const title = document.createElement('h5');
+          title.classList.add('column_cat_title');
+          title.textContent = t.titulo;
+
+          column.appendChild(eventsLink);
+          column.appendChild(title);
+
+          eventsContainer.appendChild(column);
+      });
+  }
+
+  updateTestemunhos();
+});

@@ -6,13 +6,13 @@ const renderFooter = () => {
     <div class="d-flex justify-content-between footer_container">
     <div class="logos col-3">
       <img src=${
-        !footerDetail ? "./img/Logotipo.svg" : "../img/Logotipo.svg"
+        !footerDetail ? "/img/Logotipo.svg" : "../img/Logotipo.svg"
       } alt="Logo TSIW" class="logo_footer"
       />
       <br />
       <img
           src=${
-            !footerDetail ? "./img/PPORTO_Cor.svg" : "../img/PPORTO_Cor.svg"
+            !footerDetail ? "/img/PPORTO_Cor.svg" : "../img/PPORTO_Cor.svg"
           }
           alt="Logo TSIW"
           class="logo_footer"

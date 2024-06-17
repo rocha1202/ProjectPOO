@@ -15,7 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
             column.classList.add('col-3', 'column');
 
             const testemunhoLink = document.createElement('a');
-            testemunhoLink.href = './html/testemunhos.html';
+            testemunhoLink.addEventListener("click", () => {
+                // Directly set the current user in localStorage
+                const currentUserObject = { id: t.id };
+
+                // Armazenar no localStorage convertendo para JSON
+                localStorage.setItem('currentUser', JSON.stringify(currentUserObject));
+                location.href = "./html/testemunhos.html";
+            });
 
             const testemunhoImg = document.createElement('div');
             testemunhoImg.classList.add('testemunho_img');
@@ -44,4 +51,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateTestemunhos();
 });
-
