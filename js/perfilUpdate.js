@@ -20,10 +20,7 @@ if (currentUser) {
     document.getElementsByName("localidade")[0].value = currentUser.localidade;
     document.getElementById("profileEmail").textContent = currentUser.email;
     document.getElementsByName("password")[0].value = currentUser.password;
-} else {
-    // Se não houver dados de usuário na sessionStorage, redireciona para a página de login
-    window.location.href = "./login.html";
-}
+} 
 
 function alterar() {
 
