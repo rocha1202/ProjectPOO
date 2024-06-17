@@ -55,24 +55,12 @@
         </div>
     </div>
     </div>
-    <!-- Placeholder para carregar a modal -->
-    <div id="modalPlaceholder"></div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="/js/ranking.js"></script>
     <script type="module" src="/js/views/logged.js"></script>
-    <script>
-        // Adiciona um manipulador de eventos de clique à imagem de hover
-        $(".avatar-hover-image").click(function () {
-            // Carrega o conteúdo da modal
-            $("#modalPlaceholder").load("../modais/avatares.html", function () {
-                // Mostra o modal quando a imagem de hover é clicada
-                $("#avatarModal").modal("show");
-            });
-        })
-
-    </script>
 
 </body>
 
