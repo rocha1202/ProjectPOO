@@ -8,7 +8,7 @@ function userCatalog() {
   document.querySelector(
     "#header"
   ).innerHTML += `<h2 class="text-orange mr-2">Utilizador</h2>
-  <a href="" class="mt-5" style='color:black'>Adicionar</a>`;
+  <a href="./userVer.html" class="mt-5" style='color:black'>Adicionar</a>`;
 
   //Clicar no botão filtrar
   document.querySelector("#btnFilter").addEventListener("click", () => {
@@ -33,7 +33,7 @@ function renderCatalog(users = []) {
   // Atribuição de todos os cards gerados ao elemento com id userCatalog
   document.querySelector("#userCatalog").innerHTML = render;
 
-  //Clicar no botão Ver
+  // Clicar no botão Ver
   const btnVer = document.getElementsByClassName("view");
   for (const btn of btnVer) {
     btn.addEventListener("click", () => {
@@ -42,6 +42,7 @@ function renderCatalog(users = []) {
     });
   }
 }
+
 
 function generateListItem(user) {
   let render = `
