@@ -29,7 +29,7 @@ function renderCatalog(premios = []) {
 function generateListItem(premio) {
   let render = `
     <div class='d-flex border rounded mb-3 justify-content-between px-3 py-1'>
-            <img src='${premio.img_desbloq}' style='width: 10%; height: 10%'>
+            <img src=${premio.img_desbloq} style='width: 10%; height: 10%'>
             <p>${premio.titulo}</p>
             <button id='${premio.id}' class='view'>Ver</button>
         </div>
