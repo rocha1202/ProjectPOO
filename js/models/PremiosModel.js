@@ -1,7 +1,6 @@
 let premios = [];
-let users = []; // Added to hold user data
 
-// Initialize the premios and users from local storage
+//Carrega os premios para o localStorage
 export function init() {
   if (localStorage.premios) {
     const tempPremios = JSON.parse(localStorage.premios);
@@ -12,7 +11,6 @@ export function init() {
           premio.img_bloq,
           premio.img_desbloq,
           premio.progresso,
-          premio.tipo,
           premio.eliminado
         )
       );
@@ -20,15 +18,9 @@ export function init() {
   } else {
     premios = [];
   }
-
-  if (localStorage.users) {
-    users = JSON.parse(localStorage.users);
-  } else {
-    users = [];
-  }
 }
 
-// Get all premios
+//Vai buscar todos os premios
 export function getPremios(
   filterTxt = "",
   filterEliminado = "",
@@ -48,39 +40,29 @@ export function getPremios(
   return filteredPremios;
 }
 
-// Sort premios
+//Ordenar Premios
 export function sortPremios() {
   premios.sort((a, b) => a.title.localeCompare(b.titulo));
 }
 
-// Add a new premio
-export function add(titulo, img_bloq, img_desbloq, progresso, tipo, eliminado) {
+//Adiciona os premios
+export function add(titulo, img_bloq, img_desbloq, progresso, eliminado) {
   if (premios.some((premio) => premio.titulo === titulo)) {
     throw Error(`Já existe um prémio com o titulo "${titulo}"!`);
   } else {
-    const newPremio = new Premio(titulo, img_bloq, img_desbloq, progresso, tipo, eliminado);
-    premios.push(newPremio);
+    premios.push(
+      new Premio(titulo, img_bloq, img_desbloq, progresso, eliminado)
+    );
     localStorage.setItem("premios", JSON.stringify(premios));
-    
-    // Add the new premio to each user
-    for (let user of users) {
-      user.premios.push({
-        id: newPremio.id,
-        progresso: 0,  // Initialize progresso to 0
-        eliminado: "N",
-        data_completo: ""
-      });
-    }
-    localStorage.setItem("users", JSON.stringify(users));
   }
 }
 
-// Set the current premio
+//Definir o premio atual(Aquela que será vista no detalhe na publicação)
 export function setCurrentPremio(id) {
   localStorage.setItem("premio", id);
 }
 
-// Get the current premio
+//Obter o premio atual (Todo o objeto)
 export function getCurrentPremio() {
   return premios.find(
     (premio) => premio.id === JSON.parse(localStorage.getItem("premio"))
@@ -91,23 +73,21 @@ function getNextId() {
   return premios.length > 0 ? premios.length + 1 : 1;
 }
 
-// Premio class definition
+//Classe de Premios
 class Premio {
   id = null;
   titulo = "";
   img_bloq = "";
   img_desbloq = "";
   progresso = "";
-  tipo = "";
   eliminado = "";
 
-  constructor(titulo, img_bloq, img_desbloq, progresso, tipo, eliminado) {
+  constructor(titulo, img_bloq, img_desbloq, progresso, eliminado) {
     this.id = getNextId();
     this.titulo = titulo;
     this.img_bloq = img_bloq;
     this.img_desbloq = img_desbloq;
     this.progresso = progresso;
-    this.tipo = tipo;
     this.eliminado = eliminado;
   }
 }

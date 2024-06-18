@@ -11,8 +11,6 @@ function premioView() {
   document.querySelector("#img_bloq").value = premio.img_bloq;
   document.querySelector("#img_desbloq").value = premio.img_desbloq;
   document.querySelector("#progresso").value = premio.progresso;
-  document.querySelector("#progresso").value = premio.progresso;
-  document.querySelector("#tipoJogo").value=premio.tipo;
 }
 
 function renderButtons(eliminado) {
@@ -47,7 +45,6 @@ function atualizarPremio() {
     img_bloq: document.querySelector("#img_bloq").value,
     img_desbloq: document.querySelector("#img_desbloq").value,
     progresso: document.querySelector("#progresso").value,
-    tipo: document.querySelector("#tipoJogo").value,
     eliminado: currentPremio.eliminado,
   };
 
