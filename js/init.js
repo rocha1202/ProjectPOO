@@ -23,15 +23,17 @@ function initdata() {
         avatar: "F3.svg",
         premios: [
           {
-            nome: "Consiga 100 pontos",
-            completo: "S",
+            id: 1,
+            progresso: 5,
+            eliminado: "N",
             data_completo: "2024-04-01",
           },
           {
-            nome: "Consiga 1000 pontos",
-            completo: "N",
-            data_completo: "",
-          },
+            id: 2,
+            progresso: 3,
+            eliminado: "N",
+            data_completo: "2024-04-01",
+          }
         ],
         bloqueado: "N",
         eliminado: "N",
@@ -49,15 +51,17 @@ function initdata() {
         avatar: "M2.svg",
         premios: [
           {
-            nome: "Consiga 100 pontos",
-            completo: "S",
-            data_completo: "01-04-2024",
+            id: 1,
+            progresso: 5,
+            eliminado: "N",
+            data_completo: "2024-04-01",
           },
           {
-            nome: "Consiga 1000 pontos",
-            completo: "N",
+            id: 2,
+            progresso: 1,
+            eliminado: "N",
             data_completo: "",
-          },
+          }
         ],
         bloqueado: "N",
         eliminado: "S",

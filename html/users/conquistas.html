@@ -8,7 +8,6 @@
     <link rel="icon" type="image/x-icon" href="/img/Logotipo.svg" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/perfil.css" />
-
 </head>
 
 <body>
@@ -27,41 +26,84 @@
                     <div class="d-flex flex-column icons justify-content-start text-left mt-5 mb-3">
                         <a href="/html/perfil.html"><img src="/img/icons/User/dadosPerfil.svg" width="32px">Dados de
                             Perfil</a>
-                        <a href="./ranking.html"><img src="/img/icons/User/ranking.svg"
-                                width="32px">Ranking</a>
-                        <a href="/html/users/conquistas.html"  class="select"><img src="/img/icons/User/conquistas_select.svg" width="32px">Conquistas</a>
+                        <a href="./ranking.html"><img src="/img/icons/User/ranking.svg" width="32px">Ranking</a>
+                        <a href="/html/users/conquistas.html" class="select"><img src="/img/icons/User/conquistas_select.svg" width="32px">Conquistas</a>
                         <a href="/html/Jogos/menuJogos.html"><img src="/img/icons/User/jogos.svg" width="32px">Jogos</a>
                     </div>
-                    <a href="/html/login.html" class="logout-link "><img src="/img/icons/User/SignOut.svg"
-                            width="32px"></a>
+                    <a href="/html/login.html" class="logout-link "><img src="/img/icons/User/SignOut.svg" width="32px"></a>
                 </div>
             </div>
 
             <div class="col-md-8 fundo-branco">
-                <h2 class="mb-4 text-orange">Ranking</h2>
-                <div class="top10">Top 10</div>
-
-                <div class="ranking-wrapper">
-                    <div id="rankingContainer">
-                        <!-- Conteúdo do ranking será inserido aqui -->
-                    </div>
+                <h2 class="mb-4 text-orange">Conquistas</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Imagem</th>
+                                <th>Título</th>
+                                <th>Data</th>
+                                <th>Progresso</th>
+                                <th>Percentagem</th>
+                            </tr>
+                        </thead>
+                        <tbody id="achievementsTable">
+                            <!-- As linhas da tabela serão inseridas aqui pelo JavaScript -->
+                        </tbody>
+                    </table>
                 </div>
-                <h3>A tua posição</h3>
-                <div id="userPositionContainer">
-                    <!-- Posição do usuário será inserida aqui -->
-                </div>
-
             </div>
         </div>
     </div>
-    </div>
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="/js/conquistas.js"></script>
     <script type="module" src="/js/views/logged.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const user = JSON.parse(sessionStorage.getItem('loggedUser'));
+            const achievementsTable = document.getElementById('achievementsTable');
+            
+            if (user && user.premios) {
+                user.premios.forEach(premio => {
+                    const row = document.createElement('tr');
 
+                    const imgCell = document.createElement('td');
+                    const img = document.createElement('img');
+                    img.src = premio.imagemBlo; // URL da imagem do prêmio
+                    img.width = 50;
+                    imgCell.appendChild(img);
+                    row.appendChild(imgCell);
+
+                    const titleCell = document.createElement('td');
+                    titleCell.textContent = premio.nome;
+                    row.appendChild(titleCell);
+
+                    const dateCell = document.createElement('td');
+                    dateCell.textContent = premio.data_completo;
+                    row.appendChild(dateCell);
+
+                    const progressCell = document.createElement('td');
+                    const progressBar = document.createElement('div');
+                    progressBar.className = 'progress';
+                    const progressBarInner = document.createElement('div');
+                    progressBarInner.className = 'progress-bar';
+                    progressBarInner.style.width = `${premio.percentagem}%`;
+                    progressBarInner.textContent = `${premio.percentagem}%`;
+                    progressBar.appendChild(progressBarInner);
+                    progressCell.appendChild(progressBar);
+                    row.appendChild(progressCell);
+
+                    const percentageCell = document.createElement('td');
+                    percentageCell.textContent = `${premio.percentagem}%`;
+                    row.appendChild(percentageCell);
+
+                    achievementsTable.appendChild(row);
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
