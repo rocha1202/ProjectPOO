@@ -11,7 +11,7 @@ function publicacaoView() {
   document.querySelector("#subTitulo").value = publicacao.sub_titulo;
   document.querySelector("#descricao").value = publicacao.descricao;
   document.querySelector("#tipo").value = publicacao.tipo;
-  document.querySelector("#file").filename = publicacao.img;
+  document.querySelector("#file").value = publicacao.img;
 }
 
 function renderButtons(eliminado) {

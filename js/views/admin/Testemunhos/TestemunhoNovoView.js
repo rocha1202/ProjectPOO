@@ -16,7 +16,6 @@ function testemunhoNovo() {
       const data = `${date.getFullYear()}-${String(
         date.getMonth() + 1
       ).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
-      // Assuming Testemunho.add() can handle base64 strings for images
       try {
         Testemunho.add(titulo, sub_titulo, file, descricao, data, "N");
         displayMessage("Testemunho adicionado com sucesso!", "success");

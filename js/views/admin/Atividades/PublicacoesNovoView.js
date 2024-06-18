@@ -13,7 +13,10 @@ function atividadeNovo() {
       const descricao = document.querySelector("#descricao").value;
       const tipo = document.querySelector("#tipo").value;
       const file = document.querySelector("#file").value;
-      const data = `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate()}`;
+      const date = new Date();
+      const data = `${date.getFullYear()}-${String(
+        date.getMonth() + 1
+      ).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
       try {
         Publicacao.add(titulo, sub_titulo, file, descricao, data, tipo, "N");
         displayMessage("Atividade adicionada com sucesso!", "success");
