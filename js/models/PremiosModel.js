@@ -46,7 +46,7 @@ export function sortPremios() {
 }
 
 //Adiciona os premios
-export function add(titulo, img_bloq, img_desbloq, progresso, eliminado = "N") {
+export function add(titulo, img_bloq, img_desbloq, progresso, eliminado) {
   if (premios.some((premio) => premio.titulo === titulo)) {
     throw Error(`Já existe um prémio com o titulo "${titulo}"!`);
   } else {

@@ -8,7 +8,7 @@ function premiosCatalog() {
   document.querySelector(
     "#header"
   ).innerHTML += `<h2 class="text-orange mr-2">Gamificação</h2>
-            <a href="">
+            <a href="./gamificacaoNovo.html">
               <button class="btn btn-primary">Novo</button></a>`;
 }
 
