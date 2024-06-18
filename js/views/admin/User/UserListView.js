@@ -8,7 +8,10 @@ function userCatalog() {
   document.querySelector(
     "#header"
   ).innerHTML += `<h2 class="text-orange mr-2">Utilizador</h2>
-  <a href="./userVer.html" class="mt-5" style='color:black'>Adicionar</a>`;
+  `;
+  {
+    /* <a href="./userVer.html" class="mt-5" style='color:black'>Adicionar</a> */
+  }
 
   //Clicar no botão filtrar
   document.querySelector("#btnFilter").addEventListener("click", () => {
@@ -42,7 +45,6 @@ function renderCatalog(users = []) {
     });
   }
 }
-
 
 function generateListItem(user) {
   let render = `

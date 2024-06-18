@@ -10,6 +10,19 @@ function premiosCatalog() {
   ).innerHTML += `<h2 class="text-orange mr-2">Gamificação</h2>
             <a href="./gamificacaoNovo.html">
               <button class="btn btn-primary">Novo</button></a>`;
+
+  //Clicar no botão filtrar
+  document.querySelector("#btnFilter").addEventListener("click", () => {
+    const text = document.querySelector("#text").value;
+    const eliminado = document.querySelector("#eliminado").value;
+    renderCatalog(Premio.getPremios(text, eliminado));
+  });
+
+  //Clicar no botão de ordenar
+  document.querySelector("#btnSort").addEventListener("click", () => {
+    Premio.sortPremios();
+    renderCatalog(Premio.getPremios());
+  });
 }
 
 function renderCatalog(premios = []) {

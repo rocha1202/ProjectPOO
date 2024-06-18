@@ -28,7 +28,6 @@ export function init() {
   }
 }
 
-
 //Buscar os Utilizadores
 export function getUsers(
   filterTxt = "",
@@ -38,7 +37,6 @@ export function getUsers(
   filterTipo = "",
   isSorted = false
 ) {
-
   let filteredUsers = users.filter(
     (user) =>
       (user.email.toLowerCase().includes(filterTxt.toLowerCase()) ||
@@ -53,10 +51,8 @@ export function getUsers(
     ? filteredUsers.sort((a, b) => a.nome.localeCompare(b.nome))
     : filteredUsers;
 
-
   return filteredUsers;
 }
-
 
 //Ordenar Utilizadores
 export function sortUsers() {
