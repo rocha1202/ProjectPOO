@@ -30,7 +30,6 @@ function registerView() {
       }
 
       try {
-        // Obter prémios do localStorage, se não existir, inicializar como array vazio
         const premiosLocal = JSON.parse(localStorage.getItem("premios")) || [];
 
         if (genero === "F") {
@@ -42,7 +41,7 @@ function registerView() {
         // Função para criar lista de prêmios
         const listaPremios = createPremiosList(premiosLocal);
 
-        // Adicionar o usuário com os dados e a lista de prêmios
+        // Adicionar o utilizador com os dados e a lista de prêmios
         User.add(
           nome,
           dataNascimento,

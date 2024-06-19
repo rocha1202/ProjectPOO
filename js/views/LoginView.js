@@ -12,7 +12,6 @@ function loginView() {
         document.getElementById("password").value
       );
       displayMessage("Login efetuado com sucesso", "success");
-      // Wait 1 second before reloading, so the user can see the login success message
       let userLogged = User.getUserLogged();
       setTimeout(() => {
         if (userLogged.tipo === "admin") {

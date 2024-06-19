@@ -1,177 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TSIW - ESMAD</title>
+    <link rel="icon" type="image/x-icon" href="./img/Logotipo.svg" />
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script type="module" src="./js/map.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TSIW - ESMAD</title>
-  <link rel="icon" type="image/x-icon" href="./img/Logotipo.svg" />
-  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-  <script type="module" src="./js/map.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="./css/index.css" />
-</head>
-
-<body>
-  <!-- MENU HAMBURGER -->
-  <div class="sideBar" id="sideBar"></div>
-  <!-- BARRA DE NAVEGAÇÃO -->
-  <nav class="navbar bg-navbar" id="navbar"></nav>
-  <!-- BANNER - PARTE 1 -->
-  <div class="banner">
-    <img src="./img/banner/img1.png" alt="Imagem Banner" class="img_banner" />
-    <h1 class="title_banner">Bem-vindo ao website de TSIW!</h1>
-    <p class="text_banner">
-      Aqui saberás informações relativas ao curso e poderás participar em
-      jogos que estão presentes ao fazer login
-    </p>
-    <div class="btn">
-      <button class="btn_login" onclick="window.location.href = './html/login.html';">
-        Login
-      </button>
-    </div>
-  </div>
-  <!-- SAÍDAS PROFISSIONAIS - PARTE 2 -->
-  <div id="saidas_profissionais" class="saidas_profissionais">
-    <h1 class="title">Saídas Profissionais</h1>
-    <p class="text">
-      A licenciatura assenta numa visão contemporânea e multidisciplinar da
-      Web, agregando competências focadas na concepção, design e
-      desenvolvimento de produtos e software para a Web
-    </p>
-    <div class="d-flex saidas_prof_container">
-      <div class="col-3 column column_left">
-        <h5 class="sub_title">MULTIPLATAFORMA</h5>
-        <p class="text">Desenvolvimento de produtos multiplataforma</p>
-      </div>
-      <div class="col-3 column">
-        <h5 class="sub_title">PRODUTOS WEB</h5>
-        <p class="text">
-          Conceção e desenvolvimento de software e produtos Web
-        </p>
-      </div>
-      <div class="col-3 column column_right">
-        <h5 class="sub_title">UI/UX DEVELOPER</h5>
-        <p class="text">
-          Desenvolvimento de plataformas de comercio e negócio eletrônico
-        </p>
+  <body>
+    <div class="sideBar" id="sideBar"></div>
+    <nav class="navbar bg-navbar" id="navbar"></nav>
+    <div class="banner">
+      <img src="./img/banner/img1.png" alt="Imagem Banner" class="img_banner" />
+      <h1 class="title_banner">Bem-vindo ao website de TSIW!</h1>
+      <p class="text_banner">
+        Aqui saberás informações relativas ao curso e poderás participar em
+        jogos que estão presentes ao fazer login
+      </p>
+      <div class="btn">
+        <button
+          class="btn_login"
+          onclick="window.location.href = './html/login.html';"
+        >
+          Login
+        </button>
       </div>
     </div>
-  </div>
-  <!-- EVENTOS/NOTÍCIAS - PARTE 3 -->
-<div id="eventos_noticias" class="eventos_noticias">
-  <h1 class="title">Eventos/Notícias</h1>
-  <p class="text">Eventos e notícias mais recentes relativas ao curso</p>
-  <div id="eventos_noticias_container" class="d-flex eventos_noticias_container">
-    <!-- JavaScript will populate this section -->
-  </div>
-  <div class="btn">
-    <button class="btn_login" onclick="window.location.href = './html/catalogo.html?type=eventos'">Ver tudo</button>
-  </div>
-</div>
-
-  <!-- SOBRE - PARTE 4 -->
-  <div id="sobre" class="sobre">
-    <h1 class="title">Sobre</h1>
-    <p class="text paragraph">
-      A licenciatura procura dotar os estudantes de conhecimento e
-      competências práticas que lhes permitam o domínio de áreas emergentes
-      como os serviços centrados na cloud, a computação móvel e ubíqua, ou
-      plataformas Web e de negócio eletrônico, sem descurar competências hoje
-      em dia fundamentais, como ergonomia e design de interação, usabilidade e
-      user experience ou prototipagem de plataformas digitais.
-    </p>
-    <div class="d-flex sobre_links">
-      <a href="./html/ver_plano_estudos.html"><span>Ver Plano de Estudos</span><i class="ph ph-arrow-right"></i></a>
-      <a href="./html/mais_informações.html"><span>Mais Informações</span><i class="ph ph-arrow-right"></i></a>
-    </div>
-  </div>
-
-  <!-- Testemunhos - PARTE 5 -->
-  <div id="testemunhos" class="testemunhos">
-    <h1 class="title">Testemunhos</h1>
-    <div>
-      <div class="d-flex testemunhos_container">
-        <!-- JavaScript will populate this section -->
-      </div>
-      <button class="btn_login" onclick="window.location.href = './html/catalogo.html?type=testemunhos'">Ver Mais</button>
-    </div>
-  </div>
-
-  <!-- MAPA/LOCALIZAÇÃO - PARTE 6 -->
-  <div id="map"></div>
-  <!-- CONTACTOS - PARTE 7 -->
-  <div id="contactos" class="contactos">
-    <h1 class="title">Contactos</h1>
-    <p class="text">
-      Se tiveres alguma dúvida podes nos contactar preenchendo o formulário
-      abaixo e entraremos em contacto contigo o mais rápido possível
-    </p>
-    <div class="contact_form">
-      <form action="">
-        <div class="d-flex">
-          <input type="text" class="mb-5 w-50 contact_input" placeholder="Nome" />
-          <input type="text" class="mb-5 w-50 contact_input" placeholder="Apelido" />
+    <div id="saidas_profissionais" class="saidas_profissionais">
+      <h1 class="title">Saídas Profissionais</h1>
+      <p class="text">
+        A licenciatura assenta numa visão contemporânea e multidisciplinar da
+        Web, agregando competências focadas na concepção, design e
+        desenvolvimento de produtos e software para a Web
+      </p>
+      <div class="d-flex saidas_prof_container">
+        <div class="col-3 column column_left">
+          <h5 class="sub_title">MULTIPLATAFORMA</h5>
+          <p class="text">Desenvolvimento de produtos multiplataforma</p>
         </div>
-        <div class="d-flex">
-          <input type="email" class="mb-5 w-70 contact_input" placeholder="Email" />
+        <div class="col-3 column">
+          <h5 class="sub_title">PRODUTOS WEB</h5>
+          <p class="text">
+            Conceção e desenvolvimento de software e produtos Web
+          </p>
         </div>
-        <div class="d-flex">
-          <textarea name="observacoes" class="contact_textarea" rows="10" placeholder="Texto"></textarea>
+        <div class="col-3 column column_right">
+          <h5 class="sub_title">UI/UX DEVELOPER</h5>
+          <p class="text">
+            Desenvolvimento de plataformas de comercio e negócio eletrônico
+          </p>
         </div>
-        <div class="btn"><button class="btn_login">Submeter</button></div>
-      </form>
+      </div>
     </div>
-  </div>
-  <!-- FOOTER -->
-  <div class="footer"></div>
-</body>
-<!-- SCRIPT MAPA GOOGLE -->
-<script>
-  ((g) => {
-    var h,
-      a,
-      k,
-      p = "The Google Maps JavaScript API",
-      c = "google",
-      l = "importLibrary",
-      q = "__ib__",
-      m = document,
-      b = window;
-    b = b[c] || (b[c] = {});
-    var d = b.maps || (b.maps = {}),
-      r = new Set(),
-      e = new URLSearchParams(),
-      u = () =>
-        h ||
-        (h = new Promise(async (f, n) => {
-          await (a = m.createElement("script"));
-          e.set("libraries", [...r] + "");
-          for (k in g)
-            e.set(
-              k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()),
-              g[k]
-            );
-          e.set("callback", c + ".maps." + q);
-          a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
-          d[q] = f;
-          a.onerror = () => (h = n(Error(p + " could not load.")));
-          a.nonce = m.querySelector("script[nonce]")?.nonce || "";
-          m.head.append(a);
-        }));
-    d[l]
-      ? console.warn(p + " only loads once. Ignoring:", g)
-      : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
-  })({ key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "weekly" });
-</script>
-<script type="module" src="./js/init.js"></script>
-<script src="./js/navbar.js"></script>
-<script src="./js/sideBar.js"></script>
-<script src="./js/footer.js"></script>
-<script src="/js/testemunhos_LP.js"></script>
-<script src="/js/eventos_LP.js"></script>
-
-
-
+    <div id="eventos_noticias" class="eventos_noticias">
+      <h1 class="title">Eventos/Notícias</h1>
+      <p class="text">Eventos e notícias mais recentes relativas ao curso</p>
+      <div
+        id="eventos_noticias_container"
+        class="d-flex eventos_noticias_container"
+      ></div>
+      <div class="btn">
+        <button
+          class="btn_login"
+          onclick="window.location.href = './html/catalogo.html?type=eventos'"
+        >
+          Ver tudo
+        </button>
+      </div>
+    </div>
+    <div id="sobre" class="sobre">
+      <h1 class="title">Sobre</h1>
+      <p class="text paragraph">
+        A licenciatura procura dotar os estudantes de conhecimento e
+        competências práticas que lhes permitam o domínio de áreas emergentes
+        como os serviços centrados na cloud, a computação móvel e ubíqua, ou
+        plataformas Web e de negócio eletrônico, sem descurar competências hoje
+        em dia fundamentais, como ergonomia e design de interação, usabilidade e
+        user experience ou prototipagem de plataformas digitais.
+      </p>
+      <div class="d-flex sobre_links">
+        <a href="./html/ver_plano_estudos.html"
+          ><span>Ver Plano de Estudos</span><i class="ph ph-arrow-right"></i
+        ></a>
+        <a href="./html/mais_informações.html"
+          ><span>Mais Informações</span><i class="ph ph-arrow-right"></i
+        ></a>
+      </div>
+    </div>
+    <div id="testemunhos" class="testemunhos">
+      <h1 class="title">Testemunhos</h1>
+      <div>
+        <div class="d-flex testemunhos_container"></div>
+        <button
+          class="btn_login"
+          onclick="window.location.href = './html/catalogo.html?type=testemunhos'"
+        >
+          Ver Mais
+        </button>
+      </div>
+    </div>
+    <div id="map"></div>
+    <div id="contactos" class="contactos">
+      <h1 class="title">Contactos</h1>
+      <p class="text">
+        Se tiveres alguma dúvida podes nos contactar preenchendo o formulário
+        abaixo e entraremos em contacto contigo o mais rápido possível
+      </p>
+      <div class="contact_form">
+        <form action="">
+          <div class="d-flex">
+            <input
+              type="text"
+              class="mb-5 w-50 contact_input"
+              placeholder="Nome"
+            />
+            <input
+              type="text"
+              class="mb-5 w-50 contact_input"
+              placeholder="Apelido"
+            />
+          </div>
+          <div class="d-flex">
+            <input
+              type="email"
+              class="mb-5 w-70 contact_input"
+              placeholder="Email"
+            />
+          </div>
+          <div class="d-flex">
+            <textarea
+              name="observacoes"
+              class="contact_textarea"
+              rows="10"
+              placeholder="Texto"
+            ></textarea>
+          </div>
+          <div class="btn"><button class="btn_login">Submeter</button></div>
+        </form>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </body>
+  <!-- SCRIPT MAPA GOOGLE -->
+  <script>
+    ((g) => {
+      var h,
+        a,
+        k,
+        p = "The Google Maps JavaScript API",
+        c = "google",
+        l = "importLibrary",
+        q = "__ib__",
+        m = document,
+        b = window;
+      b = b[c] || (b[c] = {});
+      var d = b.maps || (b.maps = {}),
+        r = new Set(),
+        e = new URLSearchParams(),
+        u = () =>
+          h ||
+          (h = new Promise(async (f, n) => {
+            await (a = m.createElement("script"));
+            e.set("libraries", [...r] + "");
+            for (k in g)
+              e.set(
+                k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()),
+                g[k]
+              );
+            e.set("callback", c + ".maps." + q);
+            a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+            d[q] = f;
+            a.onerror = () => (h = n(Error(p + " could not load.")));
+            a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+            m.head.append(a);
+          }));
+      d[l]
+        ? console.warn(p + " only loads once. Ignoring:", g)
+        : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+    })({ key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "weekly" });
+  </script>
+  <script type="module" src="./js/init.js"></script>
+  <script src="./js/navbar.js"></script>
+  <script src="./js/sideBar.js"></script>
+  <script src="./js/footer.js"></script>
+  <script src="/js/testemunhos_LP.js"></script>
+  <script src="/js/eventos_LP.js"></script>
 </html>

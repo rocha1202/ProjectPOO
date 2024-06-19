@@ -9,9 +9,6 @@ function userCatalog() {
     "#header"
   ).innerHTML += `<h2 class="text-orange mr-2">Utilizador</h2>
   `;
-  {
-    /* <a href="./userVer.html" class="mt-5" style='color:black'>Adicionar</a> */
-  }
 
   //Clicar no botão filtrar
   document.querySelector("#btnFilter").addEventListener("click", () => {
@@ -33,7 +30,6 @@ function userCatalog() {
 function renderCatalog(users = []) {
   let render = "";
   users.map((user) => (render += generateListItem(user)));
-  // Atribuição de todos os cards gerados ao elemento com id userCatalog
   document.querySelector("#userCatalog").innerHTML = render;
 
   // Clicar no botão Ver

@@ -1,54 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile</title>
     <link rel="icon" type="image/x-icon" href="/img/Logotipo.svg" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="/css/perfil.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3 blue-background">
-                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                    <!-- Div para envolver o avatar -->
-                    <div class="avatar-image">
-                        <!-- Avatar -->
-                        <img class="rounded-circle" width="126px" id="avatarImage">
-                    </div>
-                    <br>
-                    <span class="nomeUser"> <span id="profileName1"></span></span>
-                    <span class="text-black">Pontos: <span id="pontos"></span></span>
-                    <div class="d-flex flex-column icons justify-content-start text-left mt-5 mb-3">
-                        <a href="/html/perfil.html"><img src="/img/icons/User/dadosPerfil.svg" width="32px">Dados de
-                            Perfil</a>
-                        <a href="./ranking.html"><img src="/img/icons/User/ranking.svg" width="32px">Ranking</a>
-                        <a href="/html/users/conquistas.html" class="select"><img
-                                src="/img/icons/User/conquistas_select.svg" width="32px">Conquistas</a>
-                        <a href="/html/Jogos/menuJogos.html"><img src="/img/icons/User/jogos.svg" width="32px">Jogos</a>
-                    </div>
-                    <a href="/html/login.html" class="logout-link "><img src="/img/icons/User/SignOut.svg"
-                            width="32px"></a>
-                </div>
+      <div class="row">
+        <div class="col-md-3 blue-background">
+          <div
+            class="d-flex flex-column align-items-center text-center p-3 py-5"
+          >
+            <div class="avatar-image">
+              <img class="rounded-circle" width="126px" id="avatarImage" />
             </div>
-
-            <div class="col-md-8 fundo-branco">
-                <h2 class="mb-4 text-orange">Conquistas</h2>
-                <div id="achievementContainer">
-                    <!-- Achievement cards will be dynamically added here -->
-                </div>
+            <br />
+            <span class="nomeUser"> <span id="profileName1"></span></span>
+            <span class="text-black">Pontos: <span id="pontos"></span></span>
+            <div
+              class="d-flex flex-column icons justify-content-start text-left mt-5 mb-3"
+            >
+              <a href="/html/perfil.html"
+                ><img src="/img/icons/User/dadosPerfil.svg" width="32px" />Dados
+                de Perfil</a
+              >
+              <a href="./ranking.html"
+                ><img
+                  src="/img/icons/User/ranking.svg"
+                  width="32px"
+                />Ranking</a
+              >
+              <a href="/html/users/conquistas.html" class="select"
+                ><img
+                  src="/img/icons/User/conquistas_select.svg"
+                  width="32px"
+                />Conquistas</a
+              >
+              <a href="/html/Jogos/menuJogos.html"
+                ><img src="/img/icons/User/jogos.svg" width="32px" />Jogos</a
+              >
             </div>
+            <a href="/html/login.html" class="logout-link"
+              ><img src="/img/icons/User/SignOut.svg" width="32px"
+            /></a>
+          </div>
         </div>
+
+        <div class="col-md-8 fundo-branco">
+          <h2 class="mb-4 text-orange">Conquistas</h2>
+          <div id="achievementContainer">
+            <!-- Achievement cards will be dynamically added here -->
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="/js/conquistas.js"></script>
     <script type="module" src="/js/views/logged.js"></script>
-</body>
-
+  </body>
 </html>

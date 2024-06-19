@@ -1,118 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/img/Logotipo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EscapeRoom - Sala2</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/x-icon" href="/img/Logotipo.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EscapeRoom - Sala2</title>
-  <!-- Adicionando Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
+    <link rel="stylesheet" href="/css/salas/sala.css" />
+  </head>
 
-  <link rel="stylesheet" href="/css/salas/sala.css" />
-</head>
+  <body>
+    <img
+      src="/img/salas/imgSala2.jpg"
+      usemap="#image-map"
+      alt="room"
+      class="img-fluid img-responsive rounded mx-auto d-block"
+    />
+    <map name="image-map">
+      <area id="area" coords="252,601,298,605,303,798,252,822" shape="poly" />
+      <area id="porta" coords="713,489,786,489,789,628,709,628" shape="poly" />
+      <area
+        id="area0"
+        data-index="0"
+        coords="984,498,1136,435,1208,443,1208,770,1124,774,986,718"
+        shape="poly"
+      />
+      <area id="area1" data-index="1" coords="603,593,639,666" shape="rect" />
+      <area id="area2" data-index="2" coords="87,663,19" shape="circle" />
+    </map>
+    <a href="/html/Jogos/menuES.html"
+      ><img
+        id="close"
+        src="/img/icons/User/close.svg"
+        style="position: fixed; right: 10px; top: 10px; display: block"
+      />
+    </a>
+    <img
+      id="key"
+      src="/img/icons/User/salas/key.svg"
+      style="
+        position: fixed;
+        left: 10px;
+        bottom: 10px;
+        height: 10%;
+        display: none;
+      "
+    />
 
-<body>
-
-  <img src="/img/salas/imgSala2.jpg" usemap="#image-map" alt="room"
-    class="img-fluid img-responsive rounded mx-auto d-block">
-  <map name="image-map">
-    <area id="area" coords="252,601,298,605,303,798,252,822" shape="poly">
-    <area id="porta" coords="713,489,786,489,789,628,709,628" shape="poly">
-    <area id="area0" data-index="0" coords="984,498,1136,435,1208,443,1208,770,1124,774,986,718" shape="poly">
-    <area id="area1" data-index="1" coords="603,593,639,666" shape="rect">
-    <area id="area2" data-index="2" coords="87,663,19" shape="circle">
-
-  </map>
-  <a href="/html/Jogos/menuES.html"><img id="close" src="/img/icons/User/close.svg"
-      style="position: fixed;right: 10px;top: 10px; display: block;">
-  </a>
-  <img id="key" src="/img/icons/User/salas/key.svg"
-    style="position: fixed; left: 10px; bottom: 10px; height: 10%; display: none;">
-
-
-  <!-- Modal -->
-  <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="infoModalLabel">Título do Modal</h5>
-
-        </div>
-        <div class="modal-body">
-          <!-- Conteúdo será preenchido dinamicamente -->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          <button type="button" class="btn btn-primary" id="verifyButton">Verificar</button>
+    <div
+      class="modal fade"
+      id="infoModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="infoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="infoModalLabel">Título do Modal</h5>
+          </div>
+          <div class="modal-body">
+            <!-- Conteúdo será preenchido dinamicamente -->
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Fechar
+            </button>
+            <button type="button" class="btn btn-primary" id="verifyButton">
+              Verificar
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Modal for Key Achievement -->
-  <div class="modal fade" id="keyModal" tabindex="-1" role="dialog" aria-labelledby="keyModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="keyModalLabel">Parabéns! Você conseguiu a chave.<br></h5>
-        </div>
-        <div class="modal-body">
-          Adicionamos <span id="totalPoints"></span> pontos à sua conta.
-          <br>
-          Já pode sair ou explorar melhor a sala.
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+    <!-- Modal for Key Achievement -->
+    <div
+      class="modal fade"
+      id="keyModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="keyModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="keyModalLabel">
+              Parabéns! Você conseguiu a chave.<br />
+            </h5>
+          </div>
+          <div class="modal-body">
+            Adicionamos <span id="totalPoints"></span> pontos à sua conta.
+            <br />
+            Já pode sair ou explorar melhor a sala.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">
+              Fechar
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <dialog id="dlgVideo">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/mttrG_kbHN4?si=uRJJ9CAWPpsBU1Tb"
-      title="YouTube video player" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <br>
-    <button type="button" class="btn btn-primary" id="btnCloseVideo">Fechar</button>
-  </dialog>
+    <dialog id="dlgVideo">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/mttrG_kbHN4?si=uRJJ9CAWPpsBU1Tb"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+      <br />
+      <button type="button" class="btn btn-primary" id="btnCloseVideo">
+        Fechar
+      </button>
+    </dialog>
 
-  <script>
-    // Função para abrir o diálogo de vídeo
-    document.getElementById('area').addEventListener('click', function () {
-      document.getElementById('dlgVideo').showModal();
-    });
+    <script>
+      // Abre o diálogo de vídeo
+      document.getElementById("area").addEventListener("click", function () {
+        document.getElementById("dlgVideo").showModal();
+      });
 
-    // Fechar o diálogo de vídeo quando o botão Fechar é clicado
-    document.getElementById('btnCloseVideo').addEventListener('click', function () {
-      document.getElementById('dlgVideo').close();
-      // Parar o vídeo quando a modal for fechada
-      var video = document.querySelector('#dlgVideo iframe');
-      var videoSrc = video.src;
-      video.src = videoSrc;
-    });
+      // Fecha o diálogo de vídeo
+      document
+        .getElementById("btnCloseVideo")
+        .addEventListener("click", function () {
+          document.getElementById("dlgVideo").close();
+          // Parar o vídeo quando a modal for fechada
+          var video = document.querySelector("#dlgVideo iframe");
+          var videoSrc = video.src;
+          video.src = videoSrc;
+        });
 
-    // Lidar com o fechamento da modal pelo botão de fechar
-    document.getElementById('dlgVideo').addEventListener('close', function () {
-      // Parar o vídeo quando a modal for fechada
-      var video = document.querySelector('#dlgVideo iframe');
-      var videoSrc = video.src;
-      video.src = videoSrc;
-    });
-  </script>
+      // Lida com o fecho da modal
+      document
+        .getElementById("dlgVideo")
+        .addEventListener("close", function () {
+          // Parar o vídeo quando a modal for fechada
+          var video = document.querySelector("#dlgVideo iframe");
+          var videoSrc = video.src;
+          video.src = videoSrc;
+        });
+    </script>
 
+    <script type="module" src="/js/escape/escolhaMultipla.js"></script>
 
-
-  <script type="module" src="/js/escape/escolhaMultipla.js"></script>
-
-  <!-- Adicionando Bootstrap JS e jQuery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script type="module" src="/js/views/logged.js"></script>
-
-</body>
-
+    <!-- Adicionando Bootstrap JS e jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="module" src="/js/views/logged.js"></script>
+  </body>
 </html>

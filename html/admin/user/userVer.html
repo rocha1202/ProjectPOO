@@ -1,72 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="icon" type="image/x-icon" href="/img/Logotipo.svg" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/designFrom.css" />
+    <link rel="stylesheet" href="/css/admin/user.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Profile</title>
-  <link rel="icon" type="image/x-icon" href="/img/Logotipo.svg" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/css/designFrom.css" />
-  <link rel="stylesheet" href="/css/admin/user.css" />
-</head>
-
-<body>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-3 blue-background">
-        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-          <!-- Div para envolver o avatar -->
-          <div class="">
-            <img class="" width="200px" src="/img/Logotipo.svg" />
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3 blue-background">
+          <div
+            class="d-flex flex-column align-items-center text-center p-3 py-5"
+          >
+            <div class="">
+              <img class="" width="200px" src="/img/Logotipo.svg" />
+            </div>
+            <br />
+            <span></span>
+            <span class="admin">Administrador</span>
+            <div
+              class="d-flex flex-column icons justify-content-start text-left mt-5 mb-3"
+            >
+              <a href="/html/admin/user/user.html" class="select py-2"
+                ><img
+                  src="/img/icons/Admin/user_select.svg"
+                  width="26px"
+                />Utilizadores</a
+              >
+              <a href="/html/admin/testemunhos/testemunhos.html" class="py-2"
+                ><img
+                  src="/img/icons/Admin/testemunhos.svg"
+                  width="26px"
+                />Testemunhos</a
+              >
+              <a href="/html/admin/atividades/atividades.html" class="py-2"
+                ><img
+                  src="/img/icons/Admin/atividades.svg"
+                  width="26px"
+                />Atividades</a
+              >
+              <a href="/html/admin/gamificacao/gamificacao.html" class="py-2"
+                ><img
+                  src="/img/icons/Admin/gamificacao.svg"
+                  width="26px"
+                />Gamificação</a
+              >
+            </div>
+            <a href="/html/login.html" class="logout-link"
+              ><img src="/img/icons/User/SignOut.svg" width="32px"
+            /></a>
           </div>
-          <br />
-          <span></span>
-          <span class="admin">Administrador</span>
-          <div class="d-flex flex-column icons justify-content-start text-left mt-5 mb-3">
-            <a href="/html/admin/user/user.html" class="select py-2"><img src="/img/icons/Admin/user_select.svg"
-                width="26px" />Utilizadores</a>
-            <a href="/html/admin/testemunhos/testemunhos.html" class="py-2"><img src="/img/icons/Admin/testemunhos.svg"
-                width="26px" />Testemunhos</a>
-            <a href="/html/admin/atividades/atividades.html" class="py-2"><img src="/img/icons/Admin/atividades.svg"
-                width="26px" />Atividades</a>
-            <a href="/html/admin/gamificacao/gamificacao.html" class="py-2"><img src="/img/icons/Admin/gamificacao.svg"
-                width="26px" />Gamificação</a>
-          </div>
-          <a href="/html/login.html" class="logout-link"><img src="/img/icons/User/SignOut.svg" width="32px" /></a>
         </div>
-      </div>
 
-      <div class="col-md-8 fundo-branco">
-        <h2 class="mb-4 text-orange">Utilizador</h2>
-        <div class="d-flex flex-column justify-content-center align-items-center">
-          <input type="text" class="form-control mb-3 w-50" placeholder="Nome" id="nome" />
-          <input type="date" class="form-control mb-3 w-50" id="dataNascimento"
-            placeholder="Data de Nascimento (DD/MM/AAAA)" />
-          <select class="form-control mb-3 w-50" id="genero">
-            <option value="">Selecione o Sexo</option>
-            <option value="F">Feminino</option>
-            <option value="M">Masculino</option>
-            <option value="O">Outro</option>
-          </select>
-          <input type="text" class="form-control mb-3 w-50" placeholder="Localidade" id="localidade" />
-          <input type="email" class="form-control mb-3 w-50" placeholder="Email" id="email" />
-          <input type="password" class="form-control mb-3 w-50" placeholder="Password" id="password" />
-          <select class="form-control mb-3 w-50" id="tipo">
-            <option value="">Selecione o Tipo de Utilizador</option>
-            <option value="admin">Administrador</option>
-            <option value="user">Utilizador</option>
-          </select>
+        <div class="col-md-8 fundo-branco">
+          <h2 class="mb-4 text-orange">Utilizador</h2>
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+          >
+            <input
+              type="text"
+              class="form-control mb-3 w-50"
+              placeholder="Nome"
+              id="nome"
+            />
+            <input
+              type="date"
+              class="form-control mb-3 w-50"
+              id="dataNascimento"
+              placeholder="Data de Nascimento (DD/MM/AAAA)"
+            />
+            <select class="form-control mb-3 w-50" id="genero">
+              <option value="">Selecione o Sexo</option>
+              <option value="F">Feminino</option>
+              <option value="M">Masculino</option>
+              <option value="O">Outro</option>
+            </select>
+            <input
+              type="text"
+              class="form-control mb-3 w-50"
+              placeholder="Localidade"
+              id="localidade"
+            />
+            <input
+              type="email"
+              class="form-control mb-3 w-50"
+              placeholder="Email"
+              id="email"
+            />
+            <input
+              type="password"
+              class="form-control mb-3 w-50"
+              placeholder="Password"
+              id="password"
+            />
+            <select class="form-control mb-3 w-50" id="tipo">
+              <option value="">Selecione o Tipo de Utilizador</option>
+              <option value="admin">Administrador</option>
+              <option value="user">Utilizador</option>
+            </select>
+          </div>
+          <div
+            class="d-flex flex-row justify-content-center align-items-center"
+            id="btnList"
+          ></div>
         </div>
-        <div class="d-flex flex-row justify-content-center align-items-center" id="btnList"></div>
       </div>
     </div>
-  </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="module" src="/js/views/admin/User/UserVerView.js"></script>
-  <script type="module" src="/js/views/logged.js"></script>
-
-</body>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="module" src="/js/views/admin/User/UserVerView.js"></script>
+    <script type="module" src="/js/views/logged.js"></script>
+  </body>
 </html>

@@ -1,39 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TSIW - Plano de Estudos</title>
+    <link rel="icon" type="image/x-icon" href="../img/Logotipo.svg" />
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/ver_plano_estudos.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TSIW - Plano de Estudos</title>
-  <link rel="icon" type="image/x-icon" href="../img/Logotipo.svg" />
-  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../css/index.css" />
-  <link rel="stylesheet" href="../css/ver_plano_estudos.css" />
-</head>
-
-<body>
-  <!-- MENU HAMBURGER -->
-  <div class="sideBar sideBarDetail" id="sideBar"></div>
-  <!-- BARRA DE NAVEGAÇÃO -->
-  <nav class="navbar bg-navbar" id="navDetail"></nav>
-  <!-- TITULO -->
-  <h1 class="title_detail title">Plano de Estudos</h1>
-  <div class="container">
-    <!-- TABELA 1ºANO -->
-    <table id="tabela1" class="table table-bordered"></table>
-    <!-- TABELA 2ºANO -->
-    <table id="tabela2" class="table table-bordered"></table>
-    <!-- TABELA 3ºANO -->
-    <table id="tabela3" class="table table-bordered"></table>
-  </div>
-  <!-- FOOTER -->
-  <div class="footer footerDetail"></div>
-  <script src="../js/sideBar.js"></script>
-  <script src="../js/tabela_plano_estudos.js"></script>
-  <script src="../js/navbar.js"></script>
-  <script src="../js/footer.js"></script>
-</body>
-
+  <body>
+    <div class="sideBar sideBarDetail" id="sideBar"></div>
+    <nav class="navbar bg-navbar" id="navDetail"></nav>
+    <h1 class="title_detail title">Plano de Estudos</h1>
+    <div class="container">
+      <table id="tabela1" class="table table-bordered"></table>
+      <table id="tabela2" class="table table-bordered"></table>
+      <table id="tabela3" class="table table-bordered"></table>
+    </div>
+    <div class="footer footerDetail"></div>
+    <script src="../js/sideBar.js"></script>
+    <script src="../js/tabela_plano_estudos.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+  </body>
 </html>

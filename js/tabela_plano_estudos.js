@@ -228,7 +228,6 @@ const tabela3_data = [
   },
 ];
 
-/* FUNÇÕES PARA CRIAR AS TABELAS */
 const renderTable1 = () => {
   tabela1.innerHTML = `
     <tr>
@@ -298,7 +297,6 @@ const renderTabela3 = () => {
   });
 };
 
-/* CHAMADA DAS FUNÇÕES PARA APRESENTAR OS DADOS */
 renderTable1();
 renderTabela2();
 renderTabela3();

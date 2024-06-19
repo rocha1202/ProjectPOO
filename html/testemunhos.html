@@ -1,98 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TSIW - Eventos/Notícias</title>
+    <link rel="icon" type="image/x-icon" href="../img/Logotipo.svg" />
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/testemunho.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TSIW - Eventos/Notícias</title>
-  <link rel="icon" type="image/x-icon" href="../img/Logotipo.svg" />
-  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../css/index.css" />
-  <link rel="stylesheet" href="../css/testemunho.css" />
-</head>
+  <body>
+    <nav class="navbar bg-navbar" id="navbar"></nav>
 
-<body>
-  <!-- BARRA DE NAVEGAÇÃO -->
-  <nav class="navbar bg-navbar" id="navbar"></nav>
+    <br /><br /><br />
 
-  <br><br><br>
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-          <!-- Div para envolver o avatar -->
-          <div class="avatar-image img">
-            <!-- Avatar -->
-            <img width="250px" src="">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <div
+            class="d-flex flex-column align-items-center text-center p-3 py-5"
+          >
+            <div class="avatar-image img">
+              <img width="250px" src="" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div
+            class="d-flex flex-column justify-content-right align-items-right h-200"
+          >
+            <h2 class="mb-4 titulo" style="margin-top: 50px"></h2>
+            <h5 class="sub-titulo"></h5>
           </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="d-flex flex-column justify-content-right align-items-right h-200">
-          <h2 class="mb-4 titulo" style="margin-top: 50px;"></h2>
-          <h5 class="sub-titulo"></h5>
+      <div class="row">
+        <div class="d-flex flex-column align-items-right">
+          <div
+            style="margin: 0 100px; margin-top: -40px"
+            class="descricao"
+          ></div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="d-flex flex-column align-items-right">
-        <div style="margin: 0 100px; margin-top: -40px;" class="descricao"> <!-- Adicionando a margem -->
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <div class="footer">
-    <div class="d-flex justify-content-between footer_container">
-      <div class="logos col-3">
-        <a href="index.html" class="navbar-brand"><img src="../img/Logotipo.svg" alt="Logo TSIW"
-            class="logo_footer" /></a>
-        <br />
-        <a href="index.html" class="navbar-brand"><img src="../img/PPORTO_Cor.svg" alt="Logo TSIW"
-            class="logo_footer" /></a>
-      </div>
-      <div class="col-3">
-        <p class="info_uni">
-          Escola Superior de Media Artes e Design <br />Rua D. Sancho I, n.º
-          981
+    <div class="footer">
+      <div class="d-flex justify-content-between footer_container">
+        <div class="logos col-3">
+          <a href="index.html" class="navbar-brand"
+            ><img src="../img/Logotipo.svg" alt="Logo TSIW" class="logo_footer"
+          /></a>
           <br />
-          4480-876 Vila do Conde <br />Portugal <br />
-          <br />
-          T. +351 252 291 700 <br />E. geral@esmad.ipp.pt
-        </p>
-      </div>
-      <div class="col-3 link_sociais">
-        <p>Vê as nossas redes sociais!</p>
-        <div class="d-flex icons">
-          <a href="https://www.instagram.com/_tsiw.esmad_/">
-            <i class="ph ph-instagram-logo"></i>
-          </a>
-          <a href="https://www.facebook.com/LTSIW">
-            <i class="ph ph-facebook-logo"></i>
-          </a>
-          <a href="https://www.youtube.com/channel/UCA1uYDftSXjN1Lx5E9-ByIg">
-            <i class="ph ph-youtube-logo"></i>
-          </a>
-          <a href="">
-            <i class="ph ph-envelope"></i>
-          </a>
+          <a href="index.html" class="navbar-brand"
+            ><img
+              src="../img/PPORTO_Cor.svg"
+              alt="Logo TSIW"
+              class="logo_footer"
+          /></a>
+        </div>
+        <div class="col-3">
+          <p class="info_uni">
+            Escola Superior de Media Artes e Design <br />Rua D. Sancho I, n.º
+            981
+            <br />
+            4480-876 Vila do Conde <br />Portugal <br />
+            <br />
+            T. +351 252 291 700 <br />E. geral@esmad.ipp.pt
+          </p>
+        </div>
+        <div class="col-3 link_sociais">
+          <p>Vê as nossas redes sociais!</p>
+          <div class="d-flex icons">
+            <a href="https://www.instagram.com/_tsiw.esmad_/">
+              <i class="ph ph-instagram-logo"></i>
+            </a>
+            <a href="https://www.facebook.com/LTSIW">
+              <i class="ph ph-facebook-logo"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCA1uYDftSXjN1Lx5E9-ByIg">
+              <i class="ph ph-youtube-logo"></i>
+            </a>
+            <a href="">
+              <i class="ph ph-envelope"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="../js/testemunhos.js"></script>
-  <script src="/js/navbar2.js"></script>
-  <script src="/js/footer.js"></script>
-
-</body>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/testemunhos.js"></script>
+    <script src="/js/navbar2.js"></script>
+    <script src="/js/footer.js"></script>
+  </body>
 </html>

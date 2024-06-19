@@ -1,12 +1,11 @@
-// logged.js
 import * as User from "../models/UsersModel.js";
 
-// Verifica se há um usuário autenticado
+// Verifica se há um utilizador autenticado
 if (!User.isLogged()) {
-    // Se não estiver autenticado, redireciona para outra página
-    window.location.href = "/html/login.html"; // Substitua com a página desejada
+  // Se não estiver autenticado, redireciona para outra página
+  window.location.href = "/html/login.html";
 } else {
-    // Se estiver autenticado, continua o código
-    User.init();
-    let userLogged = User.getUserLogged();
+  // Se estiver autenticado
+  User.init();
+  let userLogged = User.getUserLogged();
 }

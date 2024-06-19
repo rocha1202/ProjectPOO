@@ -3,9 +3,6 @@ import * as Publicacao from "./models/NoticiasEventosModel.js";
 import * as Testemunho from "./models/TestemunhosModel.js";
 import * as Premio from "./models/PremiosModel.js";
 
-/* 
-import * as Media from "./models/GaleriaModel"; */
-
 initdata();
 
 function initdata() {
@@ -29,16 +26,16 @@ function initdata() {
             progresso: 0,
             tipo: "escapeRoom",
             eliminado: "N",
-
-          }, {
+          },
+          {
             id: 2,
             completo: "S",
             data_completo: "2024-04-20",
             progresso: 3,
             tipo: "quiz",
             eliminado: "N",
-
-          }],
+          },
+        ],
         bloqueado: "N",
         eliminado: "N",
         tipo: "user",
@@ -61,16 +58,16 @@ function initdata() {
             progresso: 5,
             tipo: "escaRoom",
             eliminado: "N",
-
-          }, {
+          },
+          {
             id: 2,
             completo: "N",
             data_completo: "",
             progresso: 1,
             tipo: "quiz",
             eliminado: "N",
-
-          }],
+          },
+        ],
         bloqueado: "N",
         eliminado: "S",
         tipo: "user",
@@ -94,15 +91,16 @@ function initdata() {
             progresso: 0,
             tipo: "escapeRoom",
             eliminado: "N",
-
-          }, {
+          },
+          {
             id: 2,
             completo: "N",
             data_completo: "",
             progresso: 0,
             tipo: "quiz",
             eliminado: "N",
-          }],
+          },
+        ],
         eliminado: "N",
         tipo: "admin",
       },
@@ -138,7 +136,8 @@ function initdata() {
         data_publicado: "2024-03-26",
         tipo: "evento",
         eliminado: "N",
-      }, {
+      },
+      {
         id: 2,
         titulo: "Apresentação do HaHaArt Film Festival",
         sub_titulo:
@@ -148,7 +147,8 @@ function initdata() {
         data_publicado: "2024-05-17",
         tipo: "evento",
         eliminado: "N",
-      }, {
+      },
+      {
         id: 3,
         titulo: "Dia da ESMAD",
         sub_titulo:
@@ -230,8 +230,7 @@ function initdata() {
         img_desbloq: "/img/premios/P1_des.svg",
         progresso: 5,
         eliminado: "N",
-        tipo: "escapeRoom"
-
+        tipo: "escapeRoom",
       },
       {
         id: 2,
@@ -240,7 +239,7 @@ function initdata() {
         img_desbloq: "/img/premios/P2_des.svg",
         progresso: 3,
         eliminado: "N",
-        tipo: "quiz"
+        tipo: "quiz",
       },
     ];
 
