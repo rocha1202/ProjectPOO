@@ -1,39 +1,45 @@
-// Carrega os dados do usuário da sessionStorage e exibe no perfil
 var currentUser = JSON.parse(sessionStorage.getItem("loggedUser"));
 
 if (currentUser) {
     document.getElementById("pontos").textContent = currentUser.pontos;
     document.getElementById("avatarImage").src = "/img/avatares/" + currentUser.avatar;
 
-    // Cria a tabela de prêmios
     var achievementContainer = document.getElementById("achievementContainer");
 
     var table = document.createElement("table");
     table.className = "table table-striped";
-
-    // Cria o corpo da tabela
     var tbody = document.createElement("tbody");
 
-    // Obter a lista de prêmios da localStorage
     var premiosList = JSON.parse(localStorage.getItem("premios"));
-    
+
     if (premiosList) {
-        currentUser.premios.forEach(function(premio, index) {
+        currentUser.premios.forEach(function (premio, index) {
             if (premio.id) {
-                // Encontra o prêmio correspondente na lista de prêmios
                 var premioLocal = premiosList.find(p => p.id === premio.id);
+                console.log(`premio_${premio.id}:`, premioLocal); // Log de depuração
 
                 if (premioLocal) {
+                    // Atualiza pontos na localStorage se o tipo for "pontos" e o prêmio não estiver completo
+                    if (premio.tipo === "pontos" && premio.completo !== "S") {
+                        // Aqui você deve atualizar o progresso do prêmio no objeto currentUser
+                        premio.progresso = currentUser.pontos;
+
+                        // Atualizar localStorage com os novos dados de currentUser
+                        sessionStorage.setItem("loggedUser", JSON.stringify(currentUser));
+                        console.log(`Progresso atualizado para ${premio.progresso}`);
+                    }
+
+
+
+
+
                     var row = document.createElement("tr");
 
-                    // Cria a célula de imagem
                     var imgCell = document.createElement("td");
                     var img = document.createElement("img");
 
-                    // Calcula a porcentagem de progresso
                     var percent = (premio.progresso / premioLocal.progresso) * 100;
 
-                    // Verifica se o prêmio está completo e atualiza a imagem correspondente
                     if (percent >= 100) {
                         img.src = premioLocal.img_desbloq;
                     } else {
@@ -45,7 +51,6 @@ if (currentUser) {
                     imgCell.appendChild(img);
                     row.appendChild(imgCell);
 
-                    // Cria a célula de detalhes
                     var detailsCell = document.createElement("td");
                     var titulo = document.createElement("h5");
                     titulo.textContent = premioLocal.titulo;
@@ -73,6 +78,7 @@ if (currentUser) {
                     row.appendChild(detailsCell);
 
                     tbody.appendChild(row);
+
                 } else {
                     console.error(`Premio with id ${premio.id} not found in localStorage`);
                 }
@@ -87,6 +93,5 @@ if (currentUser) {
         console.error('Premios list not found in localStorage');
     }
 } else {
-    // Se não houver dados de usuário na sessionStorage, redireciona para a página de login
     window.location.href = "./login.html";
 }

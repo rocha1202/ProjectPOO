@@ -31,7 +31,7 @@ function premioNovo() {
           // Atualiza o campo `premios` de todos os usuários
           users.forEach((user) => {
             user.premios.push({
-              id_premio: novoPremio.id,  // Adiciona o ID do prêmio recém-criado
+              id: novoPremio.id,  // Adiciona o ID do prêmio recém-criado
               completo: "N",
               data_completo: "",
               progresso:0,
