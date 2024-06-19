@@ -11,7 +11,10 @@ function shuffle(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
-
+const getFormattedDate = () => {
+    const date = new Date();
+    return date.toISOString().split('T')[0];
+  };
 function selectRandomQuestions(array, numQuestions) {
     shuffle(array);
     return array.slice(0, numQuestions);
@@ -71,6 +74,8 @@ function updateUserPoints() {
             users[userIndex].pontos = currentUser.pontos;
             localStorage.setItem("users", JSON.stringify(users));
         }
+
+
         var premiosList = JSON.parse(localStorage.getItem("premios"));
 
         if (premiosList) {
@@ -78,28 +83,53 @@ function updateUserPoints() {
                 if (premio.id) {
                     var premioLocal = premiosList.find(p => p.id === premio.id);
                     console.log(`premio_${premio.id}:`, premioLocal); // Log de depuração
-    
+
                     if (premioLocal) {
-                        // premios se o tipo for pontos pontos 
+                        // Verificar se o prêmio corresponde ao tipo e não está completo
                         if (premio.tipo === "quiz" && premio.completo !== "S") {
-    
-                            premio.progresso += 1
-    
+                            premio.progresso += 1;
+
+                            // Atualizar sessionStorage com os novos dados de currentUser
                             sessionStorage.setItem("loggedUser", JSON.stringify(currentUser));
+
+                            // Atualizar users.premios na localStorage
+                            if (userIndex !== -1) {
+                                users[userIndex].premios = currentUser.premios;
+                                localStorage.setItem("users", JSON.stringify(users));
+                            }
+
                             console.log(`Progresso atualizado para ${premio.progresso}`);
+
+                            // Verificar se o progresso do usuário alcançou o progresso do prêmio
+                            if (premio.progresso == premioLocal.progresso) {
+                                premio.data_completo = getFormattedDate();
+                                premio.completo = "S";
+
+                                // Atualizar sessionStorage com os novos dados de currentUser
+                                sessionStorage.setItem("loggedUser", JSON.stringify(currentUser));
+
+                                // Atualizar users.premios na localStorage
+                                if (userIndex !== -1) {
+                                    users[userIndex].premios = currentUser.premios;
+                                    localStorage.setItem("users", JSON.stringify(users));
+                                }
+
+                                console.log(`Prêmio ${premio.id} completo!`);
+                            }
                         }
-    
-                        
                     } else {
-                        console.error(`Premio with id ${premio.id} not found in localStorage`);
+                        console.error(`Prêmio com id ${premio.id} não encontrado em localStorage`);
                     }
                 } else {
-                    console.error(`Premio at index ${index} does not have a valid id`, premio);
+                    console.error(`Prêmio no índice ${index} não possui um ID válido`, premio);
                 }
             });
-    
         } else {
-            console.error('Premios list not found in localStorage');
+            console.error('Lista de prêmios não encontrada em localStorage');
         }
+
+
+    } else {
+        console.error('Premios list not found in localStorage');
     }
 }
