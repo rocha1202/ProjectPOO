@@ -23,7 +23,28 @@ function premioNovo() {
       }
 
       try {
-        Premio.add(titulo, img_bloq, img_desbloq, progresso, tipo, "N");
+        const novoPremio = Premio.add(
+          titulo,
+          img_bloq,
+          img_desbloq,
+          progresso,
+          tipo,
+          "N"
+        );
+        // Atualiza o campo `premios` de todos os utilizadores
+        users.forEach((user) => {
+          user.premios.push({
+            id: novoPremio.id, // Adiciona o ID do prêmio recém-criado
+            completo: "N",
+            data_completo: "",
+            progresso: 0,
+            tipo: novoPremio.tipo,
+          });
+        });
+
+        // Atualiza o localStorage dos utilizadores
+        localStorage.setItem("users", JSON.stringify(users));
+
         displayMessage("Prémio adicionado com sucesso!", "success");
         setTimeout(() => {
           window.location.href = "/html/admin/gamificacao/gamificacao.html";
