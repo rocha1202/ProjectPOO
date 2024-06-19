@@ -23,16 +23,22 @@ function initdata() {
         avatar: "F3.svg",
         premios: [
           {
-            nome: "Consiga 100 pontos",
-            completo: "S",
-            data_completo: "2024-04-01",
-          },
-          {
-            nome: "Consiga 1000 pontos",
+            id_premio: 1,
             completo: "N",
             data_completo: "",
-          },
-        ],
+            progresso: 0,
+            tipo: "escapeRoom",
+            eliminado: "N",
+
+          }, {
+            id_premio: 2,
+            completo: "S",
+            data_completo: "2024-04-20",
+            progresso: 3,
+            tipo: "quiz",
+            eliminado: "N",
+
+          }],
         bloqueado: "N",
         eliminado: "N",
         tipo: "user",
@@ -49,16 +55,22 @@ function initdata() {
         avatar: "M2.svg",
         premios: [
           {
-            nome: "Consiga 100 pontos",
+            id_premio: 1,
             completo: "S",
-            data_completo: "01-04-2024",
-          },
-          {
-            nome: "Consiga 1000 pontos",
+            data_completo: "2024-05-29",
+            progresso: 5,
+            tipo: "escaRoom",
+            eliminado: "N",
+
+          }, {
+            id_premio: 2,
             completo: "N",
             data_completo: "",
-          },
-        ],
+            progresso: 1,
+            tipo: "quiz",
+            eliminado: "N",
+
+          }],
         bloqueado: "N",
         eliminado: "S",
         tipo: "user",
@@ -73,8 +85,24 @@ function initdata() {
         password: "admin1",
         pontos: 0,
         avatar: "M1.svg",
-        premios: [],
         bloqueado: "N",
+        premios: [
+          {
+            id_premio: 1,
+            completo: "N",
+            data_completo: "",
+            progresso: 0,
+            tipo: "escapeRoom",
+            eliminado: "N",
+
+          }, {
+            id_premio: 2,
+            completo: "N",
+            data_completo: "",
+            progresso: 0,
+            tipo: "quiz",
+            eliminado: "N",
+          }],
         eliminado: "N",
         tipo: "admin",
       },
@@ -202,14 +230,17 @@ function initdata() {
         img_desbloq: "/img/premios/P1_des.svg",
         progresso: 5,
         eliminado: "N",
+        tipo: "escapeRoom"
+
       },
       {
         id: 2,
-        titulo: "Termine 3 quizzes com percentagem acima de 80%",
+        titulo: "Termine 3 quizzes",
         img_bloq: "/img/premios/P2_blo.svg",
         img_desbloq: "/img/premios/P2_des.svg",
         progresso: 3,
         eliminado: "N",
+        tipo: "quiz"
       },
     ];
 
@@ -219,6 +250,7 @@ function initdata() {
         premio.img_bloq,
         premio.img_desbloq,
         premio.progresso,
+        premio.tipo,
         premio.eliminado
       );
     });

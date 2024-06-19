@@ -11,6 +11,7 @@ function premioView() {
   document.querySelector("#img_bloq").value = premio.img_bloq;
   document.querySelector("#img_desbloq").value = premio.img_desbloq;
   document.querySelector("#progresso").value = premio.progresso;
+  document.querySelector("#tipoJogo").value = premio.tipo;
 }
 
 function renderButtons(eliminado) {
@@ -37,14 +38,27 @@ function atualizarPremio() {
     return;
   }
 
+  // Verifica se todos os campos estão preenchidos
+  const titulo = document.querySelector("#titulo").value;
+  const imgBloq = document.querySelector("#img_bloq").value;
+  const imgDesbloq = document.querySelector("#img_desbloq").value;
+  const progresso = document.querySelector("#progresso").value;
+  const tipoJogo = document.querySelector('#tipoJogo').value;
+
+  if (!titulo || !imgBloq || !imgDesbloq || !progresso || !tipoJogo) {
+    displayMessage("Por favor, preencha todos os campos antes de atualizar o prêmio.!", "danger");
+    return;
+  }
+
   const currentPremio = Premio.getCurrentPremio();
 
   const updatedPremio = {
     id: premioId,
-    titulo: document.querySelector("#titulo").value,
-    img_bloq: document.querySelector("#img_bloq").value,
-    img_desbloq: document.querySelector("#img_desbloq").value,
-    progresso: document.querySelector("#progresso").value,
+    titulo: titulo,
+    img_bloq: imgBloq,
+    img_desbloq: imgDesbloq,
+    progresso: progresso,
+    tipo: tipoJogo,
     eliminado: currentPremio.eliminado,
   };
 
@@ -55,9 +69,11 @@ function atualizarPremio() {
   if (premioIndex !== -1) {
     premios[premioIndex] = updatedPremio;
     localStorage.setItem("premios", JSON.stringify(premios));
-    alert("Premio updated successfully!");
+    updateUsersPremio(updatedPremio);
+    displayMessage("Prêmio atualizado com sucesso", "success");
+
   } else {
-    console.error("Premio not found in localStorage premios array");
+    console.error("Prêmio não encontrado no array 'premios' do localStorage");
   }
 }
 
@@ -77,15 +93,34 @@ function atualizarEliminado() {
     premio.eliminado = premio.eliminado === "S" ? "N" : "S";
     premios[premioIndex] = premio;
     localStorage.setItem("premios", JSON.stringify(premios));
-    alert(
-      `Premio ${
-        premio.eliminado === "S" ? "desativado" : "ativado"
-      } com sucesso!`
-    );
+    updateUsersPremio(premio);
+    displayMessage(`Prêmio ${premio.eliminado === "S" ? "desativado" : "ativado"} com sucesso!`, "danger");
+    
     renderButtons(premio.eliminado);
   } else {
-    console.error("Premio not found in localStorage premios array");
+    console.error("Prêmio não encontrado no array 'premios' do localStorage");
   }
+}
+function updateUsersPremio(updatedPremio) {
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+  users.forEach(user => {
+    user.premios.forEach(premio => {
+      if (premio.id_premio == updatedPremio.id) {
+        premio.tipo = updatedPremio.tipo;
+        premio.eliminado = updatedPremio.eliminado;
+      }
+    });
+  });
+  localStorage.setItem("users", JSON.stringify(users));
+}
+function displayMessage(message, type) {
+  const divMessage = document.querySelector("#msg");
+  divMessage.innerHTML = `
+        <div class='alert alert-${type}' role='alert'>${message}</div>
+    `;
+  setTimeout(() => {
+    divMessage.innerHTML = "";
+  }, 2000);
 }
 
 premioView();

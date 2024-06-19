@@ -11,6 +11,7 @@ export function init() {
           premio.img_bloq,
           premio.img_desbloq,
           premio.progresso,
+          premio.tipo,
           premio.eliminado
         )
       );
@@ -46,14 +47,14 @@ export function sortPremios() {
 }
 
 //Adiciona os premios
-export function add(titulo, img_bloq, img_desbloq, progresso, eliminado) {
+export function add(titulo, img_bloq, img_desbloq, progresso, tipo, eliminado) {
   if (premios.some((premio) => premio.titulo === titulo)) {
     throw Error(`Já existe um prémio com o titulo "${titulo}"!`);
   } else {
-    premios.push(
-      new Premio(titulo, img_bloq, img_desbloq, progresso, eliminado)
-    );
+    const novoPremio = new Premio(titulo, img_bloq, img_desbloq, progresso, tipo, eliminado);
+    premios.push(novoPremio);
     localStorage.setItem("premios", JSON.stringify(premios));
+    return novoPremio; // Retorna o prêmio criado
   }
 }
 
@@ -80,14 +81,16 @@ class Premio {
   img_bloq = "";
   img_desbloq = "";
   progresso = "";
+  tipo="";
   eliminado = "";
 
-  constructor(titulo, img_bloq, img_desbloq, progresso, eliminado) {
+  constructor(titulo, img_bloq, img_desbloq, progresso, tipo, eliminado) {
     this.id = getNextId();
     this.titulo = titulo;
     this.img_bloq = img_bloq;
     this.img_desbloq = img_desbloq;
     this.progresso = progresso;
+    this.tipo = tipo;
     this.eliminado = eliminado;
   }
 }
