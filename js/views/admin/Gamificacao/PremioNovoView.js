@@ -23,32 +23,11 @@ function premioNovo() {
       }
 
       try {
-        // Adiciona o prêmio ao sistema e obtém o prêmio criado
-        const novoPremio = await Premio.add(titulo, img_bloq, img_desbloq, progresso, tipo, "N");
-
-        // Verifica se novoPremio é válido e possui a propriedade id
-        if (novoPremio && novoPremio.id !== undefined) {
-          // Atualiza o campo `premios` de todos os usuários
-          users.forEach((user) => {
-            user.premios.push({
-              id: novoPremio.id,  // Adiciona o ID do prêmio recém-criado
-              completo: "N",
-              data_completo: "",
-              progresso:0,
-              tipo: novoPremio.tipo,
-            });
-          });
-
-          // Atualiza o localStorage dos usuários
-          localStorage.setItem("users", JSON.stringify(users));
-
-          displayMessage("Prémio adicionado com sucesso!", "success");
-          setTimeout(() => {
-            window.location.href = "/html/admin/gamificacao/gamificacao.html";
-          }, 1000);
-        } else {
-          throw new Error("Falha ao adicionar o prêmio. Dados do prêmio são inválidos.");
-        }
+        Premio.add(titulo, img_bloq, img_desbloq, progresso, tipo, "N");
+        displayMessage("Prémio adicionado com sucesso!", "success");
+        setTimeout(() => {
+          window.location.href = "/html/admin/gamificacao/gamificacao.html";
+        }, 1000);
       } catch (e) {
         displayMessage(e.message, "danger");
       }

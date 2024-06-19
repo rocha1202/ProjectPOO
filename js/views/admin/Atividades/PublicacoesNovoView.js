@@ -17,6 +17,13 @@ function atividadeNovo() {
       const data = `${date.getFullYear()}-${String(
         date.getMonth() + 1
       ).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+
+      //Verifica se todos os campos estão preenchidos
+      if (!titulo || !sub_titulo || !descricao || !tipo || !file) {
+        displayMessage("Por favor, preencha todos os campos.", "danger");
+        return;
+      }
+
       try {
         Publicacao.add(titulo, sub_titulo, file, descricao, data, tipo, "N");
         displayMessage("Atividade adicionada com sucesso!", "success");

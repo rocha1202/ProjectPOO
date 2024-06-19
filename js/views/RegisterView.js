@@ -3,54 +3,69 @@ import * as User from "../models/UsersModel.js";
 function registerView() {
   User.init();
 
-  document.querySelector("#formRegister").addEventListener("submit", (event) => {
-    event.preventDefault();
+  document
+    .querySelector("#formRegister")
+    .addEventListener("submit", (event) => {
+      event.preventDefault();
 
-    const nome = document.querySelector("#nome").value;
-    const dataNascimento = document.querySelector("#dataNascimento").value;
-    const genero = document.querySelector("#genero").value;
-    const localidade = document.querySelector("#localidade").value;
-    const email = document.querySelector("#email").value;
-    const password = document.querySelector("#password").value;
-    let avatar = "";
+      const nome = document.querySelector("#nome").value;
+      const dataNascimento = document.querySelector("#dataNascimento").value;
+      const genero = document.querySelector("#genero").value;
+      const localidade = document.querySelector("#localidade").value;
+      const email = document.querySelector("#email").value;
+      const password = document.querySelector("#password").value;
+      let avatar = "";
 
-    try {
-      // Obter prémios do localStorage, se não existir, inicializar como array vazio
-      const premiosLocal = JSON.parse(localStorage.getItem("premios")) || [];
-
-      if (genero === "F") {
-        avatar = "F1.svg";
-      } else {
-        avatar = "M1.svg";
+      //Verifica se todos os campos estão preenchidos
+      if (
+        !nome ||
+        !dataNascimento ||
+        !genero ||
+        !localidade ||
+        !email ||
+        !password
+      ) {
+        displayMessage("Por favor, preencha todos os campos.", "danger");
+        return;
       }
 
-      // Função para criar lista de prêmios
-      const listaPremios = createPremiosList(premiosLocal);
+      try {
+        // Obter prémios do localStorage, se não existir, inicializar como array vazio
+        const premiosLocal = JSON.parse(localStorage.getItem("premios")) || [];
 
-      // Adicionar o usuário com os dados e a lista de prêmios
-      User.add(
-        nome,
-        dataNascimento,
-        genero,
-        localidade,
-        email,
-        password,
-        0,
-        avatar,
-        listaPremios,
-        "N",
-        "N",
-        "user"
-      );
+        if (genero === "F") {
+          avatar = "F1.svg";
+        } else {
+          avatar = "M1.svg";
+        }
 
-      displayMessage("Registo executado com sucesso!", "success");
-      setTimeout(() => {
-        window.location.href = "/html/login.html";
-      }, 1000);
-    } catch (e) {
-      displayMessage(e.message, "danger");
-    }
-  });
+        // Função para criar lista de prêmios
+        const listaPremios = createPremiosList(premiosLocal);
+
+        // Adicionar o usuário com os dados e a lista de prêmios
+        User.add(
+          nome,
+          dataNascimento,
+          genero,
+          localidade,
+          email,
+          password,
+          0,
+          avatar,
+          listaPremios,
+          "N",
+          "N",
+          "user"
+        );
+
+        displayMessage("Registo executado com sucesso!", "success");
+        setTimeout(() => {
+          window.location.href = "/html/login.html";
+        }, 1000);
+      } catch (e) {
+        displayMessage(e.message, "danger");
+      }
+    });
 }
 
 function createPremiosList(premiosLocal) {
@@ -61,7 +76,7 @@ function createPremiosList(premiosLocal) {
     eliminado: premio.eliminado,
     completo: "N",
     data_completo: "",
-    progresso: 0
+    progresso: 0,
   }));
 
   return listaPremios;
