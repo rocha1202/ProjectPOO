@@ -233,3 +233,9 @@ body{
     background-color: white;
     vertical-align: middle;
 }
+
+
+#achievementContainer{
+    height: 480px; /* Defina a altura desejada */
+    overflow-y: auto; /* Adiciona a barra de rolagem vertical */
+}

@@ -78,7 +78,9 @@ a {
     height: 100vh;
 }
 
-.usersList {
-    overflow-y: auto;
-    height: calc(80vh - 50px);
-}
+
+
+#userCatalog, #testemunhosCatalog, #atividadesCatalog, #premiosCatalog{
+    height: 430px; 
+    overflow-y: auto; 
+  }
