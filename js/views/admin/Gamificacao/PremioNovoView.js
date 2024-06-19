@@ -39,6 +39,7 @@ function premioNovo() {
             data_completo: "",
             progresso: 0,
             tipo: novoPremio.tipo,
+            eliminado:"N"
           });
         });
 

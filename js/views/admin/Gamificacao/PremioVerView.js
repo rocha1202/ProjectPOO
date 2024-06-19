@@ -17,11 +17,11 @@ function premioView() {
 function renderButtons(eliminado) {
   const btnList = document.querySelector("#btnList");
   btnList.innerHTML = `
-        <button class="btn btn-outline-primary" id="btnAtualizar">Atualizar</button>
+    <button class="btn btn-outline-primary" id="btnAtualizar">Atualizar</button>
     <button class="btn btn-outline-primary" id="btnEliminado">${
       eliminado === "S" ? "Ativar" : "Desativar"
     }</button>
-    `;
+  `;
 
   document
     .querySelector("#btnAtualizar")
@@ -34,11 +34,10 @@ function renderButtons(eliminado) {
 function atualizarPremio() {
   const premioId = localStorage.getItem("premio");
   if (!premioId) {
-    console.error("No premio Id found in localStorage");
+    console.error("No premio ID found in localStorage");
     return;
   }
 
-  // Verifica se todos os campos estão preenchidos
   const titulo = document.querySelector("#titulo").value;
   const imgBloq = document.querySelector("#img_bloq").value;
   const imgDesbloq = document.querySelector("#img_desbloq").value;
@@ -95,17 +94,18 @@ function atualizarEliminado() {
     localStorage.setItem("premios", JSON.stringify(premios));
     updateUsersPremio(premio);
     displayMessage(`Prêmio ${premio.eliminado === "S" ? "desativado" : "ativado"} com sucesso!`, "danger");
-    
+
     renderButtons(premio.eliminado);
   } else {
     console.error("Prêmio não encontrado no array 'premios' do localStorage");
   }
 }
+
 function updateUsersPremio(updatedPremio) {
   let users = JSON.parse(localStorage.getItem("users")) || [];
   users.forEach(user => {
     user.premios.forEach(premio => {
-      if (premio.id_premio == updatedPremio.id) {
+      if (premio.id == updatedPremio.id) {
         premio.tipo = updatedPremio.tipo;
         premio.eliminado = updatedPremio.eliminado;
       }
@@ -113,11 +113,12 @@ function updateUsersPremio(updatedPremio) {
   });
   localStorage.setItem("users", JSON.stringify(users));
 }
+
 function displayMessage(message, type) {
   const divMessage = document.querySelector("#msg");
   divMessage.innerHTML = `
-        <div class='alert alert-${type}' role='alert'>${message}</div>
-    `;
+    <div class='alert alert-${type}' role='alert'>${message}</div>
+  `;
   setTimeout(() => {
     divMessage.innerHTML = "";
   }, 2000);

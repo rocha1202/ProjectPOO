@@ -19,61 +19,64 @@ if (currentUser) {
                 console.log(`premio_${premio.id}:`, premioLocal); // Log de depuração
 
                 if (premioLocal) {
-                    // premios se o tipo for pontos pontos 
-                    if (premio.tipo === "pontos" && premio.completo !== "S") {
+                    // Verificar se o prêmio não está eliminado
+                    if (premioLocal.eliminado === "N") {
+                        // premios se o tipo for pontos
+                        if (premio.tipo === "pontos" && premio.completo !== "S") {
+                            premio.progresso = currentUser.pontos; //igual os pontos
 
-                        premio.progresso = currentUser.pontos; //igual os pontos
+                            sessionStorage.setItem("loggedUser", JSON.stringify(currentUser));
+                            console.log(`Progresso atualizado para ${premio.progresso}`);
+                        }
 
-                        sessionStorage.setItem("loggedUser", JSON.stringify(currentUser));
-                        console.log(`Progresso atualizado para ${premio.progresso}`);
-                    }
+                        var row = document.createElement("tr");
 
-                    var row = document.createElement("tr");
+                        var imgCell = document.createElement("td");
+                        var img = document.createElement("img");
 
-                    var imgCell = document.createElement("td");
-                    var img = document.createElement("img");
+                        var percent = (premio.progresso / premioLocal.progresso) * 100;
 
-                    var percent = (premio.progresso / premioLocal.progresso) * 100;
+                        if (percent >= 100) {
+                            img.src = premioLocal.img_desbloq;
+                        } else {
+                            img.src = premioLocal.img_bloq;
+                        }
 
-                    if (percent >= 100) {
-                        img.src = premioLocal.img_desbloq;
+                        img.width = 64;
+                        img.height = 64;
+                        imgCell.appendChild(img);
+                        row.appendChild(imgCell);
+
+                        var detailsCell = document.createElement("td");
+                        var titulo = document.createElement("h5");
+                        titulo.textContent = premioLocal.titulo;
+                        detailsCell.appendChild(titulo);
+
+                        var progressDiv = document.createElement("div");
+                        progressDiv.className = "progress";
+                        var progressBar = document.createElement("div");
+                        progressBar.className = "progress-bar";
+                        progressBar.style.width = percent + "%";
+                        progressBar.textContent = percent.toFixed(0) + "%";
+                        progressDiv.appendChild(progressBar);
+                        detailsCell.appendChild(progressDiv);
+
+                        var completionInfo = document.createElement("p");
+                        if (premio.completo === "S") {
+                            completionInfo.textContent = `Completado em: ${premio.data_completo}`;
+                        }
+                        detailsCell.appendChild(completionInfo);
+
+                        var progressInfo = document.createElement("p");
+                        progressInfo.textContent = `Progresso: ${premio.progresso}/${premioLocal.progresso}`;
+                        detailsCell.appendChild(progressInfo);
+
+                        row.appendChild(detailsCell);
+
+                        tbody.appendChild(row);
                     } else {
-                        img.src = premioLocal.img_bloq;
+                        console.warn(`Premio with id ${premio.id} is marked as eliminated`);
                     }
-
-                    img.width = 64;
-                    img.height = 64;
-                    imgCell.appendChild(img);
-                    row.appendChild(imgCell);
-
-                    var detailsCell = document.createElement("td");
-                    var titulo = document.createElement("h5");
-                    titulo.textContent = premioLocal.titulo;
-                    detailsCell.appendChild(titulo);
-
-                    var progressDiv = document.createElement("div");
-                    progressDiv.className = "progress";
-                    var progressBar = document.createElement("div");
-                    progressBar.className = "progress-bar";
-                    progressBar.style.width = percent + "%";
-                    progressBar.textContent = percent.toFixed(0) + "%";
-                    progressDiv.appendChild(progressBar);
-                    detailsCell.appendChild(progressDiv);
-
-                    var completionInfo = document.createElement("p");
-                    if (premio.completo === "S") {
-                        completionInfo.textContent = `Completado em: ${premio.data_completo}`;
-                    }
-                    detailsCell.appendChild(completionInfo);
-
-                    var progressInfo = document.createElement("p");
-                    progressInfo.textContent = `Progresso: ${premio.progresso}/${premioLocal.progresso}`;
-                    detailsCell.appendChild(progressInfo);
-
-                    row.appendChild(detailsCell);
-
-                    tbody.appendChild(row);
-
                 } else {
                     console.error(`Premio with id ${premio.id} not found in localStorage`);
                 }
