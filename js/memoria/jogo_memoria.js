@@ -5,8 +5,9 @@ let cardOne = null;
 let cardTwo = null;
 let disabledDeck = false;
 let points = 0;
-let pointsLevel=0;
-let colUpdate=""
+let pointsLevel = 0;
+let colUpdate = "";
+let tipos = "";
 
 const flipCard = (e) => {
   let clickedCard = e.target.closest('.card');
@@ -23,7 +24,10 @@ const flipCard = (e) => {
     matchCards(cardOneImg, cardTwoImg);
   }
 };
-
+const getFormattedDate = () => {
+  const date = new Date();
+  return date.toISOString().split('T')[0];
+};
 const matchCards = (icon1, icon2) => {
   if (icon1 === icon2) {
     matchedCard++;
@@ -48,6 +52,63 @@ const matchCards = (icon1, icon2) => {
           users[userIndex].pontos = currentUser.pontos;
           localStorage.setItem("users", JSON.stringify(users));
         }
+
+        //------------------------------------------------------------
+
+        var premiosList = JSON.parse(localStorage.getItem("premios"));
+
+        if (premiosList) {
+          currentUser.premios.forEach(function (premio, index) {
+            if (premio.id) {
+              var premioLocal = premiosList.find(p => p.id === premio.id);
+              console.log(`premio_${premio.id}:`, premioLocal); // Log de depuração
+
+              if (premioLocal) {
+                // Verificar se o prêmio corresponde ao tipo e não está completo
+                if (premio.tipo === tipos && premio.completo !== "S" || premio.tipo === "memoria") {
+                  premio.progresso += 1;
+
+                  // Atualizar sessionStorage com os novos dados de currentUser
+                  sessionStorage.setItem("loggedUser", JSON.stringify(currentUser));
+
+                  // Atualizar users.premios na localStorage
+                  if (userIndex !== -1) {
+                    users[userIndex].premios = currentUser.premios;
+                    localStorage.setItem("users", JSON.stringify(users));
+                  }
+
+                  console.log(`Progresso atualizado para ${premio.progresso}`);
+                  console.log(premio.progresso)
+                  console.log(premioLocal.progresso)
+                  // Verificar se o progresso do usuário alcançou o progresso do prêmio
+                  if (premio.progresso == premioLocal.progresso) {
+                    premio.data_completo = getFormattedDate();
+                    premio.completo = "S";
+
+                    // Atualizar sessionStorage com os novos dados de currentUser
+                    sessionStorage.setItem("loggedUser", JSON.stringify(currentUser));
+
+                    // Atualizar users.premios na localStorage
+                    if (userIndex !== -1) {
+                      users[userIndex].premios = currentUser.premios;
+                      localStorage.setItem("users", JSON.stringify(users));
+                    }
+
+                    console.log(`Prêmio ${premio.id} completo!`);
+                  }
+                }
+              } else {
+                console.error(`Prêmio com id ${premio.id} não encontrado em localStorage`);
+              }
+            } else {
+              console.error(`Prêmio no índice ${index} não possui um ID válido`, premio);
+            }
+          });
+        } else {
+          console.error('Lista de prêmios não encontrada em localStorage');
+        }
+
+        //------------------------------------------------------------
       }
 
       // Exibir a modal com os pontos finais
@@ -68,8 +129,6 @@ const matchCards = (icon1, icon2) => {
   }
 };
 
-
-
 const renderCards = (random) => {
   container.innerHTML = "";
   container.innerHTML += `<div id="cards" class="row"></div>`;
@@ -87,7 +146,6 @@ const renderCards = (random) => {
       `;
   });
 };
-
 
 const randomArray = (cards) => {
   matchedCard = 0;
@@ -122,11 +180,12 @@ switch (game) {
       { id: 5, nome: "Card 5", img: "/img/jogos/Memoria/icon5.png" },
       { id: 6, nome: "Card 6", img: "/img/jogos/Memoria/icon6.png" }
     ];
-    pointsLevel=1
-    colUpdate="col-3"
+    pointsLevel = 1;
+    colUpdate = "col-3";
     if (textoElement) {
       textoElement.textContent = "Jogo da Memoria - 4x3";
     }
+    tipos = "memoriaF";
     gameCode = 'Código para o Jogo 1';
     break;
   case '2':
@@ -142,11 +201,12 @@ switch (game) {
       { id: 9, nome: "Card 9", img: "/img/jogos/Memoria/icon9.png" },
       { id: 10, nome: "Card 10", img: "/img/jogos/Memoria/icon10.png" }
     ];
-    pointsLevel=2
-    colUpdate="col-3"
+    pointsLevel = 2;
+    colUpdate = "col-3";
     if (textoElement) {
       textoElement.textContent = "Jogo da Memoria - 5x4";
     }
+    tipos = "memoriaM";
     gameCode = 'Código para o Jogo 2';
     break;
   case '3':
@@ -164,11 +224,12 @@ switch (game) {
       { id: 11, nome: "Card 11", img: "/img/jogos/Memoria/icon11.png" },
       { id: 12, nome: "Card 12", img: "/img/jogos/Memoria/icon12.png" },
     ];
-    pointsLevel=5
-    colUpdate="col-2"
+    pointsLevel = 5;
+    colUpdate = "col-2";
     if (textoElement) {
       textoElement.textContent = "Jogo da Memoria - 4x6";
     }
+    tipos = "memoriaD";
     gameCode = 'Código para o Jogo 3';
     break;
   default:
