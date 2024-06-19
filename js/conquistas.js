@@ -19,19 +19,14 @@ if (currentUser) {
                 console.log(`premio_${premio.id}:`, premioLocal); // Log de depuração
 
                 if (premioLocal) {
-                    // Atualiza pontos na localStorage se o tipo for "pontos" e o prêmio não estiver completo
+                    // premios se o tipo for pontos pontos 
                     if (premio.tipo === "pontos" && premio.completo !== "S") {
-                        // Aqui você deve atualizar o progresso do prêmio no objeto currentUser
-                        premio.progresso = currentUser.pontos;
 
-                        // Atualizar localStorage com os novos dados de currentUser
+                        premio.progresso = currentUser.pontos; //igual os pontos
+
                         sessionStorage.setItem("loggedUser", JSON.stringify(currentUser));
                         console.log(`Progresso atualizado para ${premio.progresso}`);
                     }
-
-
-
-
 
                     var row = document.createElement("tr");
 

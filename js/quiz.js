@@ -45,7 +45,7 @@ function loadQuestion() {
                 currentQuestionIndex++;
                 loadQuestion();
             } else {
-                alert(`Perdeste.\nConseguiste responder a ${score-1} perguntas.`);
+                alert(`Perdeste.\nConseguiste responder a ${score - 1} perguntas.`);
                 window.location.href = "../menuQuiz.html";
             }
         };
@@ -61,7 +61,7 @@ updateScore();
 function updateUserPoints() {
     let currentUser = JSON.parse(sessionStorage.getItem("loggedUser"));
     if (currentUser) {
-        currentUser.pontos = (currentUser.pontos || 0) + (score-1); // Adiciona os pontos ao total do usuário
+        currentUser.pontos = (currentUser.pontos || 0) + (score - 1); // Adiciona os pontos ao total do usuário
         sessionStorage.setItem("loggedUser", JSON.stringify(currentUser));
 
         // Atualiza o usuário no localStorage
@@ -70,6 +70,36 @@ function updateUserPoints() {
         if (userIndex !== -1) {
             users[userIndex].pontos = currentUser.pontos;
             localStorage.setItem("users", JSON.stringify(users));
+        }
+        var premiosList = JSON.parse(localStorage.getItem("premios"));
+
+        if (premiosList) {
+            currentUser.premios.forEach(function (premio, index) {
+                if (premio.id) {
+                    var premioLocal = premiosList.find(p => p.id === premio.id);
+                    console.log(`premio_${premio.id}:`, premioLocal); // Log de depuração
+    
+                    if (premioLocal) {
+                        // premios se o tipo for pontos pontos 
+                        if (premio.tipo === "quiz" && premio.completo !== "S") {
+    
+                            premio.progresso += 1
+    
+                            sessionStorage.setItem("loggedUser", JSON.stringify(currentUser));
+                            console.log(`Progresso atualizado para ${premio.progresso}`);
+                        }
+    
+                        
+                    } else {
+                        console.error(`Premio with id ${premio.id} not found in localStorage`);
+                    }
+                } else {
+                    console.error(`Premio at index ${index} does not have a valid id`, premio);
+                }
+            });
+    
+        } else {
+            console.error('Premios list not found in localStorage');
         }
     }
 }
