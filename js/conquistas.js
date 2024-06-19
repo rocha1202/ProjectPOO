@@ -19,10 +19,9 @@ if (currentUser) {
     
     if (premiosList) {
         currentUser.premios.forEach(function(premio, index) {
-            if (premio.id_premio) {
+            if (premio.id) {
                 // Encontra o prêmio correspondente na lista de prêmios
-                var premioLocal = premiosList.find(p => p.id === premio.id_premio);
-                console.log(`premio_${premio.id_premio}:`, premioLocal); // Log de depuração
+                var premioLocal = premiosList.find(p => p.id === premio.id);
 
                 if (premioLocal) {
                     var row = document.createElement("tr");
@@ -75,7 +74,7 @@ if (currentUser) {
 
                     tbody.appendChild(row);
                 } else {
-                    console.error(`Premio with id ${premio.id_premio} not found in localStorage`);
+                    console.error(`Premio with id ${premio.id} not found in localStorage`);
                 }
             } else {
                 console.error(`Premio at index ${index} does not have a valid id`, premio);

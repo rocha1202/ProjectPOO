@@ -215,7 +215,7 @@ body{
 
 .progress {
     height: 20px;
-    background-color: var(--white);
+    background-color: var(--gray);
     border-radius: 5px;
     overflow: hidden;
     margin-top: 10px;
@@ -225,7 +225,11 @@ body{
     height: 100%;
     background-color: #ff7f50;
     text-align: center;
-    color: white;
+    color: var(--black);
     line-height: 20px;
     border-radius: 5px;
+}
+.table td {
+    background-color: white;
+    vertical-align: middle;
 }

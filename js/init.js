@@ -23,7 +23,7 @@ function initdata() {
         avatar: "F3.svg",
         premios: [
           {
-            id_premio: 1,
+            id: 1,
             completo: "N",
             data_completo: "",
             progresso: 0,
@@ -31,7 +31,7 @@ function initdata() {
             eliminado: "N",
 
           }, {
-            id_premio: 2,
+            id: 2,
             completo: "S",
             data_completo: "2024-04-20",
             progresso: 3,
@@ -55,7 +55,7 @@ function initdata() {
         avatar: "M2.svg",
         premios: [
           {
-            id_premio: 1,
+            id: 1,
             completo: "S",
             data_completo: "2024-05-29",
             progresso: 5,
@@ -63,7 +63,7 @@ function initdata() {
             eliminado: "N",
 
           }, {
-            id_premio: 2,
+            id: 2,
             completo: "N",
             data_completo: "",
             progresso: 1,
@@ -88,7 +88,7 @@ function initdata() {
         bloqueado: "N",
         premios: [
           {
-            id_premio: 1,
+            id: 1,
             completo: "N",
             data_completo: "",
             progresso: 0,
@@ -96,7 +96,7 @@ function initdata() {
             eliminado: "N",
 
           }, {
-            id_premio: 2,
+            id: 2,
             completo: "N",
             data_completo: "",
             progresso: 0,
