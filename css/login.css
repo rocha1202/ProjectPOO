@@ -88,8 +88,25 @@ img {
   font-size: 20px;
 }
 
+.select_input {
+  border-color: var(--blue);
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.select_input::placeholder {
+  font-family: "PortoSansStencilRegular";
+  color: var(--gray);
+  font-size: 20px;
+}
+
 .btn {
   margin-top: 10%;
+  width: 100%;
+}
+
+.btn_registo {
+  margin-top: 5%;
   width: 100%;
 }
 
