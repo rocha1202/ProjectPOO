@@ -11,52 +11,48 @@
     />
     <link rel="stylesheet" href="/css/designFrom.css" />
     <link rel="stylesheet" href="/css/admin/user.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
   </head>
 
   <body>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-3 blue-background">
-          <div
-            class="d-flex flex-column align-items-center text-center p-3 py-5"
-          >
-            <div class="">
-              <img class="" width="200px" src="/img/Logotipo.svg" />
+          <div class="d-flex flex-column">
+            <div class="logo">
+              <img width="200px" src="/img/Logotipo.svg" />
             </div>
             <br />
-            <span></span>
             <span class="admin">Administrador</span>
-            <div
-              class="d-flex flex-column icons justify-content-start text-left mt-5 mb-3"
-            >
-              <a href="/html/admin/user/user.html" class="select py-2"
-                ><img
-                  src="/img/icons/Admin/user_select.svg"
-                  width="26px"
-                />Utilizadores</a
-              >
-              <a href="/html/admin/testemunhos/testemunhos.html" class="py-2"
-                ><img
-                  src="/img/icons/Admin/testemunhos.svg"
-                  width="26px"
-                />Testemunhos</a
-              >
-              <a href="/html/admin/atividades/atividades.html" class="py-2"
-                ><img
-                  src="/img/icons/Admin/atividades.svg"
-                  width="26px"
-                />Atividades</a
-              >
-              <a href="/html/admin/gamificacao/gamificacao.html" class="py-2"
-                ><img
-                  src="/img/icons/Admin/gamificacao.svg"
-                  width="26px"
-                />Gamificação</a
-              >
+            <div class="d-flex flex-column justify-content-left menu_options">
+              <div class="select option">
+                <i class="ph ph-users-three"></i>
+                <a href="/html/admin/user/user.html"
+                  ><span class="text-menu">Utilizadores</span></a
+                >
+              </div>
+              <div class="option">
+                <i class="ph ph-chat-dots"></i>
+                <a href="/html/admin/testemunhos/testemunhos.html"
+                  ><span class="text-menu">Testemunhos</span></a
+                >
+              </div>
+              <div class="option">
+                <i class="ph ph-identification-card"></i>
+                <a href="/html/admin/atividades/atividades.html"
+                  ><span class="text-menu">Atividades</span></a
+                >
+              </div>
+              <div class="option">
+                <i class="ph ph-identification-card"></i>
+                <a href="/html/admin/gamificacao/gamificacao.html"
+                  ><span class="text-menu">Gamificação</span></a
+                >
+              </div>
             </div>
             <a href="/html/login.html" class="logout-link"
-              ><img src="/img/icons/User/SignOut.svg" width="32px"
-            /></a>
+              ><i class="ph ph-sign-out"></i
+            ></a>
           </div>
         </div>
 
