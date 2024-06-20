@@ -44,7 +44,7 @@ function atualizarTestemunho() {
     titulo: document.querySelector("#titulo").value,
     sub_titulo: document.querySelector("#subTitulo").value,
     descricao: document.querySelector("#descricao").value,
-    img: document.querySelector("#file").filename,
+    img: document.querySelector("#file").value,
     data_publicado: currentTestemunho.data_publicado,
     eliminado: currentTestemunho.eliminado,
   };
