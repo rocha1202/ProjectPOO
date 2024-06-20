@@ -10,47 +10,49 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="/css/perfil.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
   </head>
 
   <body>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-3 blue-background">
-          <div
-            class="d-flex flex-column align-items-center text-center p-3 py-5"
-          >
+          <div class="d-flex flex-column">
             <div class="avatar-image">
               <img class="rounded-circle" width="126px" id="avatarImage" />
             </div>
             <br />
             <span class="nomeUser"> <span id="profileName1"></span></span>
-            <span class="text-black">Pontos: <span id="pontos"></span></span>
-            <div
-              class="d-flex flex-column icons justify-content-start text-left mt-5 mb-3"
-            >
-              <a href="perfil.html"
-                ><img src="/img/icons/User/dadosPerfil.svg" width="32px" />Dados
-                de Perfil</a
-              >
-              <a href="ranking.html" class="select"
-                ><img
-                  src="/img/icons/User/ranking_select.svg"
-                  width="32px"
-                />Ranking</a
-              >
-              <a href="conquistas.html"
-                ><img
-                  src="/img/icons/User/conquistas.svg"
-                  width="32px"
-                />Conquistas</a
-              >
-              <a href="/html/Jogos/menuJogos.html"
-                ><img src="/img/icons/User/jogos.svg" width="32px" />Jogos</a
-              >
+            <span class="pontos_user">Pontos: <span id="pontos"></span></span>
+            <div class="d-flex flex-column justify-content-left menu_options">
+              <div class="option">
+                <i class="ph ph-user"></i>
+                <a href="/html/users/perfil.html"
+                  ><span class="text-menu">Dados de Perfil</span></a
+                >
+              </div>
+              <div class="select option">
+                <i class="ph ph-ranking"></i>
+                <a href="/html/users/ranking.html"
+                  ><span class="text-menu">Ranking</span></a
+                >
+              </div>
+              <div class="option">
+                <i class="ph ph-trophy"></i>
+                <a href="/html/users/conquistas.html"
+                  ><span class="text-menu">Conquistas</span></a
+                >
+              </div>
+              <div class="option">
+                <i class="ph ph-game-controller"></i>
+                <a href="/html/Jogos/menuJogos.html"
+                  ><span class="text-menu">Jogos</span></a
+                >
+              </div>
             </div>
             <a href="/html/login.html" class="logout-link"
-              ><img src="/img/icons/User/SignOut.svg" width="32px"
-            /></a>
+              ><i class="ph ph-sign-out"></i
+            ></a>
           </div>
         </div>
 
