@@ -1,73 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="icon" type="image/x-icon" href="/img/Logotipo.svg" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/designFrom.css" />
+    <link rel="stylesheet" href="/css/admin/user.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Profile</title>
-  <link rel="icon" type="image/x-icon" href="/img/Logotipo.svg" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/css/designFrom.css" />
-  <link rel="stylesheet" href="/css/admin/user.css" />
-</head>
-
-<body>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-3 blue-background">
-        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-          <div class="">
-            <img class="" width="200px" src="/img/Logotipo.svg" />
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3 blue-background">
+          <div class="d-flex flex-column">
+            <div class="logo">
+              <img width="200px" src="/img/Logotipo.svg" />
+            </div>
+            <br />
+            <span class="admin">Administrador</span>
+            <div class="d-flex flex-column justify-content-left menu_options">
+              <div class="option">
+                <i class="ph ph-users-three"></i>
+                <a href="/html/admin/user/user.html"
+                  ><span class="text-menu">Utilizadores</span></a
+                >
+              </div>
+              <div class="option">
+                <i class="ph ph-chat-dots"></i>
+                <a href="/html/admin/testemunhos/testemunhos.html"
+                  ><span class="text-menu">Testemunhos</span></a
+                >
+              </div>
+              <div class="option">
+                <i class="ph ph-identification-card"></i>
+                <a href="/html/admin/atividades/atividades.html"
+                  ><span class="text-menu">Atividades</span></a
+                >
+              </div>
+              <div class="select option">
+                <i class="ph ph-joystick"></i>
+                <a href="/html/admin/gamificacao/gamificacao.html"
+                  ><span class="text-menu">Gamificação</span></a
+                >
+              </div>
+            </div>
+            <a href="/html/login.html" class="logout-link"
+              ><i class="ph ph-sign-out"></i
+            ></a>
           </div>
-          <br />
-          <span></span>
-          <span class="admin">Administrador</span>
-          <div class="d-flex flex-column icons justify-content-start text-left mt-5 mb-3">
-            <a href="/html/admin/user/user.html" class="py-2"><img src="/img/icons/Admin/user.svg"
-                width="26px" />Utilizadores</a>
-            <a href="/html/admin/testemunhos/testemunhos.html" class="py-2"><img src="/img/icons/Admin/testemunhos.svg"
-                width="26px" />Testemunhos</a>
-            <a href="/html/admin/atividades/atividades.html" class="py-2"><img src="/img/icons/Admin/atividades.svg"
-                width="26px" />Atividades</a>
-            <a href="./gamificacao.html" class="select py-2"><img src="/img/icons/Admin/gamificacao_select.svg"
-                width="26px" />Gamificação</a>
-          </div>
-          <a href="/html/login.html" class="logout-link">
-            <img src="/img/icons/User/SignOut.svg" width="32px" />
-          </a>
         </div>
-      </div>
-      <div class="col-md-8 fundo-branco">
-        <h2 class="mb-4 text-orange">Gamificação</h2>
-        <div class="d-flex flex-column justify-content-center align-items-center">
-          <input type="text" class="form-control mb-3" placeholder="Titulo" id="titulo" />
-          <input type="url" class="form-control mb-3" placeholder="Url Imagem Bloqueada" id="img_bloq" />
-          <input type="url" class="form-control mb-3" placeholder="Url Imagem Desbloqueada" id="img_desbloq" />
-          <input type="text" class="form-control mb-3" placeholder="Progresso" id="progresso" />
-          <select class="form-control mb-3" id="tipoJogo">
-            <option value="" disabled selected>Jogo</option>
-            <option value="memoria">Memória</option>
-            <option value="memoriaF">Memória - Fácil</option>
-            <option value="memoriaM">Memória - Médio</option>
-            <option value="memoriaD">Memória - Díficil</option>
-            <option value="escaperoom">Escape Room</option>
-            <option value="escaperoom1">Escape Room - Sala 1</option>
-            <option value="escaperoom2">Escape Room - Sala 2</option>
-            <option value="quiz">Quiz</option>
-            <option value="pontos">Pontos</option>
-          </select>
-          <div class="d-flex flex-row justify-content-center align-items-center" id="btnList"></div>
-          <div>
-            <div id="msg"></div>
+        <div class="col-md-8 fundo-branco">
+          <h2 class="mb-4 text-orange">Gamificação</h2>
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+          >
+            <input
+              type="text"
+              class="form-control mb-3"
+              placeholder="Titulo"
+              id="titulo"
+            />
+            <input
+              type="url"
+              class="form-control mb-3"
+              placeholder="Url Imagem Bloqueada"
+              id="img_bloq"
+            />
+            <input
+              type="url"
+              class="form-control mb-3"
+              placeholder="Url Imagem Desbloqueada"
+              id="img_desbloq"
+            />
+            <input
+              type="text"
+              class="form-control mb-3"
+              placeholder="Progresso"
+              id="progresso"
+            />
+            <select class="form-control mb-3" id="tipoJogo">
+              <option value="" disabled selected>Jogo</option>
+              <option value="memoria">Memória</option>
+              <option value="memoriaF">Memória - Fácil</option>
+              <option value="memoriaM">Memória - Médio</option>
+              <option value="memoriaD">Memória - Díficil</option>
+              <option value="escaperoom">Escape Room</option>
+              <option value="escaperoom1">Escape Room - Sala 1</option>
+              <option value="escaperoom2">Escape Room - Sala 2</option>
+              <option value="quiz">Quiz</option>
+              <option value="pontos">Pontos</option>
+            </select>
+            <div
+              class="d-flex flex-row justify-content-center align-items-center"
+              id="btnList"
+            ></div>
+            <div>
+              <div id="msg"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="module" src="/js/views/admin/Gamificacao/PremioVerView.js"></script>
-  <script type="module" src="/js/views/logged.js"></script>
-
-</body>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      type="module"
+      src="/js/views/admin/Gamificacao/PremioVerView.js"
+    ></script>
+    <script type="module" src="/js/views/logged.js"></script>
+  </body>
 </html>
