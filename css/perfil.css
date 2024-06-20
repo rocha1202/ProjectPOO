@@ -24,6 +24,11 @@
   --white: #fffffc;
 }
 
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 .blue-background {
   background-color: var(--blue);
   height: 100vh;
@@ -31,70 +36,13 @@
   color: var(--white);
 }
 
-.nomeUser {
-  font-family: "PortoSansStencilRegular";
-}
-
-.text-black {
-  color: var(--black);
-}
-.text-orange {
-  font-family: "PortoSansStencilRegular";
-  color: var(--orange);
-  margin-top: 5%;
-  margin-left: 5%;
-}
-.logout-link {
-  position: absolute;
-  bottom: 5%;
-  left: 45%;
-}
-
-.profile-info {
-  font-family: "Porto Sans";
-  size: 32px;
-  position: absolute;
-  top: 30%;
-  left: 40%;
-}
-
-.button-alterar {
-  position: relative;
-  left: 20%;
-}
-.profile-update {
-  position: relative;
-  top: 10%;
-  left: 30%;
-}
-.select {
-  color: var(--orange);
-}
-.campos {
-  margin-top: 20%;
-}
-a {
-  font-family: "PortoSansRegular";
-  color: var(--white);
-}
-
-a:hover {
-  color: var(--orange);
-}
-
-span,
-a {
-  font-size: 18px;
-  font-family: "PortoSansRegular";
-}
-
-/* Adicione um estilo para a imagem de avatar */
 .avatar-image {
   position: relative;
   display: inline-block;
+  margin-top: 30px;
+  margin-inline: auto;
 }
 
-/* Estilo para a imagem que aparecerá ao passar o mouse */
 .avatar-hover-image {
   position: absolute;
   top: 0;
@@ -103,8 +51,6 @@ a {
   display: none;
   z-index: 999;
 }
-
-/* Estilo para o avatar quando o mouse passa sobre ele */
 
 .avatar-image:hover .avatar-hover-image {
   display: block;
@@ -130,9 +76,97 @@ a {
   max-height: 100%;
 }
 
-body {
-  overflow-x: hidden;
-  overflow-y: hidden;
+.nomeUser {
+  font-family: "PortoSansStencilRegular";
+  text-align: center;
+}
+
+.pontos_user {
+  color: var(--black);
+  font-family: "PortoSansStencilRegular";
+  text-align: center;
+}
+
+.menu_options {
+  margin-top: 10%;
+  margin-inline: auto;
+}
+
+.select {
+  color: var(--orange);
+}
+
+.option {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.option:hover {
+  color: var(--orange);
+}
+
+.ph {
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+a {
+  font-family: "PortoSansRegular";
+  color: var(--white);
+}
+
+a:hover {
+  color: var(--orange);
+  text-decoration: none;
+}
+
+.option span {
+  font-size: 23px;
+  font-family: "PortoSansRegular";
+}
+
+.select a {
+  color: var(--orange);
+}
+
+.text-orange {
+  font-family: "PortoSansStencilRegular";
+  color: var(--orange);
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.logout-link {
+  position: absolute;
+  bottom: 5%;
+  left: 45%;
+}
+
+.ph-sign-out {
+  font-size: 32px;
+}
+
+.profile-info {
+  font-family: "Porto Sans";
+  size: 32px;
+  position: absolute;
+  top: 30%;
+  left: 40%;
+}
+
+.button-alterar {
+  position: relative;
+  left: 20%;
+}
+.profile-update {
+  position: relative;
+  top: 10%;
+  left: 30%;
+}
+
+.campos {
+  margin-top: 20%;
 }
 
 .ranking-list {
