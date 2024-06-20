@@ -132,7 +132,7 @@ function updateUserPoints() {
             // Verificar se o prêmio corresponde ao tipo e não está completo
             if (
               (premio.tipo === tipos && premio.completo !== "S") ||
-              premio.tipo == "escaperoom"
+              premio.tipo == "escapeRoom"
             ) {
               premio.progresso += 1;
 

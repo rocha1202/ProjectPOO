@@ -4,7 +4,7 @@ if (currentUser) {
   document.getElementById("pontos").textContent = currentUser.pontos;
   document.getElementById("profileName1").textContent = currentUser.nome;
   document.getElementById("avatarImage").src =
-    "../img/avatares/" + currentUser.avatar;
+    "/img/avatares/" + currentUser.avatar;
   document.getElementsByName("nome")[0].value = currentUser.nome;
   document.getElementsByName("dataNascimento")[0].value =
     currentUser.dataNascimento;

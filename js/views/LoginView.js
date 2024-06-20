@@ -17,7 +17,7 @@ function loginView() {
         if (userLogged.tipo === "admin") {
           window.location.href = "/html/admin/user/user.html";
         } else {
-          window.location.href = "/html/perfil.html";
+          window.location.href = "/html/users/perfil.html";
         }
       }, 1000);
     } catch (e) {

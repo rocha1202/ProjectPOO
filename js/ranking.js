@@ -9,16 +9,14 @@ function exibirRanking() {
   let rankingHTML = '<ol class="ranking-list">';
 
   users.forEach((user, index) => {
-    if (user.tipo == "user") {
+    if (user.tipo == "user" && user.eliminado == "N") {
       if (index < 10) {
         rankingHTML += `<li class="ranking-item">
-                                <span class="ranking-position top10">${
-                                  index + 1
-                                }</span>
+                                <span class="ranking-position top10">${index + 1
+          }</span>
                                 <span class="ranking-name">${user.nome}</span>
-                                <span class="ranking-points">${
-                                  user.pontos
-                                }</span>
+                                <span class="ranking-points">${user.pontos
+          }</span>
                             </li>`;
       }
     }
@@ -45,6 +43,7 @@ exibirRanking();
 // Carrega os dados do utilizador e exibe no perfil
 var currentUser = JSON.parse(sessionStorage.getItem("loggedUser"));
 if (currentUser) {
+  document.getElementById("profileName1").textContent = currentUser.nome;
   document.getElementById("pontos").textContent = currentUser.pontos;
   document.getElementById("avatarImage").src =
     "/img/avatares/" + currentUser.avatar;
