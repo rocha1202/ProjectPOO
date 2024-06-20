@@ -45,7 +45,7 @@ function atualizarPublicacao() {
     titulo: document.querySelector("#titulo").value,
     sub_titulo: document.querySelector("#subTitulo").value,
     descricao: document.querySelector("#descricao").value,
-    img: document.querySelector("#file").filename,
+    img: document.querySelector("#file").value,
     data_publicado: currentPublicacao.data_publicado,
     tipo: document.querySelector("#tipo").value,
     eliminado: currentPublicacao.eliminado,
@@ -58,6 +58,7 @@ function atualizarPublicacao() {
   );
   if (publicacaoIndex !== -1) {
     publicacoes[publicacaoIndex] = updatedPublicacao;
+    console.log(updatedPublicacao)
     localStorage.setItem("publicacoes", JSON.stringify(publicacoes));
     alert("Publicação updated successfully!");
   } else {
