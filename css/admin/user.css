@@ -27,15 +27,42 @@
 .blue-background {
   background-color: var(--blue);
   height: 100vh;
+  color: var(--white);
+}
+
+.logo {
+  margin-top: 20px;
+  margin-inline: auto;
 }
 
 .admin {
   font-family: "PortoSansStencilRegular";
+  text-align: center;
   color: var(--white);
+}
+
+.menu_options {
+  margin-top: 10%;
+  margin-inline: auto;
 }
 
 .select {
   color: var(--orange);
+}
+
+.option {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.option:hover {
+  color: var(--orange);
+}
+
+.ph {
+  font-size: 25px;
+  margin-right: 10px;
 }
 
 a {
@@ -45,12 +72,16 @@ a {
 
 a:hover {
   color: var(--orange);
+  text-decoration: none;
 }
 
-span,
-a {
-  font-size: 18px;
+.option span {
+  font-size: 23px;
   font-family: "PortoSansRegular";
+}
+
+.select a {
+  color: var(--orange);
 }
 
 .text-orange {
