@@ -40,9 +40,11 @@ img {
 
 .text-login {
   color: var(--blue);
+  width: 100%;
   text-align: center;
   font-size: 50px;
-
+  margin-top: 15%;
+  margin-bottom: 5%;
   font-family: "PortoSansStencilRegular";
 }
 
@@ -68,13 +70,32 @@ img {
   height: 100%;
 }
 
+.log_input {
+  border-color: var(--blue);
+  margin-right: 20px;
+  border-width: 1px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 0%;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.log_input::placeholder {
+  font-family: "PortoSansStencilRegular";
+  color: var(--gray);
+  font-size: 20px;
+}
+
 .btn {
-  width: 35%;
+  margin-top: 10%;
+  width: 100%;
 }
 
 .btn_login {
   font-family: "PortoSansStencilBold";
-  font-size: 25px;
+  font-size: 22px;
   background-color: rgba(var(--blue_rgb), 0.85);
   width: 140px;
   height: 40px;
