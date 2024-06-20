@@ -1,6 +1,7 @@
 var currentUser = JSON.parse(sessionStorage.getItem("loggedUser"));
 
 if (currentUser) {
+  document.getElementById("profileName1").textContent = currentUser.nome;
   document.getElementById("pontos").textContent = currentUser.pontos;
   document.getElementById("avatarImage").src =
     "/img/avatares/" + currentUser.avatar;

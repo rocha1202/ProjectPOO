@@ -22,7 +22,7 @@
               <img class="rounded-circle" width="126px" id="avatarImage" />
               <img
                 class="rounded-circle avatar-hover-image"
-                src="../img/avatares/profile_hover.svg"
+                src="/img/avatares/profile_hover.svg"
               />
             </div>
             <br />
@@ -113,13 +113,13 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="../js/perfilUpdate.js"></script>
+    <script src="/js/perfilUpdate.js"></script>
     <script type="module" src="/js/views/logged.js"></script>
 
     <script>
       $(".avatar-hover-image").click(function () {
         // Carrega o conteúdo da modal
-        $("#modalPlaceholder").load("../modais/avatares.html", function () {
+        $("#modalPlaceholder").load("/modais/avatares.html", function () {
           // Mostra a modal
           $("#avatarModal").modal("show");
         });

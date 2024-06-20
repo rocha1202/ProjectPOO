@@ -11,7 +11,7 @@ function initdata() {
       {
         id: 1,
         nome: "User1",
-        dataNascimento: "200-03-02",
+        dataNascimento: "2000-03-02",
         genero: "F",
         localidade: "Vila de Conde",
         email: "user1@gmail.com",
