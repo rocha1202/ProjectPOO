@@ -12,7 +12,7 @@ function exibirRanking() {
     if (user.tipo == "user") {
       if (index < 10) {
         rankingHTML += `<li class="ranking-item">
-                                <span class="ranking-position">${
+                                <span class="ranking-position top10">${
                                   index + 1
                                 }</span>
                                 <span class="ranking-name">${user.nome}</span>
@@ -32,7 +32,7 @@ function exibirRanking() {
   if (currentUser) {
     let userIndex = users.findIndex((user) => user.nome === currentUser.nome);
     let userPosition = userIndex + 1;
-    userPositionContainer.innerHTML = `<div class="user-position">
+    userPositionContainer.innerHTML = `<div class="user-position user-top">
                                                 <span class="ranking-position">${userPosition}</span>
                                                 <span class="ranking-name">${currentUser.nome}</span>
                                                 <span class="ranking-points">${currentUser.pontos}</span>

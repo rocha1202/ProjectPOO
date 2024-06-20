@@ -1,241 +1,252 @@
 @font-face {
-    font-family: "PortoSansRegular";
-    src: url("../fontes/PortoSans-Regular.otf") format("opentype");
-  }
-  
-  @font-face {
-    font-family: "PortoSansStencilBold";
-    src: url("../fontes/PortoSansStencil-Bold.otf") format("opentype");
-  }
-  
-  @font-face {
-    font-family: "PortoSansStencilRegular";
-    src: url("../fontes/PortoSansStencil-Regular.otf") format("opentype");
-  }
+  font-family: "PortoSansRegular";
+  src: url("../fontes/PortoSans-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PortoSansStencilBold";
+  src: url("../fontes/PortoSansStencil-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PortoSansStencilRegular";
+  src: url("../fontes/PortoSansStencil-Regular.otf") format("opentype");
+}
 
 :root {
-    --blue: #5688c7;
-    --blue_rgb: 86, 136, 199;
-    --orange: #c94e23;
-    --orange_rgb: 201, 78, 35;
-    --gray: #bcbec0;
-    --gray_rgb: 188, 190, 192;
-    --black: #020202;
-    --white: #fffffc;
+  --blue: #5688c7;
+  --blue_rgb: 86, 136, 199;
+  --orange: #c94e23;
+  --orange_rgb: 201, 78, 35;
+  --gray: #bcbec0;
+  --gray_rgb: 188, 190, 192;
+  --black: #020202;
+  --white: #fffffc;
 }
 
 .blue-background {
-    background-color: var(--blue);
-    height: 100vh;
-    position: relative;
-    color: var(--white);
+  background-color: var(--blue);
+  height: 100vh;
+  position: relative;
+  color: var(--white);
 }
 
-.nomeUser{
-    font-family: "PortoSansStencilRegular";
-
+.nomeUser {
+  font-family: "PortoSansStencilRegular";
 }
 
-.text-black{
-    color: var(--black );
+.text-black {
+  color: var(--black);
 }
-.text-orange{
-    font-family: "PortoSansStencilRegular";
-    color: var(--orange);
-    margin-top :5%;
-    margin-left: 5%;
+.text-orange {
+  font-family: "PortoSansStencilRegular";
+  color: var(--orange);
+  margin-top: 5%;
+  margin-left: 5%;
 }
 .logout-link {
-    position: absolute;
-    bottom: 5%;
-    left: 45%;
+  position: absolute;
+  bottom: 5%;
+  left: 45%;
 }
 
-.profile-info{
-    font-family: "Porto Sans";
-    size: 32px;
-    position: absolute;
-    top: 30%;
-    left: 40%;
+.profile-info {
+  font-family: "Porto Sans";
+  size: 32px;
+  position: absolute;
+  top: 30%;
+  left: 40%;
 }
 
-.button-alterar{
-    position: relative;
-    left: 20%;
+.button-alterar {
+  position: relative;
+  left: 20%;
 }
-.profile-update{  
-
-    position: relative;
-    top: 10%;
-    left: 30%;
+.profile-update {
+  position: relative;
+  top: 10%;
+  left: 30%;
 }
-.select{
-    color: var(--orange);
+.select {
+  color: var(--orange);
 }
-.campos{
-    margin-top:20%;
+.campos {
+  margin-top: 20%;
 }
 a {
-    font-family: "PortoSansRegular";
-    color: var(--white);
+  font-family: "PortoSansRegular";
+  color: var(--white);
 }
 
 a:hover {
-    color: var(--orange);
+  color: var(--orange);
 }
 
-span,a {
-    font-size: 18px;
-    font-family: "PortoSansRegular";
-
+span,
+a {
+  font-size: 18px;
+  font-family: "PortoSansRegular";
 }
-
-
 
 /* Adicione um estilo para a imagem de avatar */
 .avatar-image {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 /* Estilo para a imagem que aparecerá ao passar o mouse */
 .avatar-hover-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 126px;
-    display: none;
-    z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 126px;
+  display: none;
+  z-index: 999;
 }
 
 /* Estilo para o avatar quando o mouse passa sobre ele */
 
-
 .avatar-image:hover .avatar-hover-image {
-    display: block;
+  display: block;
 }
 
-
 .avatar-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .avatar-container:hover .avatar-overlay {
-    display: flex;
+  display: flex;
 }
 
 .avatar-overlay img {
-    max-width: 100%;
-    max-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
-body{
-    overflow-x: hidden;
-    overflow-y: hidden;
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .ranking-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .ranking-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  margin-left: 5%;
 }
 
 .ranking-item:nth-child(1) {
-    background-color: #ffeb3b;
+  background-color: #faed78;
 }
 
 .ranking-item:nth-child(2) {
-    background-color: #e0e0e0;
+  background-color: #e2e2e2;
 }
 
 .ranking-item:nth-child(3) {
-    background-color: #ffcdd2;
+  background-color: #dda498;
 }
 
 .ranking-position {
-    font-weight: bold;
-    width: 30px;
-}
-
-.ranking-name {
-    flex-grow: 1;
-    text-align: left;
-    padding-left: 10px;
-}
-
-.ranking-points {
-    width: 50px;
-    text-align: right;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+  width: 30px;
 }
 
 .top10 {
-    font-weight: bold;
-    margin-bottom: 10px;
+  border: 1px solid var(--black);
+}
+
+.user-top {
+  border: 1px solid var(--white);
+}
+
+.ranking-name {
+  flex-grow: 1;
+  text-align: left;
+  padding-left: 10px;
+  margin-left: 15px;
+}
+
+.ranking-points {
+  width: 50px;
+  text-align: right;
+  margin-right: 20px;
+}
+
+.subtitulo {
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 10px;
+  margin-left: 5%;
+  color: var(--blue);
+  font-family: "Porto Sans";
 }
 
 .user-position {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: var(--orange);
-    color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #da8468;
+  color: var(--white);
+  margin-left: 5%;
 }
 
 .ranking-wrapper {
-    height: 350px; /* adjust the height to your liking */
-    overflow-y: auto;
-  }
+  height: 450px;
+  width: 100%;
+  overflow-y: auto;
+}
 
-  .achievement-card {
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    
+.achievement-card {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 .progress {
-    height: 20px;
-    background-color: var(--gray);
-    border-radius: 5px;
-    overflow: hidden;
-    margin-top: 10px;
+  height: 20px;
+  background-color: var(--gray);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 10px;
 }
 
 .progress-bar {
-    height: 100%;
-    background-color: #ff7f50;
-    text-align: center;
-    color: var(--black);
-    line-height: 20px;
-    border-radius: 5px;
+  height: 100%;
+  background-color: #ff7f50;
+  text-align: center;
+  color: var(--black);
+  line-height: 20px;
+  border-radius: 5px;
 }
 .table td {
-    background-color: white;
-    vertical-align: middle;
+  background-color: white;
+  vertical-align: middle;
 }
 
-
-#achievementContainer{
-    height: 480px; /* Defina a altura desejada */
-    overflow-y: auto; /* Adiciona a barra de rolagem vertical */
+#achievementContainer {
+  height: 480px;
+  overflow-y: auto;
 }
