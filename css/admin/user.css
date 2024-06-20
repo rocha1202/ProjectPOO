@@ -34,6 +34,25 @@
   color: var(--white);
 }
 
+.select {
+  color: var(--orange);
+}
+
+a {
+  font-family: "PortoSansRegular";
+  color: var(--white);
+}
+
+a:hover {
+  color: var(--orange);
+}
+
+span,
+a {
+  font-size: 18px;
+  font-family: "PortoSansRegular";
+}
+
 .text-orange {
   font-family: "PortoSansStencilRegular";
   color: var(--orange);
@@ -54,25 +73,6 @@
 .button-alterar {
   position: relative;
   left: 20%;
-}
-
-.select {
-  color: var(--orange);
-}
-
-a {
-  font-family: "PortoSansRegular";
-  color: var(--white);
-}
-
-a:hover {
-  color: var(--orange);
-}
-
-span,
-a {
-  font-size: 18px;
-  font-family: "PortoSansRegular";
 }
 
 .container-fluid {
