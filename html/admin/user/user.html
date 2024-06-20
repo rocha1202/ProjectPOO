@@ -1,104 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile</title>
-    <link rel="icon" type="image/x-icon" href="/img/Logotipo.svg" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
-    <link rel="stylesheet" href="/css/designFrom.css" />
-    <link rel="stylesheet" href="/css/admin/user.css" />
-  </head>
 
-  <body>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-3 blue-background">
-          <div class="d-flex flex-column">
-            <div class="logo">
-              <img width="200px" src="/img/Logotipo.svg" />
-            </div>
-            <br />
-            <span class="admin">Administrador</span>
-            <div class="d-flex flex-column justify-content-left menu_options">
-              <div class="select option">
-                <i class="ph ph-users-three"></i>
-                <a href="/html/admin/user/user.html"
-                  ><span class="text-menu">Utilizadores</span></a
-                >
-              </div>
-              <div class="option">
-                <i class="ph ph-chat-dots"></i>
-                <a href="/html/admin/testemunhos/testemunhos.html"
-                  ><span class="text-menu">Testemunhos</span></a
-                >
-              </div>
-              <div class="option">
-                <i class="ph ph-identification-card"></i>
-                <a href="/html/admin/atividades/atividades.html"
-                  ><span class="text-menu">Atividades</span></a
-                >
-              </div>
-              <div class="option">
-                <i class="ph ph-joystick"></i>
-                <a href="/html/admin/gamificacao/gamificacao.html"
-                  ><span class="text-menu">Gamificação</span></a
-                >
-              </div>
-            </div>
-            <a href="/html/login.html" class="logout-link"
-              ><i class="ph ph-sign-out"></i
-            ></a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administrador</title>
+  <link rel="icon" type="image/x-icon" href="/img/Logotipo.svg" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <link rel="stylesheet" href="/css/designFrom.css" />
+  <link rel="stylesheet" href="/css/admin/user.css" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 blue-background">
+        <div class="d-flex flex-column">
+          <div class="logo">
+            <img width="200px" src="/img/Logotipo.svg" />
           </div>
-        </div>
-        <div class="col-md-8 fundo-branco">
-          <div class="d-flex mb-4 align-items-center" id="header"></div>
-          <div class="d-flex">
-            <input
-              type="text"
-              class="mb-3 contact_input"
-              id="text"
-              placeholder="Pesquisa"
-            />
-            <select class="mb-3" id="genero">
-              <option value="">Selecione uma opção</option>
-              <option value="F">Feminino</option>
-              <option value="M">Masculino</option>
-              <option value="O">Outro</option>
-            </select>
-            <select class="mb-3" id="bloqueado">
-              <option value="">Selecione uma opção</option>
-              <option value="S">Bloqueado</option>
-              <option value="N">Não Bloqueado</option>
-            </select>
-            <select class="mb-3" id="eliminado">
-              <option value="">Selecione uma opção</option>
-              <option value="S">Eliminado</option>
-              <option value="N">Não Eliminado</option>
-            </select>
-            <select class="mb-3" id="tipo">
-              <option value="">Selecione uma opção</option>
-              <option value="admin">Administrador</option>
-              <option value="user">Utilizador</option>
-            </select>
-            <button id="btnFilter">
-              <i class="ph ph-magnifying-glass"></i>
-            </button>
-            <button id="btnSort">
-              <i class="ph ph-sort-ascending"></i>
-            </button>
+          <br />
+          <span class="admin">Administrador</span>
+          <div class="d-flex flex-column justify-content-left menu_options">
+            <div class="select option">
+              <i class="ph ph-users-three"></i>
+              <a href="/html/admin/user/user.html"><span class="text-menu">Utilizadores</span></a>
+            </div>
+            <div class="option">
+              <i class="ph ph-chat-dots"></i>
+              <a href="/html/admin/testemunhos/testemunhos.html"><span class="text-menu">Testemunhos</span></a>
+            </div>
+            <div class="option">
+              <i class="ph ph-identification-card"></i>
+              <a href="/html/admin/atividades/atividades.html"><span class="text-menu">Atividades</span></a>
+            </div>
+            <div class="option">
+              <i class="ph ph-joystick"></i>
+              <a href="/html/admin/gamificacao/gamificacao.html"><span class="text-menu">Gamificação</span></a>
+            </div>
           </div>
-          <div id="userCatalog"></div>
+          <a href="/html/login.html" class="logout-link"><i class="ph ph-sign-out"></i></a>
         </div>
       </div>
+      <div class="col-md-8 fundo-branco">
+        <div class="d-flex mb-4 align-items-center" id="header"></div>
+        <div class="d-flex">
+          <input type="text" class="mb-3 contact_input" id="text" placeholder="Pesquisa" />
+          <select class="mb-3" id="genero">
+            <option value="">Selecione uma opção</option>
+            <option value="F">Feminino</option>
+            <option value="M">Masculino</option>
+            <option value="O">Outro</option>
+          </select>
+          <select class="mb-3" id="bloqueado">
+            <option value="">Selecione uma opção</option>
+            <option value="S">Bloqueado</option>
+            <option value="N">Não Bloqueado</option>
+          </select>
+          <select class="mb-3" id="eliminado">
+            <option value="">Selecione uma opção</option>
+            <option value="S">Eliminado</option>
+            <option value="N">Não Eliminado</option>
+          </select>
+          <select class="mb-3" id="tipo">
+            <option value="">Selecione uma opção</option>
+            <option value="admin">Administrador</option>
+            <option value="user">Utilizador</option>
+          </select>
+          <button id="btnFilter">
+            <i class="ph ph-magnifying-glass"></i>
+          </button>
+          <button id="btnSort">
+            <i class="ph ph-sort-ascending"></i>
+          </button>
+        </div>
+        <div id="userCatalog"></div>
+      </div>
     </div>
+  </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="module" src="/js/views/admin/User/UserListView.js"></script>
-    <script type="module" src="/js/views/logged.js"></script>
-  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="module" src="/js/views/admin/User/UserListView.js"></script>
+  <script type="module" src="/js/views/logged.js"></script>
+</body>
+
 </html>

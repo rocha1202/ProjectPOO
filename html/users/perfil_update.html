@@ -1,129 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile</title>
-    <link rel="icon" type="image/x-icon" href="../img/Logotipo.svg" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="/css/perfil.css" />
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
-  </head>
 
-  <body>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-3 blue-background">
-          <div class="d-flex flex-column">
-            <div class="avatar-image">
-              <img class="rounded-circle" width="126px" id="avatarImage" />
-              <img
-                class="rounded-circle avatar-hover-image"
-                src="/img/avatares/profile_hover.svg"
-              />
-            </div>
-            <br />
-            <span class="nomeUser"> <span id="profileName1"></span></span>
-            <span class="pontos_user">Pontos: <span id="pontos"></span></span>
-            <div
-              class="d-flex flex-column icons justify-content-left menu_options"
-            >
-              <div class="select option">
-                <i class="ph ph-user"></i>
-                <a href="/html/users/perfil.html"
-                  ><span class="text-menu">Dados de Perfil</span></a
-                >
-              </div>
-              <div class="option">
-                <i class="ph ph-ranking"></i>
-                <a href="/html/users/ranking.html"
-                  ><span class="text-menu">Ranking</span></a
-                >
-              </div>
-              <div class="option">
-                <i class="ph ph-trophy"></i>
-                <a href="/html/users/conquistas.html"
-                  ><span class="text-menu">Conquistas</span></a
-                >
-              </div>
-              <div class="option">
-                <i class="ph ph-game-controller"></i>
-                <a href="/html/Jogos/menuJogos.html"
-                  ><span class="text-menu">Jogos</span></a
-                >
-              </div>
-            </div>
-            <a href="./login.html" class="logout-link"
-              ><i class="ph ph-sign-out"></i
-            ></a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil</title>
+  <link rel="icon" type="image/x-icon" href="../img/Logotipo.svg" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/perfil.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 blue-background">
+        <div class="d-flex flex-column">
+          <div class="avatar-image">
+            <img class="rounded-circle" width="126px" id="avatarImage" />
+            <img class="rounded-circle avatar-hover-image" src="/img/avatares/profile_hover.svg" />
           </div>
-        </div>
-
-        <div class="col-md-8 fundo-branco">
-          <h2 class="mb-4 text-orange">Dados do Perfil</h2>
-
-          <div class="profile-update">
-            <p id="profileEmail"></p>
-            <input
-              type="text"
-              class="form-control mb-3 w-50"
-              name="nome"
-              placeholder="Nome"
-            />
-            <input
-              type="date"
-              class="form-control mb-3 w-50"
-              name="dataNascimento"
-              placeholder="Data de Nascimento (DD/MM/AAAA)"
-            />
-            <select class="form-control mb-3 w-50" name="profileSex">
-              <option value="">Selecione o Sexo</option>
-              <option value="F">Feminino</option>
-              <option value="M">Masculino</option>
-              <option value="O">Outro</option>
-            </select>
-            <input
-              type="text"
-              class="form-control mb-3 w-50"
-              name="localidade"
-              placeholder="Localidade"
-            />
-            <input
-              type="password"
-              class="form-control mb-3 w-50"
-              name="password"
-              placeholder="Password"
-            />
-
-            <div class="button-alterar">
-              <button class="btn btn-primary btn-lg" onclick="alterar()">
-                Alterar Dados
-              </button>
+          <br />
+          <span class="nomeUser"> <span id="profileName1"></span></span>
+          <span class="pontos_user">Pontos: <span id="pontos"></span></span>
+          <div class="d-flex flex-column icons justify-content-left menu_options">
+            <div class="select option">
+              <i class="ph ph-user"></i>
+              <a href="/html/users/perfil.html"><span class="text-menu">Dados de Perfil</span></a>
+            </div>
+            <div class="option">
+              <i class="ph ph-ranking"></i>
+              <a href="/html/users/ranking.html"><span class="text-menu">Ranking</span></a>
+            </div>
+            <div class="option">
+              <i class="ph ph-trophy"></i>
+              <a href="/html/users/conquistas.html"><span class="text-menu">Conquistas</span></a>
+            </div>
+            <div class="option">
+              <i class="ph ph-game-controller"></i>
+              <a href="/html/Jogos/menuJogos.html"><span class="text-menu">Jogos</span></a>
             </div>
           </div>
-          <div id="msg"></div>
+          <a href="./login.html" class="logout-link"><i class="ph ph-sign-out"></i></a>
         </div>
       </div>
+
+      <div class="col-md-8 fundo-branco">
+        <h2 class="mb-4 text-orange">Dados do Perfil</h2>
+
+        <div class="profile-update">
+          <p id="profileEmail"></p>
+          <input type="text" class="form-control mb-3 w-50" name="nome" placeholder="Nome" />
+          <input type="date" class="form-control mb-3 w-50" name="dataNascimento"
+            placeholder="Data de Nascimento (DD/MM/AAAA)" />
+          <select class="form-control mb-3 w-50" name="profileSex">
+            <option value="">Selecione o Sexo</option>
+            <option value="F">Feminino</option>
+            <option value="M">Masculino</option>
+            <option value="O">Outro</option>
+          </select>
+          <input type="text" class="form-control mb-3 w-50" name="localidade" placeholder="Localidade" />
+          <input type="password" class="form-control mb-3 w-50" name="password" placeholder="Password" />
+
+          <div class="button-alterar">
+            <button class="btn btn-primary btn-lg" onclick="alterar()">
+              Alterar Dados
+            </button>
+          </div>
+        </div>
+        <div id="msg"></div>
+      </div>
     </div>
+  </div>
 
-    <div id="modalPlaceholder"></div>
+  <div id="modalPlaceholder"></div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="/js/perfilUpdate.js"></script>
-    <script type="module" src="/js/views/logged.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="/js/perfilUpdate.js"></script>
+  <script type="module" src="/js/views/logged.js"></script>
 
-    <script>
-      $(".avatar-hover-image").click(function () {
-        // Carrega o conteúdo da modal
-        $("#modalPlaceholder").load("/modais/avatares.html", function () {
-          // Mostra a modal
-          $("#avatarModal").modal("show");
-        });
+  <script>
+    $(".avatar-hover-image").click(function () {
+      // Carrega o conteúdo da modal
+      $("#modalPlaceholder").load("/modais/avatares.html", function () {
+        // Mostra a modal
+        $("#avatarModal").modal("show");
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>

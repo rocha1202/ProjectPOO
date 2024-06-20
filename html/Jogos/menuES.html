@@ -1,59 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/img/Logotipo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Salas - Escape Room</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
 
-    <link rel="stylesheet" href="/css/menuJogos.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/img/Logotipo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salas - Escape Room</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
 
-  <body>
-    <div class="navbar fixed-top">
-      <a href="../users/perfil.html"><img src="/img/Logotipo.svg" /></a>
-      <a href="../users/perfil.html">
-        <img id="avatarImage" src="" class="avatares" width="50px"
-      /></a>
-    </div>
+  <link rel="stylesheet" href="/css/menuJogos.css" />
+</head>
 
-    <div class="mt-5 pt-5">
-      <h2 class="mb-4 text">Escape Room</h2>
-      <a href="/html/Jogos/menuJogos.html"
-        ><img
-          src="/img/jogos/seta.svg"
-          style="position: fixed; left: 60px; top: 160px; display: block"
-        />
-      </a>
+<body>
+  <div class="navbar fixed-top">
+    <a href="../users/perfil.html"><img src="/img/Logotipo.svg" /></a>
+    <a href="../users/perfil.html">
+      <img id="avatarImage" src="" class="avatares" width="50px" /></a>
+  </div>
 
-      <div class="container">
-        <div class="row justify-content-center mt-5">
-          <div class="col-auto">
-            <a href="./EscapeRoom/sala1.html">
-              <img src="/img/salas/Sala1.svg" class="img-fluid" width="300px"
-            /></a>
-          </div>
-          <div class="col-auto">
-            <a href="./EscapeRoom/sala2.html"
-              ><img src="/img/salas/Sala2.svg" class="img-fluid" width="300px"
-            /></a>
-          </div>
+  <div class="mt-5 pt-5">
+    <h2 class="mb-4 text">Escape Room</h2>
+    <a href="/html/Jogos/menuJogos.html"><img src="/img/jogos/seta.svg"
+        style="position: fixed; left: 60px; top: 160px; display: block" />
+    </a>
+
+    <div class="container">
+      <div class="row justify-content-center mt-5">
+        <div class="col-auto">
+          <a href="./EscapeRoom/sala1.html">
+            <img src="/img/salas/imgSala1.jpg" class="img-fluid" width="300px" /></a>
+        </div>
+        <div class="col-auto">
+          <a href="./EscapeRoom/sala2.html"><img src="/img/salas/imgSala2.jpg" class="img-fluid" width="300px" /></a>
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script type="module" src="/js/views/logged.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script type="module" src="/js/views/logged.js"></script>
 
-    <script>
-      var currentUser = JSON.parse(sessionStorage.getItem("loggedUser"));
-      document.getElementById("avatarImage").src =
-        "/img/avatares/" + currentUser.avatar;
-    </script>
-  </body>
+  <script>
+    var currentUser = JSON.parse(sessionStorage.getItem("loggedUser"));
+    document.getElementById("avatarImage").src =
+      "/img/avatares/" + currentUser.avatar;
+  </script>
+</body>
+
 </html>

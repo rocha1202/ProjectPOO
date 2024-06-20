@@ -7,20 +7,18 @@ function exibirRanking() {
   let userPositionContainer = document.getElementById("userPositionContainer");
 
   let rankingHTML = '<ol class="ranking-list">';
+  let rankIndex = 0;
 
-  users.forEach((user, index) => {
-    if (user.tipo == "user" && user.eliminado == "N") {
-      if (index < 10) {
+  users.forEach((user) => {
+    if (user.tipo === "user" && user.eliminado === "N") {
+      if (rankIndex < 10) {
         rankingHTML += `<li class="ranking-item">
-                                <span class="ranking-position top10">${
-                                  index + 1
-                                }</span>
-                                <span class="ranking-name">${user.nome}</span>
-                                <span class="ranking-points">${
-                                  user.pontos
-                                }</span>
-                            </li>`;
+                          <span class="ranking-position top10">${rankIndex + 1}</span>
+                          <span class="ranking-name">${user.email}</span>
+                          <span class="ranking-points">${user.pontos}</span>
+                        </li>`;
       }
+      rankIndex++;
     }
   });
 
@@ -30,13 +28,25 @@ function exibirRanking() {
   let currentUser = JSON.parse(sessionStorage.getItem("loggedUser"));
 
   if (currentUser) {
-    let userIndex = users.findIndex((user) => user.nome === currentUser.nome);
-    let userPosition = userIndex + 1;
-    userPositionContainer.innerHTML = `<div class="user-position">
-                                                <span class="ranking-position user-top">${userPosition}</span>
-                                                <span class="ranking-name">${currentUser.nome}</span>
-                                                <span class="ranking-points">${currentUser.pontos}</span>
-                                            </div>`;
+    let userIndex = -1;
+    rankIndex = 0;
+
+    users.forEach((user) => {
+      if (user.tipo === "user" && user.eliminado === "N") {
+        rankIndex++;
+        if (user.nome === currentUser.nome) {
+          userIndex = rankIndex;
+        }
+      }
+    });
+
+    if (userIndex !== -1) {
+      userPositionContainer.innerHTML = `<div class="user-position">
+                                          <span class="ranking-position user-top">${userIndex}</span>
+                                          <span class="ranking-name">${currentUser.email}</span>
+                                          <span class="ranking-points">${currentUser.pontos}</span>
+                                        </div>`;
+    }
   }
 }
 

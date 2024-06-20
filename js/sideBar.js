@@ -14,7 +14,6 @@ const renderSideBar = () => {
   <a href=${
     !sideBarDetail ? "#eventos_noticias" : "index.html#eventos_noticias"
   } onclick="closeNav()">Eventos/Notícias</a>
-  <a href="">Galeria</a>
   <a href=${
     !sideBarDetail ? "#sobre" : "../index.html#sobre"
   } onclick="closeNav()">Sobre</a>
@@ -25,8 +24,7 @@ const renderSideBar = () => {
     !sideBarDetail ? "#contactos" : "../index.html#contactos"
   } onclick="closeNav()">Contactos</a>
   <a href=${!sideBarDetail ? "./html/login.html" : "./login.html"}>Login</a>
-</div>
-<div class="d-flex linguas"><a href="">EN</a> | <a href="">PT</a></div>`;
+</div>`;
 };
 
 renderSideBar();

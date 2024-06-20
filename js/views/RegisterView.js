@@ -12,7 +12,7 @@ function registerView() {
       const dataNascimento = document.querySelector("#dataNascimento").value;
       const genero = document.querySelector("#genero").value;
       const localidade = document.querySelector("#localidade").value;
-      const email = document.querySelector("#email").value;
+      let email = document.querySelector("#email").value;
       const password = document.querySelector("#password").value;
       let avatar = "";
 
@@ -28,6 +28,7 @@ function registerView() {
         displayMessage("Por favor, preencha todos os campos.", "danger");
         return;
       }
+      email = email.toLowerCase()
 
       try {
         const premiosLocal = JSON.parse(localStorage.getItem("premios")) || [];

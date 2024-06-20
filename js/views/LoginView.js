@@ -7,10 +7,13 @@ function loginView() {
   document.querySelector("#formLogin").addEventListener("submit", (event) => {
     event.preventDefault();
     try {
+      let email = document.getElementById("email").value
+      email = email.toLowerCase()
       User.login(
-        document.getElementById("email").value,
+        email,
         document.getElementById("password").value
       );
+
       displayMessage("Login efetuado com sucesso", "success");
       let userLogged = User.getUserLogged();
       setTimeout(() => {

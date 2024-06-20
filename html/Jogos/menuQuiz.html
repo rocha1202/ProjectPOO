@@ -1,62 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/img/Logotipo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Salas - Escape Room</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
 
-    <link rel="stylesheet" href="/css/menuJogos.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/img/Logotipo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salas - Escape Room</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
 
-  <body>
-    <div class="navbar fixed-top">
-      <a href="../users/perfil.html"><img src="/img/Logotipo.svg" /></a>
-      <a href="../users/perfil.html">
-        <img id="avatarImage" src="" class="avatares" width="50px"
-      /></a>
-    </div>
+  <link rel="stylesheet" href="/css/menuJogos.css" />
+</head>
 
-    <div class="mt-5 pt-5">
-      <a href="/html/Jogos/menuJogos.html"
-        ><img
-          src="/img/jogos/seta.svg"
-          style="position: fixed; left: 60px; top: 100px; display: block"
-        />
-      </a>
+<body>
+  <div class="navbar fixed-top">
+    <a href="../users/perfil.html"><img src="/img/Logotipo.svg" /></a>
+    <a href="../users/perfil.html">
+      <img id="avatarImage" src="" class="avatares" width="50px" /></a>
+  </div>
 
-      <div class="container">
-        <div class="row justify-content-center mt-5">
-          <div class="col-auto">
-            <img src="/img/quiz.svg" class="img-fluid" width="400px" />
-          </div>
-          <div class="col-auto">
-            <h1 class="text">Queres jogar um quiz?</h1>
-            <p>As perguntas são sempre dadas de uma forma aleatória.</p>
-            <button class="btn btn-primary btn-lg" id="btnEntrar">
-              Entrar
-            </button>
-          </div>
+  <div class="mt-5 pt-5">
+    <a href="/html/Jogos/menuJogos.html"><img src="/img/jogos/seta.svg"
+        style="position: fixed; left: 60px; top: 100px; display: block" />
+    </a>
+
+    <div class="container">
+      <div class="row justify-content-center mt-5">
+        <div class="col-auto">
+          <img src="/img/quiz.svg" class="img-fluid" width="400px" />
+        </div>
+        <div class="col-auto">
+          <h1 class="text">Queres jogar um quiz?</h1>
+          <p>As perguntas são sempre dadas de uma forma aleatória.</p>
+          <button class="btn btn-primary btn-lg" id="btnEntrar">
+            Entrar
+          </button>
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script type="module" src="/js/views/logged.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script type="module" src="/js/views/logged.js"></script>
 
-    <script>
-      var currentUser = JSON.parse(sessionStorage.getItem("loggedUser"));
-      document.getElementById("avatarImage").src =
-        "/img/avatares/" + currentUser.avatar;
+  <script>
+    var currentUser = JSON.parse(sessionStorage.getItem("loggedUser"));
+    document.getElementById("avatarImage").src =
+      "/img/avatares/" + currentUser.avatar;
 
-      document.querySelector("#btnEntrar").addEventListener("click", () => {
-        window.location.href = "./Quiz/quiz.html";
-      });
-    </script>
-  </body>
+    document.querySelector("#btnEntrar").addEventListener("click", () => {
+      window.location.href = "./Quiz/quiz.html";
+    });
+  </script>
+</body>
+
 </html>

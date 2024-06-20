@@ -1,127 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile</title>
-    <link rel="icon" type="image/x-icon" href="/img/Logotipo.svg" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="/css/perfil.css" />
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
-  </head>
 
-  <body>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-3 blue-background">
-          <div class="d-flex flex-column">
-            <div class="avatar-image">
-              <img class="rounded-circle" width="126px" id="avatarImage" />
-              <img
-                class="rounded-circle avatar-hover-image"
-                src="/img/avatares/profile_hover.svg"
-              />
-            </div>
-            <br />
-            <span class="nomeUser"> <span id="profileName1"></span></span>
-            <span class="pontos_user">Pontos: <span id="pontos"></span></span>
-            <div class="d-flex flex-column justify-content-left menu_options">
-              <div class="select option">
-                <i class="ph ph-user"></i>
-                <a href="/html/users/perfil.html"
-                  ><span class="text-menu">Dados de Perfil</span></a
-                >
-              </div>
-              <div class="option">
-                <i class="ph ph-ranking"></i>
-                <a href="/html/users/ranking.html"
-                  ><span class="text-menu">Ranking</span></a
-                >
-              </div>
-              <div class="option">
-                <i class="ph ph-trophy"></i>
-                <a href="/html/users/conquistas.html"
-                  ><span class="text-menu">Conquistas</span></a
-                >
-              </div>
-              <div class="option">
-                <i class="ph ph-game-controller"></i>
-                <a href="/html/Jogos/menuJogos.html"
-                  ><span class="text-menu">Jogos</span></a
-                >
-              </div>
-            </div>
-            <a href="/html/login.html" class="logout-link"
-              ><i class="ph ph-sign-out"></i
-            ></a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil</title>
+  <link rel="icon" type="image/x-icon" href="/img/Logotipo.svg" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/perfil.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 blue-background">
+        <div class="d-flex flex-column">
+          <div class="avatar-image">
+            <img class="rounded-circle" width="126px" id="avatarImage" />
+            <img class="rounded-circle avatar-hover-image" src="/img/avatares/profile_hover.svg" />
           </div>
+          <br />
+          <span class="nomeUser"> <span id="profileName1"></span></span>
+          <span class="pontos_user">Pontos: <span id="pontos"></span></span>
+          <div class="d-flex flex-column justify-content-left menu_options">
+            <div class="select option">
+              <i class="ph ph-user"></i>
+              <a href="/html/users/perfil.html"><span class="text-menu">Dados de Perfil</span></a>
+            </div>
+            <div class="option">
+              <i class="ph ph-ranking"></i>
+              <a href="/html/users/ranking.html"><span class="text-menu">Ranking</span></a>
+            </div>
+            <div class="option">
+              <i class="ph ph-trophy"></i>
+              <a href="/html/users/conquistas.html"><span class="text-menu">Conquistas</span></a>
+            </div>
+            <div class="option">
+              <i class="ph ph-game-controller"></i>
+              <a href="/html/Jogos/menuJogos.html"><span class="text-menu">Jogos</span></a>
+            </div>
+          </div>
+          <a href="/html/login.html" class="logout-link"><i class="ph ph-sign-out"></i></a>
         </div>
+      </div>
 
-        <div class="col-md-8 fundo-branco">
-          <h2 class="mb-4 text-orange">Dados do Perfil</h2>
-          <div class="profile-info">
-            <div class="d-flex flex-column align-items-start mb-5">
-              <div class="d-flex mb-3">
-                <div class="atributoContainer">
-                  <span class="atributos">Nome</span>
-                </div>
-                <span id="profileName2" class="info"></span>
+      <div class="col-md-8 fundo-branco">
+        <h2 class="mb-4 text-orange">Dados do Perfil</h2>
+        <div class="profile-info">
+          <div class="d-flex flex-column align-items-start mb-5">
+            <div class="d-flex mb-3">
+              <div class="atributoContainer">
+                <span class="atributos">Nome</span>
               </div>
-              <div class="d-flex mb-3">
-                <div class="atributoContainer">
-                  <span class="atributos">Data de nascimento</span>
-                </div>
-                <span id="profileBirthDate" class="info"></span>
-              </div>
-              <div class="d-flex mb-3">
-                <div class="atributoContainer">
-                  <span class="atributos">Género</span>
-                </div>
-                <span id="profileSex" class="info"></span>
-              </div>
-              <div class="d-flex mb-3">
-                <div class="atributoContainer">
-                  <span class="atributos">Localidade</span>
-                </div>
-                <span id="profileLocation" class="info"></span>
-              </div>
-              <div class="d-flex mb-3">
-                <div class="atributoContainer">
-                  <span class="atributos">Email</span>
-                </div>
-                <span id="profileEmail" class="info"></span>
-              </div>
+              <span id="profileName2" class="info"></span>
             </div>
-            <div class="d-flex justify-content-center">
-              <button
-                class="btn btn-atualizar"
-                onclick="window.location.href = './perfil_update.html'"
-              >
-                Atualizar Dados
-              </button>
+            <div class="d-flex mb-3">
+              <div class="atributoContainer">
+                <span class="atributos">Data de nascimento</span>
+              </div>
+              <span id="profileBirthDate" class="info"></span>
             </div>
+            <div class="d-flex mb-3">
+              <div class="atributoContainer">
+                <span class="atributos">Género</span>
+              </div>
+              <span id="profileSex" class="info"></span>
+            </div>
+            <div class="d-flex mb-3">
+              <div class="atributoContainer">
+                <span class="atributos">Localidade</span>
+              </div>
+              <span id="profileLocation" class="info"></span>
+            </div>
+            <div class="d-flex mb-3">
+              <div class="atributoContainer">
+                <span class="atributos">Email</span>
+              </div>
+              <span id="profileEmail" class="info"></span>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-atualizar" onclick="window.location.href = './perfil_update.html'">
+              Atualizar Dados
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <div id="modalPlaceholder"></div>
+  </div>
+  <div id="modalPlaceholder"></div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="/js/perfil.js"></script>
-    <script type="module" src="/js/views/logged.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="/js/perfil.js"></script>
+  <script type="module" src="/js/views/logged.js"></script>
 
-    <script>
-      $(".avatar-hover-image").click(function () {
-        // Carrega o conteúdo da modal
-        $("#modalPlaceholder").load("/modais/avatares.html", function () {
-          // Mostra a modal
-          $("#avatarModal").modal("show");
-        });
+  <script>
+    $(".avatar-hover-image").click(function () {
+      // Carrega o conteúdo da modal
+      $("#modalPlaceholder").load("/modais/avatares.html", function () {
+        // Mostra a modal
+        $("#avatarModal").modal("show");
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>

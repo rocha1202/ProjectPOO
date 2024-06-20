@@ -101,7 +101,7 @@ export const perguntasSala1 = [
     }
 ];
 
-export const perguntasSala2  = [
+export const perguntasSala2 = [
     {
         pergunta: "Qual é a representação binária do número decimal 10?",
         opcoes: ["1000", "1010", "1100", "1110"],
