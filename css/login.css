@@ -110,7 +110,8 @@ img {
   width: 100%;
 }
 
-.btn_login {
+.btn_login,
+.btn_registo {
   font-family: "PortoSansStencilBold";
   font-size: 22px;
   background-color: rgba(var(--blue_rgb), 0.85);
@@ -122,6 +123,8 @@ img {
   border-radius: 7px;
 }
 
-.btn_login:hover {
+.btn_login:hover,
+.btn_registo:hover {
+  color: var(--white);
   background-color: var(--blue);
 }
