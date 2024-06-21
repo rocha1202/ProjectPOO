@@ -24,7 +24,7 @@ function initdata() {
             completo: "N",
             data_completo: "",
             progresso: 0,
-            tipo: "escapeRoom",
+            tipo: "escaperoom",
             eliminado: "N",
           },
           {
@@ -89,7 +89,7 @@ function initdata() {
             completo: "N",
             data_completo: "",
             progresso: 0,
-            tipo: "escapeRoom",
+            tipo: "escaperoom",
             eliminado: "N",
           },
           {
@@ -230,7 +230,7 @@ function initdata() {
         img_desbloq: "/img/premios/P1_des.svg",
         progresso: 5,
         eliminado: "N",
-        tipo: "escapeRoom",
+        tipo: "escaperoom",
       },
       {
         id: 2,

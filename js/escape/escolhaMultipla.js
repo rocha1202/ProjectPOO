@@ -132,7 +132,7 @@ function updateUserPoints() {
             // Verificar se o prêmio corresponde ao tipo e não está completo
             if (
               (premio.tipo === tipos && premio.completo !== "S") ||
-              premio.tipo == "escapeRoom"
+              premio.tipo === "escaperoom"
             ) {
               premio.progresso += 1;
 
@@ -146,7 +146,7 @@ function updateUserPoints() {
               }
 
               // Verifica se o progresso do utilizador alcançou o progresso do prêmio
-              if (premio.progresso == premioLocal.progresso) {
+              if (premio.progresso === premioLocal.progresso) {
                 premio.data_completo = getFormattedDate();
                 premio.completo = "S";
 
@@ -178,7 +178,5 @@ function updateUserPoints() {
     } else {
       console.error("Lista de prêmios não encontrada em localStorage");
     }
-
-    //------------------------------------------------------------
   }
 }
